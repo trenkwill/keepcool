@@ -1,0 +1,32 @@
+.member-group {
+	margin-left: 10px;
+	&__avatar {
+		background: #fff;
+		border-radius: 50%;
+		border: solid 2px #fff;
+		margin-left: -10px;
+		float: left;
+		position: relative;
+		z-index: 4;
+		overflow: hidden;
+		&:nth-child(2) {
+			z-index: 3;
+			img {
+				opacity: .8;
+			}
+		}
+		&:nth-child(3) {
+			z-index: 2;
+			img {
+				opacity: .4;
+			}
+		}
+	}
+	&__text {
+		font-size: 12px;
+		margin-left: 10px;
+		color: $grey-light;
+		margin-top: 7px;
+		float: left;
+	}
+}

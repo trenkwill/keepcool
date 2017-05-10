@@ -1,0 +1,67 @@
+.slider {
+	.slider-track {
+		height: 2px !important;
+		margin-top: 0px !important;
+	}
+	.slider-handle {
+		background: #FFF;
+		border-width: 2px;
+		width: 24px;
+		height: 24px;
+		top: -2px;
+		border-style: solid;
+		box-shadow: 0 2px 4px 0 rgba(0,0,0,0.20);
+		&:active, &:hover {
+			border-width: 3px;
+		}
+	}
+
+}
+#slider-green {
+	.slider-selection {
+		background: $green;
+	}
+	.slider-handle {
+		border-color: rgba(130,199,32,0.30);
+	}
+}	
+#slider-pink {
+	.slider-selection {
+		background: $pink;
+	}
+	.slider-handle {
+		border-color: rgba(235,42,93,0.50);
+	}
+}
+#slider-orange {
+	.slider-selection {
+		background: $orange;
+	}	
+	.slider-handle {
+		border-color: rgba(255,160,51,0.30);
+	}
+}
+#slider-purple {
+	.slider-selection {
+		background: $purple;
+	}	
+	.slider-handle {
+		border-color: rgba(93,36,145,0.30);
+	}
+}
+#slider-turquoise {
+	.slider-selection {
+		background: $turquoise;
+	}
+	.slider-handle {
+		border-color: rgba(0,161,151,0.30);
+	}
+}
+#slider-blue {
+	.slider-selection {
+		background: $blue;
+	}
+	.slider-handle {
+		border-color: rgba(0,109,192,0.30);
+	}
+}

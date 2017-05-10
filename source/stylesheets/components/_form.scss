@@ -1,0 +1,139 @@
+.form-control {
+  border: none;
+  border-bottom: solid 1px $grey-lighter;
+  padding: 0;
+  box-shadow: none;
+  height: 55px;
+  &:focus {
+    border: none;
+    border-bottom: solid 1px $grey-lighter;
+    box-shadow: none;
+    outline: none;
+  }
+}
+.form-control-2 {
+  display: block;
+  width: 100%;
+  height: 36px;
+  padding: 6px 12px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #555555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
+.input-group-addon {
+	background: none;
+	border: none;
+}
+[data-provide="datepicker"]{
+	.input-group-addon {
+		left: -13px;
+    	position: relative;
+    	z-index: 9;
+	}
+}
+
+.search {
+	position: relative;
+	.js-float-label-wrapper {
+		&.focused {
+			label {
+				&:before {
+					content:"Your search";
+					display: block;
+				}
+				span {display: none;}
+			}
+		}
+	}
+	&__input {
+		font-size: 24px;
+		color: #A3D8F4;
+		width: 100%;
+		height: 50px;
+		font-weight: 100;
+		&:hover {
+			border-bottom: solid 1px $blue;
+		}
+		&:focus {
+			color: $blue;
+		}
+	}
+	&__btn {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	&__icon {
+		font-size: 24px;
+		margin-right: 20px;
+	}
+	&__filters {
+		@extend .list-inline;
+		.open > a{
+			color: $grey;
+			text-decoration: none;
+		}
+		> li > a {
+			color: $grey-light;
+			&:hover {
+				color: $blue;
+			}
+		}
+	}
+}
+
+.js-float-label-wrapper {
+	position: relative;
+}
+
+.js-float-label-wrapper label {
+	position: absolute;
+	top: 1em; left: 1em;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.js-float-label-wrapper.focused label,
+.js-float-label-wrapper.populated label {
+	opacity: 1
+}
+
+.js-float-label-wrapper.focused input,
+.js-float-label-wrapper.populated input,
+.js-float-label-wrapper.focused textarea,
+.js-float-label-wrapper.populated textarea {
+	padding-top: 2em;
+}
+
+.js-float-label-wrapper input,
+.js-float-label-wrapper textarea,
+.js-float-label-wrapper label {
+	-webkit-transition: 0.2s ease-in-out;
+	-moz-transition: 0.2s ease-in-out;
+	-ms-transition: 0.2s ease-in-out;
+	-o-transition: 0.2s ease-in-out;
+	transition: 0.2s ease-in-out;
+}
+
+.js-float-label-wrapper label {
+	top: 8px !important;
+	left: 10px !important;
+	font-size: 14px;
+}
+.js-float-label-wrapper.focused label, .js-float-label-wrapper.populated label {
+	top: 0px !important;
+	left: 0px !important;
+	font-size: 14px;
+	color: $grey-light;
+}
+.js-float-label-wrapper.focused input,
+.js-float-label-wrapper.populated input,
+.js-float-label-wrapper.focused textarea,
+.js-float-label-wrapper.populated textarea {
+	padding-top: 1em !important;
+}

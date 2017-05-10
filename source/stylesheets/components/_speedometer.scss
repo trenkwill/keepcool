@@ -1,0 +1,92 @@
+.speedometer {
+
+	&__envelope {
+		position: relative;
+		margin: auto;
+		background: url("../images/speedometer.png") no-repeat;
+		background-size: contain;
+		width  :300px;
+		height :300px;
+		border-radius:50%;
+	}
+
+	&__speednobe {
+		position:absolute;
+		width:100%;
+		z-index:10;	
+		transition: all 1s;
+		-webkit-transition: all 1s;
+		-o-transition: all 1s;
+		-moz-transition: all 1s;	
+		height:4px;
+		top:148px;
+		transform:rotate(25deg);
+		div{
+			background: linear-gradient(to left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+			position: absolute;
+			height: 100%;
+			top: 0;
+			width  :95px;
+			left :13px;
+			&:before {
+				content:"";
+				display: block;
+				width: 15px;
+				height: 15px;
+				border: solid 3px #fff;
+				border-radius: 50%;
+				position: absolute;
+				left: -20px;
+				top: -5px;
+			}
+		}
+	}
+
+	&__speedposition {
+		position: absolute;
+		color: #FFF;
+		text-align: center;
+		line-height: 80px;
+		font-size: 30px;
+		border-radius: 50%;
+		background: rgba(255,255,255,0.28);
+		width: 80px;
+		height: 80px;
+		top: 110px;
+		left: 110px;
+		&:before {
+			content:"";
+			display: block;
+			width: 50px;
+			height: 50px;
+			background: #fff;
+			border-radius: 50%;
+			position: absolute;
+			left: 15px;
+			top: 15px;
+		}
+	}
+	&__number-of-patents {
+		margin-top: -80px;
+		margin-bottom: 50px;
+		margin-left: 20px;
+		margin-right: 20px;
+		padding-left: 30px;
+		padding-right: 20px;
+		padding-bottom: 20px;
+		font-weight: lighter;
+		border-bottom: solid 1px #506270;
+
+		&__number {
+			font-size: 40px;
+			color: #fff;
+			float: left;
+			line-height: 1.2;
+			margin-right: 10px;
+		}
+		p {
+			color:#fff;
+		}
+	}
+}
+

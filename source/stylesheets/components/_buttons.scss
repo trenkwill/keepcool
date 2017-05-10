@@ -1,0 +1,76 @@
+.btn {
+	border-radius: 30px;
+	padding-left: 40px;
+	padding-right: 40px;
+	transition: all 0.3s ease-in-out;
+	&.active {
+		background: $blue;
+		color: #fff;
+		&:hover, &:active, &:focus {
+			background: $blue;
+			color: #fff;
+		}
+	}
+	&--plus {
+		position: relative;
+		padding-left: 10px;
+		padding-right: 0;
+		left: 35px;
+		color: $blue;
+		&:hover {
+			color: darken($blue, 20);
+			&:before {
+				background: darken($blue, 20);
+			}
+		}
+		&:active {
+			box-shadow: none;
+		}
+		&:before {
+			content:"+";
+			position: absolute;
+			color: #fff;
+			display: block;
+			left: -35px;
+			top: -3px;
+			width: 36px;
+			height: 36px;
+			background: $blue;
+			line-height: 36px;
+			text-align: center;
+			border-radius: 50%;
+		}
+	}
+}
+
+.btn-outline {
+	border: solid 1px #fff;
+	background: none;
+	&:hover, &:active {
+		color: #fff;
+	}
+}
+
+.btn-white {
+	background: #fff;
+	color: $blue-2;
+	&:hover, &:active {
+		color: $blue-2;
+	}
+}
+.btn-outline-grey {
+	border: solid 1px $grey-light;
+	background: none;
+	&:hover, &:active {
+		border: solid 1px darken($grey-light, 20);
+		color: $blue;
+	}
+}
+.btn-outline-blue {
+	border: solid 1px $blue;
+	background: none;
+	&:hover, &:active {
+		border: solid 1px darken($grey-light, 20);
+		color: $blue;
+	}
+}

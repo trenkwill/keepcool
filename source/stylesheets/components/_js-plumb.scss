@@ -1,0 +1,24 @@
+.jsplumb-container {
+	width: 50%;
+}
+
+.jsplumb-endpoint {
+	z-index: 1;
+	cursor: move;
+	circle {
+		fill: transparent;
+	}
+}
+
+// make the path larger when dragging an anchor point
+.jsplumb-dragging path:first-child{
+    stroke-width: 5px
+}
+// make the arrow green
+.jsplumb-connector {
+	z-index: 3;
+	path:nth-child(2) {
+		fill: $green;
+		stroke: $green;
+	}
+}

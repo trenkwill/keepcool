@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title><%= current_page.data.title || "Pixseb" %></title>
+
+    <link href='//fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker3.standalone.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.css">
+
+    <%= stylesheet_link_tag :site %>
+    <%= javascript_include_tag :all %>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.5.3/css/bootstrap-slider.min.css">
+  </head>
+
+  <body class="<%= page_classes %>">
+
+
+    <% unless current_page.url == '/' %>
+
+      <nav class="navbar navbar-primary bg-faded mb0">
+          <%= link_to("Pixseb", "index.html" , class:"navbar-brand text-uppercase") %>
+          <a class="navbar-brand pl0" href="#">
+          <% if current_page.data.menu_title %>
+          <i class="ionicons ion-chevron-right color-grey-light mr-"></i>
+          <% end %>
+          <%= current_page.data.menu_title %>
+          </a>
+          <ul class="nav navbar-nav pull-right">
+            <li class="nav-item">
+              <a class="nav-link p text-medium" href="#"><i class="ionicons ion-chatbox-working color-grey-light mr- pull-left" style="font-size: 24px;"></i>Help</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle p text-medium" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">EN <i class="ionicons ion-chevron-down color-grey-light ml-"></i></a>
+              <div class="dropdown-menu p">
+                <ul class="list-unstyled">
+                  <li><a class="dropdown-item" href="#">EN</a></li>
+                  <li><a class="dropdown-item" href="#">FR</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p" href="#">
+                <div class="badge-container">
+                  <i class="fa fa-bell"></i>
+                  <span class="badge">3</span>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item">
+
+              <a class="nav-link clearfix p0 jc-sb at-c dropdown-toggle " data-toggle="dropdown" style="display: flex;" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+
+                <%= image_tag "face-1.jpg", class:"pull-left mr-", width:"60" %>
+
+                <div class="pull-left ml df flex-column">
+                  <p class="small color-grey-light">INSA Strasbourg</p> <p class="text-medium">Denis C.</p>
+                </div>
+
+                <i class="ionicons ion-chevron-down pull-right ml mr"></i>
+
+              </a>
+              <div class="dropdown-menu p">
+                <ul class="list-unstyled">
+                  <li>
+                    <%= link_to("Profile", "account.html#profile" , class:"dropdown-item") %>
+                  </li>
+                  <li>
+                    <%= link_to("Password", "account.html#password" , class:"dropdown-item") %>
+                  </li>
+                  <li>
+                    <%= link_to("Notifications", "account.html#notifications" , class:"dropdown-item") %>
+                  </li>
+                  <li>
+                    <%= link_to("Team", "account.html#team" , class:"dropdown-item") %>
+                  </li>
+                  <li>
+                    <%= link_to("Data Setting", "account.html#data-setting" , class:"dropdown-item") %>
+                  </li>
+                  <hr>
+                  <li><a href="" class="dropdown-item color-pink mb0">Disconnect</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+
+      </nav>
+    <% end %>
+
+    <%= yield %>
+
+  </body>
+</html>

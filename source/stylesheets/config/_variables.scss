@@ -1,0 +1,42 @@
+/* -------------------------------------
+ * Fonts
+ * ------------------------------------- */
+// Google fonts
+@import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed");
+$base-font: "Roboto", "Helvetica", "sans-serif";
+$header-font: "Roboto Condensed", "Helvetica", "sans-serif";
+
+// Local fonts (uncomment following lines)
+// @font-face {
+//   font-family: "Font Name";
+//   src: font-url('FontFile.eot');
+//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
+//        font-url('FontFile.woff') format('woff'),
+//        font-url('FontFile.ttf') format('truetype')
+// }
+// $my-font: "Font Name";
+
+// Font-size and line-height
+$base-size: 16px;
+$base-height: 1.4;
+
+/* -------------------------------------
+ * Colors
+ * ------------------------------------- */
+// Scheme
+$brand-color: #506270;
+
+$red: #EE5F5B;
+$blue: #53B6EB;
+$blue-2: #1673BC;
+$blue-dark: #17212A;
+$yellow: #FDB631;
+$orange: #E67E22;
+$green: #00A297;
+$grey: #506270;
+$grey-light:#AEB9BF;
+$grey-lighter:#DEE3E6;
+$light: #E8ECEF;
+$pink : #EB2B5E;
+$purple: #5F288F;
+$turquoise: #00A297;

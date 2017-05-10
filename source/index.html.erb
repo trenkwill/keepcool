@@ -1,0 +1,22 @@
+---
+title: Welcome to Pixseb
+---
+
+<div class="container">
+
+</div>
+
+
+<%= partial "partials/javascripts" %>
+
+<script>
+	$( '.js-float-label-wrapper' ).FloatLabel();
+
+	$(document).on('click', '.js-scroll-down', function(event){
+	    event.preventDefault();
+
+	    $('html, body').animate({
+	        scrollTop: $( $.attr(this, 'href') ).offset().top
+	    }, 500);
+	});
+</script>

@@ -1,0 +1,119 @@
+
+@keyframes loading-dot {
+	from { 
+		transform: rotate(55deg);
+	}
+	to {
+		transform: rotate(-55deg);
+	}
+}
+@keyframes loading-line {
+	0% { 
+		background:#83C720;
+	}
+	20% {
+		background: #4BB2EF;
+	}
+	40% {
+		background: #FF9D3D;
+	}
+	60% {
+		background: #EB2B5E;
+	}
+	80% {
+		background: #5F288F;
+	}
+	100% {
+		background: #2AA89E;
+	}
+}
+
+@keyframes loading-dot-color {
+	0% { 
+		border: solid 3px #83C720;
+	}
+	20% {
+		border: solid 3px #4BB2EF;
+	}
+	40% {
+		border: solid 3px #FF9D3D;
+	}
+	60% {
+		border: solid 3px #EB2B5E;
+	}
+	80% {
+		border: solid 3px #5F288F;
+	}
+	100% {
+		border: solid 3px #2AA89E;
+	}
+}
+
+
+.loading {
+	background: #fff url("../images/transition-bg.png") no-repeat center 100px;
+	border-radius: 50%;
+	background-size: contain;
+	width: 230px;
+	height: 215px;
+	margin: auto;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 0 2px 2px 0 rgba(18,25,34,0.08);
+	&__dot {
+		width: 0px;
+		height: 150px;
+		position: absolute;
+		z-index: 999;
+		left: 50%;
+		animation-name: loading-dot;
+		animation-duration:  1s;
+		animation-direction: alternate;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite; 
+		&:before {
+			content:"";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			display: block;
+			width: 10px;
+			height: 10px;
+			background: #fff;
+			border: solid 3px #83C720;
+			border-radius: 50%;
+			animation-name: loading-dot-color;
+			animation-duration:  30s;
+			animation-direction: alternate;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite; 
+		}
+	}
+
+	&__line {
+		width: 119px;
+	    height: 90px;
+	    border-radius: 50%;
+	    background-image: linear-gradient(to right, #83C720 0%, #4BB2EF 100%);
+	    position: absolute;
+	    top: 56px;
+	    left: 58px;
+	    animation-name: loading-line;
+		animation-duration:  30s;
+		animation-direction: alternate;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	}
+	&__mask {
+		position: absolute;
+		background-size: contain;
+		left: 56px;
+		top: 52px;
+		width: 123px;
+		height: 90px;
+		border-radius: 50%;
+		background: #fff url(../images/transition-bg.png) no-repeat;
+		background-size: 204%;
+    	background-position: -67px 48px;
+	}
+}
