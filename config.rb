@@ -15,6 +15,10 @@ page '/*.txt', layout: false
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
 #  which_fake_page: "Rendering a fake page with a local variable" }
+["amuser", "defouler", "entrainer", "ressourcer", "tonifier", "aerer", "sport-a-2", "preparer-courses"].each do |cours|
+  proxy "/envie-de/#{cours}.html", "/envie-de/show.html", :locals => { :cours => cours }, :ignore => true
+end
+
 
 # General configuration
 
@@ -37,7 +41,19 @@ helpers do
   def is_page_active(page)
     current_page.url == page ? 'active' : ''
   end
+
+  def inline_svg name
+    root = Middleman::Application.root
+    file_path = "#{root}/source/images/#{name}.svg"
+    if File.exists?(file_path)
+      File.read(file_path)
+    else
+      "<span class='icon-error'>Icon #{name} not found</span>"
+    end
+  end
+
 end
+
 
 # Build-specific configuration
 configure :build do

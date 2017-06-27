@@ -1,22 +1,40 @@
 ---
-title: Welcome to Pixseb
+title: Keep Cool
 ---
 
-<div class="container">
+<div class="hero">
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="hero__card" style="background-image: url('<%= asset_url "img-content/bikini-challenge.png" %>');">
+      </div>
+    </div>
 
+    <div class="col-xs-6">
+      <div class="hero__card" style="background-image: url('<%= asset_url "img-content/abdo-choko.png" %>');">
+      </div>
+    </div>
+  </div>
 </div>
+<div class="main-content__section">
+
+    <h2 class="main-content__title mb">Envie de se défouler ?</h2>
+
+    <div class="row mb+">
+      <% data.lessons.envies.each do |lesson| %>
+          <div class="col-md-4">
+            <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+          </div>
+      <% end %>
+    </div>
 
 
-<%= partial "partials/javascripts" %>
+     <h2 class="main-content__title mb">Le top de la semaine</h2>
 
-<script>
-	$( '.js-float-label-wrapper' ).FloatLabel();
-
-	$(document).on('click', '.js-scroll-down', function(event){
-	    event.preventDefault();
-
-	    $('html, body').animate({
-	        scrollTop: $( $.attr(this, 'href') ).offset().top
-	    }, 500);
-	});
-</script>
+    <div class="row">
+      <% data.lessons.top.each do |lesson| %>
+          <div class="col-md-4">
+            <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+          </div>
+      <% end %>
+    </div>
+</div>

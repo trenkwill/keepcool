@@ -1,47 +1,36 @@
 body {
 	color: $grey;
-	background: #fff;
-}
-.row.no-gutter {
-  margin-left: 0;
-  margin-right: 0;
+	background: #E2E2E2;
 }
 
-.row.no-gutter [class*='col-']:not(:first-child),
-.row.no-gutter [class*='col-']:not(:last-child) {
-  padding-right: 0;
-  padding-left: 0;
-}
-.added {
-	position: relative;
-	left: 35px;
-	color: $green;
-	padding: 6px 12px;
-	&__check {
-		position: absolute;
-		color: $green;
-		display: block;
-		left: -35px;
-		top: -3px;
-		width: 36px;
-		height: 36px;
-		border: solid 1px $green;
-		line-height: 36px;
-		text-align: center;
-		border-radius: 50%;
-	}
+h1, h2, h3 {
+  font-family: $header-font;
+  font-weight: bold;
 }
 
-.dot {
-	display: block;
-	width: 10px;
-	height: 10px;
-	border-radius: 50%;
+p {
+  font-size: 14px
 }
+.main-content {
+  margin-left: $sidebar-width + $main-content-gutter;
+  &__title {
+    font-family: $font-3;
+    font-size: 24px;
+  }
+  &__section {
+    margin-left: 70px;
+    margin-top: 55px;
+  }
+}
+
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+
 // Paddings
 .padded {
-  padding-top: 5em;
-  padding-bottom: 5em;
+  padding: 5em;
 }
 // Backgrounds
 .bg-white {
@@ -55,18 +44,6 @@ body {
 }
 .bg-grey-light {
   background: #eee;
-}
-.bg-blue {
-  background: #00a3e1;
-}
-.bg-blue-2 {
-  background: #3477A1;
-}
-.bg-dark-blue {
-  background: #3b5998;
-}
-.bg-dark-blue-2 {
-  background: #17212A;
 }
 .bg-pink {
 	background: $pink;
@@ -84,6 +61,13 @@ body {
 	background: $turquoise;
 }
 
+
+// modal overide
+.modal {
+}
+.modal-backdrop {
+  background: rgba(33,43,50,1);
+}
 
 .border-radius {
 	border-radius: 6px;

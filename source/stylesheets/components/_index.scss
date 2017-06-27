@@ -1,18 +1,24 @@
 @import "alert";
-@import "avatars";
-@import "badges";
 @import "typography";
 @import "buttons";
+@import "toggle";
+@import "difficulty-icon";
+@import "right-slide";
+
+// main card
 @import "card";
-@import "progress";
-@import "member-group";
-@import "form";
-@import "breadcrumb";
-@import "speedometer";
+
+// slot cards in the sidebar
+@import "slot";
 @import "contradictions";
-@import "patent";
-@import "label";
-@import "mini-card";
-@import "slider";
-@import "loading";
-@import "js-plumb";
+
+// top category cards on homepage
+@import "hero";
+@import "category";
+
+@import "filter";
+
+// the keyboard code popup
+@import "code";
+
+
