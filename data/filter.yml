@@ -1,0 +1,127 @@
+categories:
+  -
+    title: Tous les cours
+    image: "images/categorie-white.png"
+  -
+    title: Abdo
+    image: "images/categories/abdos.png"
+  -
+    title: Actions
+    image: "images/categories/actions.png"
+  -
+    title: Ballon
+    image: "images/categories/ballon.png"
+  -
+    title: Bar
+    image: "images/categories/bar.png"
+  -
+    title: Cuisses
+    image: "images/categories/cuisses.png"
+  -
+    title: Danse
+    image: "images/categories/danse.png"
+  -
+    title: Etirement
+    image: "images/categories/etirement.png"
+  -
+    title: Gymstick
+    image: "images/categories/gymstick.png"
+  -
+    title: Hiit
+    image: "images/categories/hiit.png"
+  -
+    title: Pilates
+    image: "images/categories/pilates.png"
+  -
+    title: Piloxing
+    image: "images/categories/piloxing.png"
+  -
+    title: Postnatal
+    image: "images/categories/postnatal.png"
+  -
+    title: Yoga
+    image: "images/categories/yoga.png"
+  -
+    title: Step
+    image: "images/categories/step.png"
+  -
+    title: Gym
+    image: "images/categories/gym.png"
+
+teachers:
+  -
+    title: "Victoria"
+    image: "img-content/teacher-1.jpg"
+  -
+    title: "Victoria"
+    image: "img-content/teacher-1.jpg"
+  -
+    title: "Filipe"
+    image: "img-content/teacher-2.jpg"
+  -
+    title: "Filipe"
+    image: "img-content/teacher-2.jpg"
+  -
+    title: "Victoria"
+    image: "img-content/teacher-1.jpg"
+  -
+    title: "Filipe"
+    image: "img-content/teacher-2.jpg"
+  -
+    title: "Filipe"
+    image: "img-content/teacher-2.jpg"
+  -
+    title: "Victoria"
+    image: "img-content/teacher-1.jpg"
+  -
+    title: "Victoria"
+    image: "img-content/teacher-1.jpg"
+  -
+    title: "Filipe"
+    image: "img-content/teacher-2.jpg"
+  -
+    title: "Victoria"
+    image: "img-content/teacher-1.jpg"
+  -
+    title: "Filipe"
+    image: "img-content/teacher-2.jpg"
+  -
+    title: "Victoria"
+    image: "img-content/teacher-1.jpg"
+  -
+    title: "Filipe"
+    image: "img-content/teacher-2.jpg"
+  -
+    title: "Victoria"
+    image: "img-content/teacher-1.jpg"
+  -
+    title: "Filipe"
+    image: "img-content/teacher-2.jpg"
+
+difficulties:
+  -
+    title: "Tout niveau"
+    image: "images/difficulty_all.png"
+  -
+    title: "Facile"
+    image: "images/difficulty_green_1.png"
+  -
+    title: "Moyen"
+    image: "images/difficulty_green_2.png"
+  -
+    title: "Difficile"
+    image: "images/difficulty_green_3.png"
+
+time:
+  -
+    title: "Toutes durées"
+    image: "images/time_all.png"
+  -
+    title: "Moins de 10 minutes"
+    image: "images/time_green_1.png"
+  -
+    title: "10 à 20 min"
+    image: "images/time_green_2.png"
+  -
+    title: "Plus de 20 min"
+    image: "images/time_green_3.png"

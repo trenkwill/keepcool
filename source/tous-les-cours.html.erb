@@ -1,0 +1,274 @@
+<div id="filter">
+
+  <div class="filter">
+    <div class="filter__description">Trouver votre cours <br>grace aux filtres</div>
+    <ul class="filter__nav list-inline">
+      <li><a href="#" data-toggle="collapse" data-target="#categories" class="filter__item filter__item--categorie">Categories</a></li>
+      <li><a href="#" data-toggle="collapse" data-target="#teachers" class="filter__item filter__item--teacher">Tous les profs</a></li>
+      <li><a href="#" data-toggle="collapse" data-target="#difficulties" class="filter__item filter__item--difficulty">Tout niveau</a></li>
+      <li><a href="#" data-toggle="collapse" data-target="#time" class="filter__item filter__item--time selected">Durée</a></li>
+      <li>
+      <label for="enter-code" class="filter__item filter__item--label">Code</label>
+        <input type="number" id="enter-code" class="filter__item filter__item--code">
+      </li>
+    </ul>
+  </div>
+
+
+  <div class="collapse indent fade" id="categories">
+    <div class="filter__section">
+    <h2 class="filter__section__title">Sélectionner une catégorie de cours</h2>
+    <div class="row no-gutter">
+        <% data.filter.categories.each do |category| %>
+          <div class="col-md-3">
+            <div class="filter__section__card">
+              <div>
+                <%= image_tag category.image %>
+                <div class="filter__section__card__title"><%= category.title %></div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+    </div>
+  </div>
+
+
+  <div class="collapse indent fade" id="teachers">
+    <div class="filter__section">
+    <h2 class="filter__section__title">Sélectionner un professeur</h2>
+    </div>
+  </div>
+
+  <div class="teacher-carousel-wrap">
+    <ul class="teacher-carousel">
+      <li>
+        <div class="row no-gutter">
+        <% data.filter.teachers.each do |teacher| %>
+          <div class="col-md-3">
+            <div class="filter__section__card">
+              <div>
+                <%= image_tag teacher.image %>
+                <div class="filter__section__card__title mt"><%= teacher.title %></div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </li>
+      <li>
+        <div class="row no-gutter">
+        <% data.filter.teachers.each do |teacher| %>
+          <div class="col-md-3">
+            <div class="filter__section__card">
+              <div>
+                <%= image_tag teacher.image %>
+                <div class="filter__section__card__title mt"><%= teacher.title %></div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+
+  <div class="collapse indent fade" id="difficulties">
+    <div class="filter__section">
+    <h2 class="filter__section__title">Sélectionner un niveau</h2>
+    <div class="row no-gutter">
+        <% data.filter.difficulties.each do |difficulty| %>
+          <div class="col-md-3">
+            <div class="filter__section__card">
+              <div>
+                <%= image_tag difficulty.image %>
+                <div class="filter__section__card__title"><%= difficulty.title %></div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+    </div>
+  </div>
+
+  <div class="collapse indent fade" id="time">
+    <div class="filter__section">
+    <h2 class="filter__section__title">Sélectionner une durée</h2>
+    <div class="row no-gutter">
+        <% data.filter.time.each do |difficulty| %>
+          <div class="col-md-3">
+            <div class="filter__section__card">
+              <div>
+                <%= image_tag difficulty.image %>
+                <div class="filter__section__card__title"><%= difficulty.title %></div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="card-carousel">
+  <ul class="carousel">
+    <li>
+        <div class="row mb+">
+        <% data.lessons.envies.each do |lesson| %>
+            <div class="col-md-4">
+              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+            </div>
+        <% end %>
+        <% data.lessons.top.each do |lesson| %>
+            <div class="col-md-4">
+              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+            </div>
+        <% end %>
+        <% data.lessons.envies.each do |lesson| %>
+            <div class="col-md-4">
+              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+            </div>
+        <% end %>
+
+      </div>
+    </li>
+    <li>
+      <div class="row mb+">
+        <% data.lessons.envies.each do |lesson| %>
+            <div class="col-md-4">
+              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+            </div>
+        <% end %>
+        <% data.lessons.top.each do |lesson| %>
+            <div class="col-md-4">
+              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+            </div>
+        <% end %>
+        <% data.lessons.envies.each do |lesson| %>
+            <div class="col-md-4">
+              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+            </div>
+        <% end %>
+
+      </div>
+    </li>
+    <li>
+      <div class="row mb+">
+        <% data.lessons.envies.each do |lesson| %>
+            <div class="col-md-4">
+              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+            </div>
+        <% end %>
+        <% data.lessons.top.each do |lesson| %>
+            <div class="col-md-4">
+              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+            </div>
+        <% end %>
+        <% data.lessons.envies.each do |lesson| %>
+            <div class="col-md-4">
+              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+            </div>
+        <% end %>
+
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="modal fade" id="code">
+  <div class="modal-dialog code">
+    <div class="code__header">
+
+      <a href="" data-dismiss="modal" aria-hidden="true">Retour</a>
+
+      <div class="code__title">
+        Taper votre code
+      </div>
+
+
+      <div id="numpad4div"></div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<script>
+  var slideWidth = $(window).width() - 400;
+  var mySettings = {
+        minSlides: 1,
+        maxSlides: 1,
+        slideWidth: slideWidth,
+        slideMargin: 0,
+        moveSlides: 1,
+        pager: false,
+        shrinkItems: true
+      }
+
+  var slider = $('.carousel').bxSlider(mySettings);
+  var slider2 = $('.teacher-carousel').bxSlider(mySettings);
+
+  var $myGroup = $('#filter');
+
+  $myGroup.on('show.bs.collapse','.collapse', function() {
+      $myGroup.find('.collapse.in').collapse('hide');
+      slider2.reloadSlider();
+  });
+
+  $("a[data-toggle='collapse']:not([data-target='#teachers'])").click(function(){
+      $(".teacher-carousel-wrap").removeClass("active");
+  });
+
+  $("a[data-target='#teachers']").click(function(){
+      $(".teacher-carousel-wrap").toggleClass("active");
+  });
+
+
+
+
+  $(window).resize( function() {
+        slider.destroySlider();
+        slider.reloadSlider();
+        slider2.destroySlider();
+        slider2.reloadSlider();
+    }).trigger("resize");
+
+  // Set NumPad defaults for jQuery mobile.
+  // These defaults will be applied to all NumPads within this document!
+  $.fn.numpad.defaults.gridTpl = '<div class="code"></div>';
+  $.fn.numpad.defaults.rowTpl = '<div class="code__numbers"></div>';
+  $.fn.numpad.defaults.cellTpl = '<div class="code__num"></div>';
+  $.fn.numpad.defaults.displayCellTpl = '<div class="code__header"></div>';
+  $.fn.numpad.defaults.textDelete = 'Effacer';
+  $.fn.numpad.defaults.textDone = 'Retour';
+  $.fn.numpad.defaults.backgroundTpl = '<div class="modal-backdrop in"></div>';
+  // $.fn.numpad.defaults.displayTpl = '<div><input type="text" class="form-control" /></div>';
+  $.fn.numpad.defaults.buttonNumberTpl =  '<button type="button" class="btn btn-default code__btn"></button>';
+  $.fn.numpad.defaults.buttonFunctionTpl = '<div></div>';
+  $.fn.numpad.defaults.hidePlusMinusButton = false;
+  $.fn.numpad.defaults.hideDecimalButton = false;
+
+  $.fn.numpad.defaults.onKeypadCreate = function(){
+      $(this).find('.nmpd-display').attr( "placeholder", "••••" );
+      $('#enter-code').removeClass("active");
+  ;};
+  $.fn.numpad.defaults.onKeypadClose = function(){
+      $('#enter-code').val($(this).find('.nmpd-display').val()).addClass("active");
+  ;};
+  $.fn.numpad.defaults.onChange = function(){
+      // limit to 4 digits
+  ;};
+
+  // Instantiate NumPad once the page is ready to be shown
+  $(document).ready(function(){
+    $('#enter-code').numpad();
+  });
+
+</script>

@@ -1,0 +1,92 @@
+.sidebar {
+  background: #212B32;
+  width: $sidebar-width;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: $sidebar-padding;
+  z-index: 99;
+  &__current_time {
+    font-family: $base-font-light;
+    font-size: 24px;
+    color: #FFFFFF;
+    line-height: 26px;
+    float: left;
+  }
+  &__lang {
+    float: right;
+    // bootstrap overide
+    .dropdown-menu {
+      top: 0;
+      left: 40px;
+      &:before {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 50px 86.6px 50px 0;
+        border-color: transparent #ffffff transparent transparent;
+      }
+    }
+  }
+
+  &__back {
+    border: solid 1px #fff;
+    border-radius: 50%;
+    height: 100px;
+    margin: 100px auto;
+    width: 100px;
+    font-family: $font-3;
+    color: #fff;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__icon {
+      display: block;
+      margin-bottom: 5px;
+      margin-top: 10px;
+    }
+  }
+
+  &__nav {
+    margin-top: 100px;
+    ul {
+      margin-left: -$sidebar-padding;
+      margin-right: -$sidebar-padding;
+    }
+    li {
+      transition: all 0.5s ease-in;
+      &:active, &:focus {
+        background: rgba(255, 255, 255, 0.05);
+        a {
+          color: rgba(255, 255, 255, 1);
+        }
+      }
+      &.active {
+        background: rgba(255, 255, 255, 0.1);
+        border-right: solid 6px $green;
+        a {
+          color: rgba(255, 255, 255, 1);
+          font-family: $header-font;
+        }
+      }
+      a {
+        display: block;
+        height: 60px;
+        line-height: 60px;
+        padding-left: $sidebar-padding;
+        padding-right: $sidebar-padding;
+        color: rgba(255, 255, 255, .7);
+        text-decoration: none;
+      }
+    }
+  }
+  &__slots {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}

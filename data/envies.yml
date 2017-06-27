@@ -1,0 +1,49 @@
+amuser:
+  title: M'amuser
+  description: Toujours Plus Loin, Plus Fort, Plus Vite !
+  image: img-content/envie-1.png
+  icon: images/envies/envie-icon-1.svg
+  time: 14'
+defouler:
+  title: Me défouler
+  description: Toujours Plus Loin, Plus Fort, Plus Vite !
+  image: img-content/envie-2.png
+  icon: images/envies/envie-icon-2.svg
+  time: 14'
+entrainer:
+  title: M'entrainer
+  description: Toujours Plus Loin, Plus Fort, Plus Vite !
+  image: img-content/envie-3.png
+  icon: images/envies/envie-icon-3.svg
+  time: 14'
+ressourcer:
+  title: Me ressourcer
+  description: Toujours Plus Loin, Plus Fort, Plus Vite !
+  image: img-content/envie-4.png
+  icon: images/envies/envie-icon-4.svg
+  time: 14'
+tonifier:
+  title: Me tonifier
+  description: Toujours Plus Loin, Plus Fort, Plus Vite !
+  image: img-content/envie-5.png
+  icon: images/envies/envie-icon-5.svg
+  time: 14'
+aerer:
+  title: M'aérer
+  description: Toujours Plus Loin, Plus Fort, Plus Vite !
+  image: img-content/envie-6.png
+  icon: images/envies/envie-icon-6.svg
+  time: 14'
+sport-a-2:
+  title: Sport à 2
+  description: Toujours Plus Loin, Plus Fort, Plus Vite !
+  image: img-content/envie-7.png
+  icon: images/envies/envie-icon-7.svg
+  time: 14'
+preparer-courses:
+  title: Préparer mes courses
+  description: Toujours Plus Loin, Plus Fort, Plus Vite !
+  image: img-content/envie-8.png
+  icon: images/envies/envie-icon-8.svg
+  time: 14'
+

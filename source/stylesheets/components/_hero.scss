@@ -1,0 +1,12 @@
+.hero {
+  background: #F2F2F2;
+  padding: 72px 100px;
+  margin-left: -$main-content-gutter;
+  margin-bottom: 30px;
+  &__card {
+    height: 215px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+  }
+}

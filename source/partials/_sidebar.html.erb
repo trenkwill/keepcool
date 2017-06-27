@@ -1,0 +1,59 @@
+<div class="sidebar">
+
+
+<% unless current_page.url == "/cours.html" %>
+  <%= image_tag "logo.png" %>
+
+  <div class="clearfix mt-">
+    <div class="sidebar__current_time">17h31</div>
+
+    <span class="sidebar__lang dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <%= image_tag "french_flag.png" %></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+    </span>
+  </div>
+
+  <nav class="sidebar__nav">
+    <ul class="list-unstyled">
+      <li class="<%= is_page_active('/') %>">
+        <%= link_to "A la Une", "/index.html" %>
+      </li>
+      <li class="<%= is_page_active('/envie.html') %>">
+        <%= link_to "Envie de", "/envie.html" %>
+      </li>
+      <li class="<%= is_page_active('/tous-les-cours.html') %>">
+        <%= link_to "Tous les cours", "/tous-les-cours.html" %>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="sidebar__slots">
+
+    <%= partial "partials/slot", :locals => { :type => "encours" } %>
+
+    <%= partial "partials/slot", :locals => { :type => "suivant" } %>
+
+  </div>
+<% else %>
+
+  <% link_to "/tous-les-cours.html", :class => 'sidebar__back' do %>
+    <%= image_tag "back.svg", :class => 'sidebar__back__icon' %>
+    Menu
+  <% end %>
+
+  <div class="sidebar__slots">
+
+    <%= partial "partials/slot", :locals => { :type => "active" } %>
+
+    <%= partial "partials/slot", :locals => { :type => "suivant-disponible" } %>
+
+  </div>
+
+<% end %>
+</div>

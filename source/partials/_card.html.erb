@@ -1,0 +1,21 @@
+<div class="card" style="background-image: url('<%= asset_url img %>');">
+
+  <a href="fiche.html" class="card__link"></a>
+
+  <div class="card__number">2034</div>
+
+  <div class="card__content">
+
+    <div class="card__time"><%= time %></div>
+    <h3 class="card__title"><%= title %></h3>
+    <p class="card__description"><%= description %></p>
+
+    <span class="card__difficulty">
+      <span class="difficulty-icon difficulty-icon--pink difficulty-icon__level-2">
+        <%= inline_svg("difficulty") %>
+      </span>
+    </span>
+
+  </div>
+
+</div>

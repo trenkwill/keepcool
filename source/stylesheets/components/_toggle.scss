@@ -1,0 +1,109 @@
+.toggle-wrap {
+  position: relative;
+  height: 70px;
+  width: 110px;
+
+  input[type="checkbox"]{
+    display: none;
+  }
+  .toggle{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 9px;
+    margin: auto;
+    width: 130px;
+    height: 60px;
+    &__on {
+      position: absolute;
+      font-family: $font-3;
+      font-size: 20px;
+      color: #212B31;
+      letter-spacing: 2px;
+      top: 20px;
+      left: 18px;
+      pointer-events: none;
+      z-index: 999999999999;
+      transition: all 0.3s cubic-bezier(0.275, -0.450, 0.725, 1.450);
+    }
+    &__off {
+      position: absolute;
+      font-family: $font-3;
+      font-size: 20px;
+      color: #212B31;
+      letter-spacing: 2px;
+      top: 20px;
+      right: 15px;
+      pointer-events: none;
+      z-index: 999999999999;
+      transition: all 0.3s cubic-bezier(0.275, -0.450, 0.725, 1.450);
+    }
+    label,
+    i{
+      box-sizing: border-box;
+      display: block;
+    }
+
+    label{
+      width: 130px;
+      height: 62px;
+      border-radius: 62px;
+      border: 2px solid #fff;
+      background: transparent !important;
+      transition: all 0.30s ease;
+    }
+
+    i{
+      position: absolute;
+      top: 2px;
+      left: 0px;
+      width: 60px;
+      height: 60px;
+      border-radius: 60px;
+      box-shadow: 0 0 1px 0 rgba(0,0,0, 0.25),
+            0 3px 3px 0 rgba(0,0,0, 0.15);
+      background: #ffffff;
+      transition: all 0.3s cubic-bezier(0.275, -0.450, 0.725, 1.450);
+    }
+  }
+
+  input[type="checkbox"]:active + .toggle i{
+    width: 35px;
+  }
+
+  input[type="checkbox"]:active + .toggle label,
+  input[type="checkbox"]:checked + .toggle label{
+    border: 2px solid #fff;
+  }
+
+  input[type="checkbox"]:checked + .toggle i{
+    left: 69px;
+  }
+
+  input[type="checkbox"]:checked:active + .toggle label{
+    border: 2px solid #fff;
+  }
+
+  input[type="checkbox"]:checked:active + .toggle i{
+    left: 14px;
+  }
+
+
+  input[type="checkbox"] + .toggle .toggle__on{
+    color: #212B31;
+    opacity: 1;
+  }
+  input[type="checkbox"]:checked + .toggle .toggle__on{
+    color: #fff;
+    opacity: .5;
+  }
+
+  input[type="checkbox"] + .toggle .toggle__off{
+    opacity: .5;
+    color: #fff;
+  }
+  input[type="checkbox"]:checked + .toggle .toggle__off{
+    color: #212B31;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,99 @@
+<% category = data.envies[cours] %>
+
+
+<div class="envies">
+      <% link_to "/envie.html", :class => 'envies__back' do %>
+        <%= image_tag "images/back-gris.png" %>
+      <% end %>
+      <h1 class="envies__title text-center mt+"><%= image_tag category.icon, :class => 'envies__icon' %><%= category.title %></h1>
+</div>
+
+
+<div class="card-carousel">
+  <ul class="carousel">
+    <li>
+
+        <div class="row mb+">
+          <div class="col-md-2">
+            <h3 class="envies__carousel-title">Cette sélection <br>
+              est faite pour :</h3>
+              <ul class="envies__carousel-list">
+                <li>S’aérer</li>
+                <li>Évacuer le stress</li>
+                <li>Lorem ipsum</li>
+              </ul>
+          </div>
+          <div class="col-md-8 col-md-offset-2">
+              <div class="row">
+              <% data.lessons.envies.each do |lesson| %>
+                    <div class="col-md-6">
+                      <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+                    </div>
+                <% end %>
+                <% data.lessons.top.each do |lesson| %>
+                    <div class="col-md-6">
+                      <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+                    </div>
+                <% end %>
+                </div>
+        </div>
+
+      </div>
+    </li>
+    <li>
+      <div class="row mb+">
+        <% data.lessons.envies.each do |lesson| %>
+            <div class="col-md-4">
+              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+            </div>
+        <% end %>
+        <% data.lessons.top.each do |lesson| %>
+            <div class="col-md-4">
+              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+            </div>
+        <% end %>
+        <% data.lessons.envies.each do |lesson| %>
+            <div class="col-md-4">
+              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+            </div>
+        <% end %>
+
+      </div>
+    </li>
+    <li>
+      <div class="row mb+">
+        <% data.lessons.envies.each do |lesson| %>
+            <div class="col-md-4">
+              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+            </div>
+        <% end %>
+        <% data.lessons.top.each do |lesson| %>
+            <div class="col-md-4">
+              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+            </div>
+        <% end %>
+        <% data.lessons.envies.each do |lesson| %>
+            <div class="col-md-4">
+              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+            </div>
+        <% end %>
+
+      </div>
+    </li>
+  </ul>
+</div>
+
+<script>
+  var slideWidth = $(window).width() - 400;
+  var mySettings = {
+        minSlides: 1,
+        maxSlides: 1,
+        slideWidth: slideWidth,
+        slideMargin: 0,
+        moveSlides: 1,
+        pager: false,
+        shrinkItems: true
+      }
+
+  var slider = $('.carousel').bxSlider(mySettings);
+</script>

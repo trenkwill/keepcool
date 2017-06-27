@@ -1,0 +1,148 @@
+.filter {
+  background: #F3F3F3;
+  box-shadow: 0 1px 5px 0 rgba(33,43,50,0.30);
+  margin-left: -$sidebar-padding;
+  position: relative;
+  &__description {
+    float: left;
+    width:325px;
+    padding: 30px 50px;
+    font-family: $font-4;
+    font-size: 30px;
+    color: #212B31;
+    line-height: 25px;
+    background:url("../images/arrow.png") no-repeat 220px 20px;
+  }
+  &__nav {
+    display: flex;
+
+    li {
+      background:#fff;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      width:20%;
+      border-right: solid 1px #eee;
+      text-align: center;
+      position: relative;
+      .filter__item {
+        color: #000;
+        height: 100px;
+        width: 100%;
+        padding: 15px;
+        display: block;
+        background-repeat: no-repeat;
+        background-position: center 50px;
+        &.selected {
+          background-color: $green;
+          color: #fff;
+        }
+        &--categorie {
+          background-image:url("../images/categorie.png");
+          &.active {
+            background-image:url("../images/categorie-active.png");
+          }
+          &.selected {
+            background-image:url("../images/categorie-white.png");
+          }
+        }
+        &--teacher {
+          background-image:url("../images/teacher.png");
+          &.active {
+            background-image:url("../images/teacher-active.png");
+          }
+          &.selected {
+            background-image:url("../images/teacher-white.png");
+          }
+        }
+        &--difficulty {
+          background-image:url("../images/difficulty.png");
+          &.active {
+            background-image:url("../images/difficulty-active.png");
+          }
+          &.selected {
+            background-image:url("../images/difficulty-white.png");
+          }
+        }
+        &--time {
+          background-image:url("../images/time.png");
+          &.active {
+            background-image:url("../images/time-active.png");
+          }
+          &.selected {
+            background-image:url("../images/time-white.png");
+          }
+        }
+        &--code {
+          background-image:url("../images/code.png");
+          border: none;
+          text-align: center;
+          &.active {
+            background-image:url("../images/green-circle.png");
+            background-size: 50px;
+            background-position: center 40px;
+            color: #fff;
+            font-size: 20px;
+            padding: 30px 0 0 12px;
+            font-family: $font-3;
+          }
+        }
+        &--label {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  &__section {
+    padding: 70px;
+    &__card {
+      background: #fff;
+      text-align: center;
+      height: 160px;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items:center;
+      border-right: solid 1px #eee;
+      border-bottom: solid 1px #eee;
+    }
+    &__title {
+      margin-bottom: 20px;
+      margin-left: -15px;
+      font-family: $header-font;
+      font-size: 24px;
+      color: #000000;
+      letter-spacing: 0;
+      line-height: 28px;
+    }
+  }
+
+
+
+}
+
+// .teacher-carousel can't be displayed none because it breaks the carousel
+// so I've put it in visibility:hidden and position absolute
+.teacher-carousel-wrap {
+  position: absolute;
+  top: 150px;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  &.active {
+    display: block;
+    opacity: 1;
+  }
+}
+.teacher-carousel li[aria-hidden="true"]{
+  opacity: .5;
+}
+// set the sane height of the collapsable container (#teachers) and teachers carousel (.teacher-carousel-wrap)
+#teachers {
+  .filter__section {
+    height: 900px;
+  }
+}

@@ -1,0 +1,59 @@
+.envies {
+  position: relative;
+  &__header {
+    height: 450px;
+    background:url("../images/envie-header.png") no-repeat;
+    background-size: cover;
+    margin-left: -$sidebar-padding;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -100px;
+  }
+  &__title {
+    font-family: $font-2;
+    font-size: 48px;
+    color: #212B31;
+    letter-spacing: 5.33px;
+    margin-bottom: 70px;
+  }
+  &__icon {
+    margin-right: 20px;
+    path {
+      fill: #000;
+    }
+  }
+  &__subtitle {
+    font-family: $header-font;
+    font-size: 16px;
+    color: #212B31;
+    letter-spacing: 0;
+    line-height: 22px;
+  }
+  &__back {
+    position: absolute;
+    top: 15px;
+    left: 30px;
+  }
+  &__carousel-title {
+    font-family: $header-font;
+    font-size: 24px;
+    color: #000000;
+    letter-spacing: 0;
+    line-height: 28px;
+  }
+  &__carousel-list {
+    @extend .list-unstyled;
+    margin-top: 20px;
+    li {
+      background:url("../images/check-green.png") no-repeat 0px 5px;
+      font-family: $header-font;
+      padding-left: 38px;
+      font-size: 16px;
+      color: rgba(33,43,50,0.50);
+      letter-spacing: 0;
+      line-height: 36px;
+    }
+  }
+}
