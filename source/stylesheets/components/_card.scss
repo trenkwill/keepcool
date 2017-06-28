@@ -17,22 +17,29 @@
     right: 0;
   }
 	&__title {
-		color: $grey;
+    margin-bottom: 7px;
+    font-family: $gotham-bold;
+    font-size: 16px;
+    color: #212B32;
+    letter-spacing: 0;
 	}
   &__number {
     position: absolute;
     font-family: $bebas-bold;
-    left: 20px;
-    top: 20px;
+    left: 15px;
+    top: 15px;
+    font-size: 16px;
+    letter-spacing: 0.44px;
     color: #fff;
   }
 	&__content {
     background: #fff;
     position: absolute;
     bottom: 0;
+    height: 82px;
     left: 0;
     right: 0;
-    padding: 15px;
+    padding: 15px 0 0 28px;
   }
   &__time {
     position: absolute;
@@ -51,6 +58,11 @@
   }
   &__description {
     width: 70%;
+    font-family: $gotham-medium;
+    font-size: 14px;
+    color: #7B7B7B;
+    letter-spacing: 0;
+    line-height: 16px;
   }
   &__difficulty {
     position: absolute;
