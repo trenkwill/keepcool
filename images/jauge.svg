@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="184px" height="152px" viewBox="0 0 184 152" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>jauge</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="UX-UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.229244403">
+        <g id="04-01-Mire-avant-cours" transform="translate(-593.000000, -426.000000)">
+            <g id="son-voix" transform="translate(601.000000, 434.000000)">
+                <g id="jauge">
+                    <circle id="Oval-Copy" stroke="" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" transform="translate(84.000000, 84.000000) rotate(-90.000000) translate(-84.000000, -84.000000) " cx="84" cy="84" r="88"></circle>
+                    <circle id="Oval-Copy-2" fill="#FFFFFF" transform="translate(152.000000, 140.000000) rotate(-90.000000) translate(-152.000000, -140.000000) " cx="152" cy="140" r="4"></circle>
+                    <circle id="Oval-Copy-3" fill="#FFFFFF" transform="translate(16.200012, 140.000000) rotate(-90.000000) translate(-16.200012, -140.000000) " cx="16.2000122" cy="140" r="4"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
