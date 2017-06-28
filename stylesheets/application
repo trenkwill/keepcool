@@ -9669,20 +9669,27 @@ legend {
     left: 0;
     right: 0; }
   .card__title {
-    color: #506270; }
+    margin-bottom: 7px;
+    font-family: "Gotham Bold", "Helvetica", "sans-serif";
+    font-size: 16px;
+    color: #212B32;
+    letter-spacing: 0; }
   .card__number {
     position: absolute;
     font-family: "Bebas Bold";
-    left: 20px;
-    top: 20px;
+    left: 15px;
+    top: 15px;
+    font-size: 16px;
+    letter-spacing: 0.44px;
     color: #fff; }
   .card__content {
     background: #fff;
     position: absolute;
     bottom: 0;
+    height: 82px;
     left: 0;
     right: 0;
-    padding: 15px; }
+    padding: 15px 0 0 28px; }
   .card__time {
     position: absolute;
     top: -40px;
@@ -9698,7 +9705,12 @@ legend {
     font-family: "Bebas Bold";
     font-size: 24px; }
   .card__description {
-    width: 70%; }
+    width: 70%;
+    font-family: "Gotham Medium", "Helvetica", "sans-serif";
+    font-size: 14px;
+    color: #7B7B7B;
+    letter-spacing: 0;
+    line-height: 16px; }
   .card__difficulty {
     position: absolute;
     right: 45px;
