@@ -4,7 +4,7 @@
  * ------------------------------------- */
 
 // General style
-$font-family-sans-serif:  $base-font;
+$font-family-sans-serif:  $gotham-book;
 $body-bg:                 white;
 $font-size-base:          $base-size;
 $line-height-base:        $base-height;
@@ -37,6 +37,7 @@ $container-tablet: 1170px;
 $container-desktop: 1170px;
 $container-sm: 1170px;
 
+$grid-gutter-width: 15px;
 
 
 // font size

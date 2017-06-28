@@ -5,21 +5,26 @@
     background:url("../images/envie-header.png") no-repeat;
     background-size: cover;
     margin-left: -$sidebar-padding;
-    display: flex;
+    margin-right: -$sidebar-padding;
+    padding-top: 55px;
     text-align: center;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: -100px;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    margin-bottom: -195px;
   }
   &__title {
-    font-family: $font-2;
+    font-family: $bebas-bold;
     font-size: 48px;
     color: #212B31;
     letter-spacing: 5.33px;
-    margin-bottom: 70px;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   &__icon {
-    margin-right: 20px;
+    margin-right: 40px;
     path {
       fill: #000;
     }
@@ -34,7 +39,14 @@
   &__back {
     position: absolute;
     top: 15px;
-    left: 30px;
+    left: 90px;
+    svg {
+      transform: scale(1.5);
+      transform-origin: top;
+      path {
+        fill: #212B31;
+      }
+    }
   }
   &__carousel-title {
     font-family: $header-font;
@@ -42,6 +54,16 @@
     color: #000000;
     letter-spacing: 0;
     line-height: 28px;
+    margin-bottom: 50px;
+  }
+  &__intro {
+    width: 320px;
+    padding-left: 40px;
+    float: left;
+  }
+  &__cards {
+    float: left;
+    width: 560px;
   }
   &__carousel-list {
     @extend .list-unstyled;

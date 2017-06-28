@@ -2,12 +2,13 @@
   background: #F3F3F3;
   box-shadow: 0 1px 5px 0 rgba(33,43,50,0.30);
   margin-left: -$sidebar-padding;
+  margin-right: -$sidebar-padding;
   position: relative;
   &__description {
     float: left;
     width:325px;
     padding: 30px 50px;
-    font-family: $font-4;
+    font-family: $have-heart;
     font-size: 30px;
     color: #212B31;
     line-height: 25px;
@@ -25,17 +26,25 @@
       border-right: solid 1px #eee;
       text-align: center;
       position: relative;
+      font-family: $gotham-book;
+      font-size: 14px;
+      color: #212B32;
+      letter-spacing: 0;
       .filter__item {
         color: #000;
         height: 100px;
         width: 100%;
-        padding: 15px;
+        padding: 10px 15px;
         display: block;
         background-repeat: no-repeat;
         background-position: center 50px;
+        text-decoration: none;
         &.selected {
           background-color: $green;
           color: #fff;
+          position: absolute;
+          padding-top: 15px;
+          height: 110px;
         }
         &--categorie {
           background-image:url("../images/categorie.png");
@@ -84,7 +93,7 @@
             color: #fff;
             font-size: 20px;
             padding: 30px 0 0 12px;
-            font-family: $font-3;
+            font-family: $bebas-regular;
           }
         }
         &--label {
@@ -98,17 +107,24 @@
   }
 
   &__section {
-    padding: 70px;
+    padding: 50px 60px;
     &__card {
       background: #fff;
       text-align: center;
-      height: 160px;
+      height: 145px;
       padding: 20px;
       display: flex;
       justify-content: center;
       align-items:center;
       border-right: solid 1px #eee;
       border-bottom: solid 1px #eee;
+      &__title {
+        opacity: 0.5;
+        font-family: $gotham-medium;
+        font-size: 14px;
+        color: #212B31;
+        letter-spacing: 0;
+      }
     }
     &__title {
       margin-bottom: 20px;
@@ -129,7 +145,7 @@
 // so I've put it in visibility:hidden and position absolute
 .teacher-carousel-wrap {
   position: absolute;
-  top: 150px;
+  top: 110px;
   opacity: 0;
   transition: all 0.3s ease-in-out;
   &.active {
@@ -137,12 +153,17 @@
     opacity: 1;
   }
 }
+.teacher-carousel .row.no-gutter{
+  border-top: solid 1px #CFD4D7;
+  border-left: solid 1px #CFD4D7;
+  border-bottom: solid 1px #CFD4D7;
+}
 .teacher-carousel li[aria-hidden="true"]{
   opacity: .5;
 }
 // set the sane height of the collapsable container (#teachers) and teachers carousel (.teacher-carousel-wrap)
 #teachers {
   .filter__section {
-    height: 900px;
+    height: 670px;
   }
 }

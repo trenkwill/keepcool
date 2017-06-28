@@ -27,8 +27,37 @@
          url('../fonts/gotham/gotham-light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
+@font-face {
+  font-family: 'Gotham Black';
+  src: url('../fonts/gotham/GothamBlack.eot');
+  src: url('../fonts/gotham/GothamBlack.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/gotham/GothamBlack.woff') format('woff'),
+    url('../fonts/gotham/GothamBlack.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham Medium';
+  src: url('../fonts/gotham/GothamMedium.eot');
+  src: url('../fonts/gotham/GothamMedium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/gotham/GothamMedium.woff') format('woff'),
+    url('../fonts/gotham/GothamMedium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham Black Italic';
+  src: url('../fonts/gotham/GothamBlack-Italic.eot');
+  src: url('../fonts/gotham/GothamBlack-Italic.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/gotham/GothamBlack-Italic.woff') format('woff'),
+    url('../fonts/gotham/GothamBlack-Italic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
 
 @font-face {
     font-family: 'Bebas Regular';
@@ -80,13 +109,20 @@
 
 }
 // $my-font: "Font Name";
-$base-font: "Gotham Book", "Helvetica", "sans-serif";
-$base-font-light: "Gotham Light", "Helvetica", "sans-serif";
 $header-font: "Gotham Bold", "Helvetica", "sans-serif";
 
-$font-2: "Bebas Bold";
-$font-3: "Bebas Regular";
-$font-4: "Have Heart One";
+$gotham-book: "Gotham Book", "Helvetica", "sans-serif";
+$gotham-light: "Gotham Light", "Helvetica", "sans-serif";
+$gotham-bold: "Gotham Bold", "Helvetica", "sans-serif";
+$gotham-medium: "Gotham Medium", "Helvetica", "sans-serif";
+$gotham-black: "Gotham Black", "Helvetica", "sans-serif";
+$gotham-black-italic: "Gotham Black Italic", "Helvetica", "sans-serif";
+
+
+$bebas-bold: "Bebas Bold";
+$bebas-book: "Bebas Book";
+$bebas-regular: "Bebas Regular";
+$have-heart: "Have Heart One";
 
 // Font-size and line-height
 $base-size: 16px;
@@ -119,8 +155,8 @@ $turquoise: #00A297;
 
 // layout
 $sidebar-width: 255px;
-$sidebar-padding: 30px;
-$main-content-gutter : 30px;
+$sidebar-padding: 40px;
+$main-content-gutter: 30px;
 
 // slider
 $sliderBorderColor: #EEE;

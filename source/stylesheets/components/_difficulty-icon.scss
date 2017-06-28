@@ -1,13 +1,21 @@
 .difficulty-icon {
   &--white {
-
+    svg {
+      transform: scaleY(1.5);
+    }
+    #level_1, #level_2, #level_3 {
+      fill:#fff;
+      transform-origin: bottom;
+    }
     &.difficulty-icon__level-1 {
         #level_2, #level_3 {
+          fill:#fff;
           opacity: .2;
         }
     }
     &.difficulty-icon__level-2 {
         #level_3 {
+          fill:#fff;
           opacity: .2;
         }
     }
@@ -22,16 +30,22 @@
     &.difficulty-icon__level-1 {
       #level_1 {
         fill:$pink;
+        transform: scaleX(1.2);
+        transform-origin: center;
       }
     }
     &.difficulty-icon__level-2 {
       #level_1, #level_2 {
         fill:$pink;
+        transform: scaleX(1.2);
+        transform-origin: center;
       }
     }
     &.difficulty-icon__level-3 {
       #level_1, #level_2, #level_3 {
         fill:$pink;
+        transform: scaleX(1.2);
+        transform-origin: center;
       }
     }
   }
@@ -42,16 +56,22 @@
     &.difficulty-icon__level-1 {
       #level_1 {
         fill:$pink;
+        transform: scaleX(1.2);
+        transform-origin: center;
       }
     }
     &.difficulty-icon__level-2 {
       #level_1, #level_2 {
         fill:$pink;
+        transform: scaleX(1.2);
+        transform-origin: center;
       }
     }
     &.difficulty-icon__level-3 {
       #level_1, #level_2, #level_3 {
         fill:$pink;
+        transform: scaleX(1.2);
+        transform-origin: center;
       }
     }
   }

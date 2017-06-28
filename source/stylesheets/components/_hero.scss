@@ -2,11 +2,20 @@
   background: #F2F2F2;
   padding: 72px 100px;
   margin-left: -$main-content-gutter;
+  margin-right: -$main-content-gutter;
   margin-bottom: 30px;
   &__card {
+    position: relative;
     height: 215px;
     background-size: cover;
     background-position: center;
     border-radius: 4px;
+    &__link {
+      position: absolute;
+      top: 0;
+      bottom:0;
+      left: 0;
+      right: 0;
+    }
   }
 }

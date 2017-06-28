@@ -13,8 +13,11 @@ p {
 }
 .main-content {
   margin-left: $sidebar-width + $main-content-gutter;
+  margin-right: $main-content-gutter;
   &__title {
-    font-family: $font-3;
+    font-family: $bebas-regular;
+    color: #212B31;
+    letter-spacing: 1px;
     font-size: 24px;
   }
   &__section {

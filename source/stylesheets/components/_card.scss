@@ -21,7 +21,7 @@
 	}
   &__number {
     position: absolute;
-    font-family: $font-2;
+    font-family: $bebas-bold;
     left: 20px;
     top: 20px;
     color: #fff;
@@ -46,7 +46,7 @@
     line-height: 45px;
     text-align: center;
     color: rgba(224, 0, 105, 1);
-    font-family: $font-2;
+    font-family: $bebas-bold;
     font-size: 24px;
   }
   &__description {
@@ -55,6 +55,6 @@
   &__difficulty {
     position: absolute;
     right: 45px;
-    top: 20px;
+    top: 25px;
   }
 }

@@ -2,35 +2,27 @@
 title: Keep Cool
 ---
 
-<div class="hero">
-  <div class="row">
-    <div class="col-xs-6">
-      <div class="hero__card" style="background-image: url('<%= asset_url "img-content/bikini-challenge.png" %>');">
-        <a href="thematique.html" class="hero__card__link"></a>
-      </div>
-    </div>
-
-    <div class="col-xs-6">
-      <div class="hero__card" style="background-image: url('<%= asset_url "img-content/abdo-choko.png" %>');">
-      </div>
+<div class="thematique">
+  <div class="thematique__header">
+    <% link_to "/", :class => 'thematique__back' do %>
+      <%= inline_svg("back") %>
+    <% end %>
+    <div>
+      <h1 class="thematique__title">À la une</h1>
+      <h2 class="thematique__main-title">Bikini challenge</h2>
+      <h2 class="thematique__subtitle">Laissez vous guider par votre <br> envie du moment.</h2>
     </div>
   </div>
 </div>
-<div class="main-content__section">
 
-    <h2 class="main-content__title mb">Envie de se défouler ?</h2>
-
-    <div class="row mb+">
+<div class="thematique__content">
+  <div class="row">
       <% data.lessons.envies.each do |lesson| %>
           <div class="col-md-4">
             <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
           </div>
       <% end %>
     </div>
-
-
-     <h2 class="main-content__title mb">Le top de la semaine</h2>
-
     <div class="row">
       <% data.lessons.top.each do |lesson| %>
           <div class="col-md-4">

@@ -3,18 +3,25 @@
 
 <div class="envies">
       <% link_to "/envie.html", :class => 'envies__back' do %>
-        <%= image_tag "images/back-gris.png" %>
+        <%= inline_svg("back") %>
       <% end %>
-      <h1 class="envies__title text-center mt+"><%= image_tag category.icon, :class => 'envies__icon' %><%= category.title %></h1>
+      <h1 class="envies__title text-center mt+">
+
+        <span class="envies__icon">
+          <%= inline_svg("envie-icon-1") %>
+        </span>
+
+        <span><%= category.title %></span>
+
+      </h1>
 </div>
 
 
 <div class="card-carousel">
-  <ul class="carousel">
-    <li>
+  <ul class="carousel-envie">
+    <li class="slide">
 
-        <div class="row mb+">
-          <div class="col-md-2">
+          <div class="envies__intro">
             <h3 class="envies__carousel-title">Cette sélection <br>
               est faite pour :</h3>
               <ul class="envies__carousel-list">
@@ -23,7 +30,7 @@
                 <li>Lorem ipsum</li>
               </ul>
           </div>
-          <div class="col-md-8 col-md-offset-2">
+          <div class="envies__cards">
               <div class="row">
               <% data.lessons.envies.each do |lesson| %>
                     <div class="col-md-6">
@@ -38,9 +45,8 @@
                 </div>
         </div>
 
-      </div>
     </li>
-    <li>
+    <li class="slide">
       <div class="row mb+">
         <% data.lessons.envies.each do |lesson| %>
             <div class="col-md-4">
@@ -60,7 +66,7 @@
 
       </div>
     </li>
-    <li>
+    <li class="slide">
       <div class="row mb+">
         <% data.lessons.envies.each do |lesson| %>
             <div class="col-md-4">
@@ -81,19 +87,61 @@
       </div>
     </li>
   </ul>
+  <div id="slide-counter"></div>
 </div>
 
 <script>
-  var slideWidth = $(window).width() - 400;
+  var slideWidth = $(window).width() - 400,
+      totalLessonCount = $(".card-carousel .card").length;
+
+  $('#slide-counter').prepend('Cours <span class="from-current-index"></span> à <span class="current-index"></span>/<span class="total-lesson-count">'+totalLessonCount+'</span>');
+
+  $(".slide").each(function() {
+        return lessonsInSlide = $(this).find(".card").length;
+    });
+
+  $('#slide-counter .current-index').text(lessonsInSlide + 1);
+
+
   var mySettings = {
         minSlides: 1,
         maxSlides: 1,
         slideWidth: slideWidth,
         slideMargin: 0,
+        infiniteLoop: false,
+        hideControlOnEnd: true,
+        touchEnabled: false,
         moveSlides: 1,
         pager: false,
-        shrinkItems: true
+        shrinkItems: true,
+        onSliderLoad: function (currentIndex){
+            $('#slide-counter .from-current-index').text(currentIndex+1);
+            $('#slide-counter .current-index').text(currentIndex+1*lessonsInSlide);
+        },
+        onSlideNext: function (){
+            var slide_count = slider.getSlideCount();
+            var slide_curr = slider.getCurrentSlide();
+            if(slide_curr >= 1) {
+              $('#slide-counter .from-current-index').text(slide_curr*lessonsInSlide);
+            } else {
+              $('#slide-counter .from-current-index').text(slide_curr+1);
+            }
+            $('#slide-counter .current-index').text((slide_curr+1)*lessonsInSlide);
+            },
+        onSlidePrev: function (){
+            var slide_count = slider.getSlideCount();
+            var slide_curr = slider.getCurrentSlide();
+            if(slide_curr >= 1) {
+              $('#slide-counter .from-current-index').text(slide_curr*lessonsInSlide);
+            } else {
+              $('#slide-counter .from-current-index').text(slide_curr+1);
+            }
+            $('#slide-counter .current-index').text((slide_curr+1)*lessonsInSlide);
+        },
+        onSlideBefore: function ($slideElement, oldIndex, newIndex){
+            $('#slide-counter .current-index').text(newIndex);
+        }
       }
 
-  var slider = $('.carousel').bxSlider(mySettings);
+  var slider = $('.carousel-envie').bxSlider(mySettings);
 </script>

@@ -5,10 +5,10 @@
   top: 0;
   left: 0;
   bottom: 0;
-  padding: $sidebar-padding;
+  padding: 22px $sidebar-padding;
   z-index: 99;
   &__current_time {
-    font-family: $base-font-light;
+    font-family: $gotham-light;
     font-size: 24px;
     color: #FFFFFF;
     line-height: 26px;
@@ -16,6 +16,7 @@
   }
   &__lang {
     float: right;
+    margin-right: -20px;
     // bootstrap overide
     .dropdown-menu {
       top: 0;
@@ -36,7 +37,7 @@
     height: 100px;
     margin: 100px auto;
     width: 100px;
-    font-family: $font-3;
+    font-family: $bebas-regular;
     color: #fff;
     font-size: 18px;
     display: flex;
@@ -69,13 +70,16 @@
         border-right: solid 6px $green;
         a {
           color: rgba(255, 255, 255, 1);
-          font-family: $header-font;
+          font-family: $gotham-medium;
         }
       }
       a {
         display: block;
         height: 60px;
         line-height: 60px;
+        font-family: $gotham-book;
+        font-size: 20px;
+        letter-spacing: 0;
         padding-left: $sidebar-padding;
         padding-right: $sidebar-padding;
         color: rgba(255, 255, 255, .7);

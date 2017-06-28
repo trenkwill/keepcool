@@ -1,10 +1,30 @@
+.card-carousel {
+  position: relative;
+}
+#slide-counter {
+  position: absolute;
+  right: 130px;
+  bottom: -35px;
+  font-family: $bebas-regular;
+  font-size: 18px;
+  color: #212B32;
+  letter-spacing: 2.57px;
+  .total-lesson-count {
+    font-family: $bebas-book;
+  }
+}
+
 .bx-wrapper {
     position: relative;
-    margin-left: -$sidebar-padding;
+    margin-left: -$main-content-gutter;
+    margin-right: -$main-content-gutter;
     margin-top: 100px;
-    margin-bottom: 100px;
+    // margin-bottom: 100px;
     padding: 0;
     max-width: inherit !important;
+    .card-carousel & {
+
+    }
     img{
         max-width: 100%;
         display: block;
@@ -15,11 +35,34 @@
     }
 
     .carousel, .teacher-carousel {
+      margin-left: 60px;
       > li {
         margin-left: 30px;
+        transition: all 0.3s ease-in;
+        .card {
+          transition: all 0.3s ease-in;
+        }
       }
       li[aria-hidden="true"] {
         opacity: .5;
+        .card {
+
+        }
+      }
+    }
+    .carousel-envie {
+      > li {
+        margin-left: 30px;
+        transition: all 0.3s ease-in;
+        .card {
+          transition: all 0.3s ease-in;
+        }
+      }
+      li[aria-hidden="true"] {
+        opacity: .5;
+        .card {
+
+        }
       }
     }
 
@@ -88,21 +131,32 @@
 
   .bx-wrapper{
       .bx-prev {
-          left: 10px;
+          position: absolute;
+          right: 340px;
+          width: 120px;
+          height: 120px;
+          bottom: -70px;
           background: url(../images/bt-prev.png) no-repeat;
+          &.disabled {
+            display: none;
+          }
       }
       .bx-next {
           position: absolute;
           right: 0;
-          width: 100px;
+          width: 110px;
           top: 100px;
-          bottom: 0;
-          background: url(../images/bt-next.png) no-repeat center bottom;
+          bottom: -70px;
+          background: url(../images/bt-next.png) no-repeat right bottom;
+          &.disabled {
+            display: none;
+          }
       }
   }
 
   #filter .bx-next {
-    background: url(../images/bt-next-green.png) no-repeat center bottom !important;
+    background: url(../images/bt-next-green.png) no-repeat right bottom !important;
+    right: 40px;
   }
 
 

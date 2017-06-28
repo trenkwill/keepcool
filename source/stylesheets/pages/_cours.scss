@@ -3,8 +3,8 @@
   &__top {
     position: absolute;
     z-index: 999999;
-    top: 40px;
-    left: $sidebar-width + $sidebar-padding;
+    top: 70px;
+    left: $sidebar-width + $sidebar-padding + $main-content-gutter;
     right: 0;
     display: flex;
     justify-content: space-between;
@@ -30,8 +30,8 @@
     align-items: center;
     .text {
       margin-bottom: 20px;
-      font-family: $font-2;
-      font-family: $font-3;
+      font-family: $bebas-bold;
+      font-family: $bebas-regular;
       font-size: 20px;
       letter-spacing: 1px;
       color: #FFFFFF;
@@ -61,7 +61,7 @@
       box-shadow: 0 0px 16px 0 rgba(33, 43, 50, 0.6);
       .time {
         margin-top: 20px;
-        font-family: $font-2;
+        font-family: $bebas-bold;
         font-size: 48px;
         color: #FFFFFF;
         letter-spacing: 1.5px;
@@ -92,8 +92,8 @@
       align-items: center;
       .text {
         margin-bottom: 20px;
-        font-family: $font-2;
-        font-family: $font-3;
+        font-family: $bebas-bold;
+        font-family: $bebas-regular;
         font-size: 20px;
         letter-spacing: 1px;
         color: #FFFFFF;
@@ -144,8 +144,10 @@
     height: 100%;
   }
   &__number {
-      font-family: $font-2;
+      font-family: $bebas-regular;
+      opacity: .3;
       font-size: 24px;
+      margin-bottom: -5px;
       color: #fff;
     }
   &__title {
@@ -153,9 +155,11 @@
       font-size: 48px;
       color: #fff;
       letter-spacing: 0;
+      margin-bottom: 15px;
     }
   &__description {
-    font-family: $header-font;
+    font-family: $gotham-medium;
+    width: 90%;
     font-size: 20px;
     color: #fff;
     letter-spacing: 0;
@@ -163,30 +167,37 @@
   }
   &__material {
     @extend .list-inline;
-    margin-top: 30px;
-    font-family: $header-font;
-    font-size: 12px;
+    margin-top: 15px;
+    font-family: $gotham-medium;
+    font-size: 11px;
     color: #fff;
     display: flex;
     justify-content: flex-start;
     align-items: baseline;
     li {
       margin-right: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
       svg {
+        margin-bottom: 10px;
         path {
           fill: #fff;
         }
       }
     }
     &__difficulty {
-      width: 72px;
-      height: 72px;
-      top: -4px;
-      padding: 17px 0;
+      width: 80px;
+      height: 80px;
+      top: 5px;
+      padding: 11px 0;
       text-align: center;
       position: relative;
       border-radius: 50%;
       border: 3px solid rgba(255,255,255,0.16);
+      svg {
+        margin-bottom: 0px !important;
+      }
     }
   }
 
