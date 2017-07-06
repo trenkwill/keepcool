@@ -6586,7 +6586,8 @@ legend {
   position: relative;
   overflow: hidden;
   background-size: cover;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  position: relative; }
   .slot:last-child {
     margin-bottom: 0; }
   .slot--active {
@@ -6603,6 +6604,13 @@ legend {
     overflow: inherit; }
     .slot--fin-cours .slot__time {
       right: -32px; }
+  .slot__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 4; }
   .slot__schedule {
     font-family: "Bebas Bold";
     background: #7F7F7F;
@@ -6773,22 +6781,32 @@ legend {
     font-family: "Have Heart One";
     font-size: 30px;
     color: #212B31;
-    line-height: 25px;
-    background: url("../images/arrow.png") no-repeat 270px 30px; }
+    position: relative;
+    line-height: 25px; }
+    .filter__description img {
+      position: absolute;
+      right: 20px;
+      top: 30px; }
   .filter__reset {
-    font-family: "Gotham Medium", "Helvetica", "sans-serif";
+    font-family: "Gotham Book", "Helvetica", "sans-serif";
     font-size: 18px;
     color: #FFFFFF;
+    height: 48px;
+    line-height: 48px;
+    margin-top: 5px;
     text-transform: uppercase;
     background: #B7B7B7;
     border-radius: 24px;
     padding: 5px 20px;
     letter-spacing: 0;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center; }
+    display: inline-block; }
     .filter__reset svg {
-      margin-right: 10px; }
+      margin-right: 10px;
+      margin-top: 5px;
+      float: left; }
+    .filter__reset span {
+      margin-top: -2px;
+      float: left; }
   .filter__nav {
     display: flex; }
     .filter__nav li {
@@ -6811,16 +6829,37 @@ legend {
         margin-bottom: 10px;
         display: block;
         background-repeat: no-repeat;
-        background-position: center 46px;
+        background-position: center 60px;
         text-decoration: none;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center; }
         .filter__nav li .filter__item__text {
-          margin-top: 10px; }
+          position: absolute;
+          top: 25px;
+          left: 0;
+          right: 0; }
+        .filter__nav li .filter__item__icon {
+          position: absolute;
+          bottom: 25px;
+          left: 0;
+          right: 0; }
         .filter__nav li .filter__item.filter__item--difficulty svg {
+          transform-origin: top;
           transform: scaleY(1.5); }
+        .filter__nav li .filter__item.filter__item--difficulty.collapsed rect {
+          fill: #fff !important;
+          opacity: .5; }
+        .filter__nav li .filter__item.filter__item--difficulty .difficulty-icon__level-1 #level_1 {
+          fill: #fff !important;
+          opacity: 1; }
+        .filter__nav li .filter__item.filter__item--difficulty .difficulty-icon__level-2 #level_1, .filter__nav li .filter__item.filter__item--difficulty .difficulty-icon__level-2 #level_2 {
+          fill: #fff !important;
+          opacity: 1; }
+        .filter__nav li .filter__item.filter__item--difficulty .difficulty-icon__level-3 #level_1, .filter__nav li .filter__item.filter__item--difficulty .difficulty-icon__level-3 #level_2, .filter__nav li .filter__item.filter__item--difficulty .difficulty-icon__level-3 #level_2 {
+          fill: #fff !important;
+          opacity: 1; }
         .filter__nav li .filter__item svg path {
           fill: #000; }
         .filter__nav li .filter__item .teacher-img {
@@ -6828,6 +6867,8 @@ legend {
           border: solid 6px #A7CD45;
           width: 50px;
           height: 50px;
+          position: absolute;
+          top: 53px;
           display: none; }
         .filter__nav li .filter__item[aria-expanded="true"] {
           background-color: #A7CD45;
@@ -6845,7 +6886,8 @@ legend {
           width: 72px;
           height: 72px;
           border-radius: 50%;
-          margin: 0 auto;
+          position: absolute;
+          top: 13px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -6871,14 +6913,17 @@ legend {
           .filter__nav li .filter__item--code.active {
             background-image: url("../images/green-circle.png");
             background-size: 50px;
-            background-position: center 40px;
+            background-position: center 54px;
             color: #fff;
             font-size: 20px;
-            padding: 30px 0 0 12px;
-            font-family: "Bebas Regular"; }
+            padding: 50px 0 0 12px;
+            font-family: "Bebas Regular";
+            display: block;
+            height: 130px;
+            margin: 0; }
         .filter__nav li .filter__item--label {
           position: absolute;
-          top: -25px;
+          top: -21px;
           left: 0px;
           text-align: center; }
   .filter__section {
@@ -6952,6 +6997,15 @@ legend {
     #difficulties .selected .icon-wrap svg rect {
       fill: #fff !important;
       opacity: .5; }
+  #difficulties .selected .icon-wrap .difficulty-icon__level-1 #level_1 {
+    fill: #fff !important;
+    opacity: 1; }
+  #difficulties .selected .icon-wrap .difficulty-icon__level-2 #level_1, #difficulties .selected .icon-wrap .difficulty-icon__level-2 #level_2 {
+    fill: #fff !important;
+    opacity: 1; }
+  #difficulties .selected .icon-wrap .difficulty-icon__level-3 #level_1, #difficulties .selected .icon-wrap .difficulty-icon__level-3 #level_2, #difficulties .selected .icon-wrap .difficulty-icon__level-3 #level_2 {
+    fill: #fff !important;
+    opacity: 1; }
 #difficulties .icon-wrap {
   bottom: 0; }
   #difficulties .icon-wrap svg {
