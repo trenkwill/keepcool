@@ -1,0 +1,25 @@
+.user-icon {
+  &--small {
+    svg {
+      width: 10px;
+      height: 13px;
+    }
+    path {
+      fill: #fff;
+      stroke: none;
+    }
+  }
+  &--selected {
+    path {
+      fill: $pink;
+      stroke: none;
+    }
+  }
+  &--dash {
+    path {
+      stroke-linejoin: round;
+      stroke-linecap: round;
+      stroke-dasharray: 2,6;
+    }
+  }
+}

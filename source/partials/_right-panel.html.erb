@@ -1,0 +1,127 @@
+<div class="right-panel animated">
+    <div class="right-panel__title">
+      <% if current_page.url == "/play/rpm.html" %>
+      Le cours s’arrêtera dans
+      <% else %>
+      Vérifier que la salle est vide avant de lancer ce cours
+      <% end %>
+    </div>
+
+
+
+    <% if current_page.url == "/play/rpm.html" %>
+
+    <div class="right-panel__countdown js-countdown-play-2">
+      <div class="inner">
+        <div>
+          <div class="time">00:06</div>
+        </div>
+      </div>
+      <%= image_tag "jauge-pink.png", :class =>"jauge-pink" %>
+    </div>
+
+
+    <div class="right-panel__buttons">
+      <div class="row">
+        <div class="col-md-6 pr">
+          <a href="#" class="btn btn-primary btn-block"><%= image_tag "play.svg", :class => "btn__icon" %><div>Reprendre <br>le cours</div></a>
+        </div>
+        <div class="col-md-6">
+          <a href="#" class="btn btn-white js-close-panel">Arrêter <br>maintenant</a>
+        </div>
+      </div>
+    </div>
+
+
+    <% else %>
+
+
+
+
+    <div class="right-panel__content">
+      <div class="row">
+        <div class="col-md-6 pr">
+
+            <%= partial "partials/card", :locals => { :img => data.lessons.envies[0].image, :time => data.lessons.envies[0].time, :title => data.lessons.envies[0].title, :description => data.lessons.envies[0].description, :difficulty => data.lessons.envies[0].difficulty } %>
+
+          </div>
+
+          <div class="col-md-6">
+            <div class="right-panel__text">
+            <p class="right-panel__description">Celui-ci se lancera dans <br>30 secondes</p>
+
+            <div>
+              <ul class="list-inline">
+                <li><%= inline_svg("bottle") %></li>
+                <li><%= inline_svg("towel") %></li>
+              </ul>
+
+              <p><em>Pensez à votre serviette et votre bouteille d’eau</em></p>
+            </div>
+            </div>
+          </div>
+
+        </div>
+
+    </div>
+    <div class="right-panel__buttons">
+      <div class="row">
+        <div class="col-md-6 pr">
+          <a href="#" class="btn btn-primary btn--text-center js-confirm-lesson">Confirmer</a>
+        </div>
+        <div class="col-md-6">
+          <a href="#" class="btn btn-white btn--text-center js-close-panel">Annuler</a>
+        </div>
+      </div>
+    </div>
+    <% end %>
+</div>
+<div class="right-panel-bg js-close-panel"></div>
+
+
+<script>
+
+  $('.js-countdown-play-2').circleProgress({
+    startAngle: -Math.PI / 4 * 2,
+    value: 0.25,
+    size: 240,
+    thickness: 15,
+    lineCap: 'round',
+    emptyFill: 'rgba(255, 255, 255, .1)',
+    fill: '#E00069'
+  });
+
+
+  $(".js-open-panel").click(function(){
+    $(".right-panel").show().removeClass("bounceOutRight").addClass("bounceInRight");
+    $(".right-panel-bg").show().removeClass("fadeOut").addClass("fadeIn");
+  });
+
+  $(".js-confirm-lesson").click(function(){
+    $(".right-panel__title").text("Confirmer la réservation de ce cours à 17h45");
+    $(".right-panel__text .right-panel__description").text("Celui-ci se lancera 30 secondes après la fin du cours actuel (à 17h45)");
+    $(this).addClass("btn-default").removeClass("btn-primary").text("confirmer");
+  });
+
+
+
+  $(".js-close-panel").click(function(){
+
+    $(".right-panel").removeClass("bounceInRight").addClass("bounceOutRight").delay(100).queue(function(next){
+        $(this).hide();
+        next();
+    });
+
+    $(".right-panel-bg").hide();
+
+  });
+
+
+  if (window.location.search.indexOf('available=no') > -1) {
+      $(".right-panel__title").text("Ce studio n’est disponible que jusqu’à 23H00, votre cours sera arrêté avant la fin");
+      $(".right-panel__text .right-panel__description").text("Nous vous conseillons de choisir un cours plus adapté au temps disponible dans ce studio");
+      $(".right-panel__text .right-panel__description").text("Nous vous conseillons de choisir un cours plus adapté au temps disponible dans ce studio");
+      $(".right-panel__buttons .btn-primary").html("Lancer tout de <br> même ce cours");
+      $(".right-panel__buttons .btn-white").text("Choisir un autre cours");
+  }
+</script>

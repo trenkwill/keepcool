@@ -1,0 +1,98 @@
+.right-panel {
+  display: none;
+  animation-duration: 0.5s !important;
+  width: 820px;
+  background:#fff;
+  padding: 160px 100px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 99999999999;
+  box-shadow: 0 2px 24px 0 rgba(33,43,50,0.60);
+
+  &__buttons {
+    position: absolute;
+    top: 700px;
+    width: 620px;
+    .btn {
+      height: 100px;
+    }
+  }
+  &__title {
+    font-family: $header-font;
+    font-size: 48px;
+    color: #212B31;
+    letter-spacing: -1px;
+    line-height: 52px;
+    margin-bottom: 70px;
+  }
+  &__text {
+    height: $card-height;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  p {
+    font-family: $gotham-medium;
+    font-size: 16px;
+    color: rgba(0,0,0,0.71);
+    letter-spacing: 0;
+    line-height: 20px;
+    em {
+      font-family: $gotham-black-italic;
+      font-size: 16px;
+      color: rgba(0,0,0,0.40);
+      letter-spacing: 0;
+      line-height: 20px;
+    }
+  }
+  &__countdown {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    .inner {
+      border-radius: 50%;
+      position: absolute;
+      top: 12px;
+      bottom: 17px;
+      left: 13px;
+      right: 12px;
+      text-align: center;
+      font-size: 20px;
+      color: #FFFFFF;
+      letter-spacing: 0;
+      line-height: 22px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .time {
+        margin-top: 20px;
+        font-family: $bebas-bold;
+        font-size: 48px;
+        color: $pink;
+        margin-bottom: 5px;
+        letter-spacing: 1.5px;
+        line-height: 40px;
+      }
+    }
+    .jauge-pink {
+      position: absolute;
+      top: 0px;
+      left: 0;
+      z-index: 0;
+    }
+  }
+}
+
+.right-panel-bg {
+  animation-duration: 0.5s;
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 999999;
+  background: rgba(33,43,50,0.70);
+}

@@ -1,0 +1,45 @@
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+.pop-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.70);
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+  }
+  &__loading {
+    position: absolute;
+    z-index: 0;
+    animation: spin 4s infinite linear;
+  }
+  &__text {
+    font-family: $gotham-medium;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+    color: #A7CD45;
+    letter-spacing: 0;
+    line-height: 22px;
+  }
+}
