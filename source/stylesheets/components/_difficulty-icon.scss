@@ -75,4 +75,30 @@
       }
     }
   }
+  &--green {
+    #level_1, #level_2, #level_3 {
+      fill: rgba(0,0,0,0.20);
+    }
+    &.difficulty-icon__level-1 {
+      #level_1 {
+        fill:$green;
+        transform: scaleX(1.35);
+        transform-origin: center;
+      }
+    }
+    &.difficulty-icon__level-2 {
+      #level_1, #level_2 {
+        fill:$green;
+        transform: scaleX(1.35);
+        transform-origin: center;
+      }
+    }
+    &.difficulty-icon__level-3 {
+      #level_1, #level_2, #level_3 {
+        fill:$green;
+        transform: scaleX(1.35);
+        transform-origin: center;
+      }
+    }
+  }
 }

@@ -1,5 +1,8 @@
 .card-carousel {
   position: relative;
+  &.opacity {
+    opacity: 0.5;
+  }
 }
 #slide-counter {
   position: absolute;
@@ -157,6 +160,10 @@
   #filter .bx-next {
     background: url(../images/bt-next-green.png) no-repeat right bottom !important;
     right: 40px;
+  }
+  #filter .bx-prev {
+    background: url(../images/bt-prev-green.png) no-repeat right bottom !important;
+    right: 160px;
   }
 
 

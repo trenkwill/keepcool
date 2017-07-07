@@ -1,34 +1,58 @@
 .code {
+  display: none;
   background: #fff;
+  position: fixed;
+  left: 355px;
+  top: 62px;
+  width: 770px;
+  height: 900px;
+  z-index: 99999999999999999;
 
-  .nmpd-display {
-    height: 300px;
-    background:$green;
-    width: 770px;
-    font-family: $bebas-regular;
-    border: none;
-    position: absolute;
-    left: 0px;
-    top: 0;
-    color: #fff;
-    font-size: 100px;
-  }
   &__btn {
     border: solid 1px $green;
     font-family: $bebas-regular;
     font-size: 48px;
     color: #212B31;
     height: 100px;
+    width: 100px;
+    text-align: center;
+    background:#fff;
     border-radius: 50%;
+    justify-content: center;
     &:focus {
       outline: none;
+    }
+    &:active, &:hover {
+      border: solid 1px #fff;
+      color: #333;
+      background: #EEEEEE;
     }
   }
   &__header {
     height: 300px;
     position: relative;
     margin-bottom: 40px;
-    left: -385px;
+    background:$green;
+    width: 100%;
+    font-family: $bebas-regular;
+    color: #fff;
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &__text {
+      font-family: $gotham-book;
+      font-size: 18px;
+      color: #FFFFFF;
+      letter-spacing: -1px;
+      line-height: 24px;
+      text-transform: uppercase;
+      margin-top: 50px;
+    }
+    .empty {
+      opacity: .5;
+    }
   }
   &__numbers {
     display: flex;
@@ -41,57 +65,43 @@
     text-align: center;
   }
 
-  // hide all the buttons
-  .clear,   .cancel,  .neg, .sep {
-    display: none;
-  }
-
-  .del {
+  &__del {
     position: absolute;
     bottom: 135px;
     left: 465px;
     font-family: $bebas-regular;
     font-size: 18px;
+    color:#212B31;
   }
 
-  .done {
+  &__done {
     background: #FFFFFF url("../images/back-green.png") no-repeat center 30px;
     box-shadow: 0 -6px 12px 0 rgba(33,43,50,0.40);
     border-radius: 100%;
+    color:#212B31;
     display: block;
     width: 100px;
     height: 100px;
     position: absolute;
     left: -50px;
     top: 90px;
+    text-align: center;
     padding-top: 58px;
     font-family: $bebas-regular;
     font-size: 18px;
-  }
-  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: rgba(255,255, 255, .5);
+    &:hover, &:active {
+      color:#212B31;
+    }
   }
 }
 
-.nmpd-wrapper {
-    display: none;
-}
-.nmpd-target {
-  cursor: pointer;
-}
-.nmpd-grid {
-  position:absolute;
-  left:50px;
-  top:50px;
-  z-index:5000;
-  width: 770px !important;
-  height: 900px;
-  -khtml-user-select: none;
-  width: initial;
-}
-.nmpd-overlay {
-  z-index:4999;
-}
-input.nmpd-display {
-  text-align: center;
+.code-bg {
+  display: none;
+  position: fixed;
+  z-index: 9999999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(33,43,50,0.70);
 }

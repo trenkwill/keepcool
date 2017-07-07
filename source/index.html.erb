@@ -1,7 +1,3 @@
----
-title: Keep Cool
----
-
 <div class="hero">
   <div class="row">
     <div class="col-xs-6">
@@ -21,8 +17,9 @@ title: Keep Cool
     <h2 class="main-content__title mb">Envie de se défouler ?</h2>
 
     <div class="row mb+">
-      <% data.lessons.envies.each do |lesson| %>
-          <div class="col-md-4">
+      <% data.lessons.envies[0,3].each do |lesson| %>
+          <div class="col-md-4 card-animation">
+            <% @slug = lesson.slug %>
             <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
           </div>
       <% end %>
@@ -33,7 +30,8 @@ title: Keep Cool
 
     <div class="row">
       <% data.lessons.top.each do |lesson| %>
-          <div class="col-md-4">
+          <div class="col-md-4 card-animation">
+            <% @slug = lesson.slug %>
             <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
           </div>
       <% end %>

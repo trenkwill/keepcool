@@ -19,14 +19,46 @@
     margin-right: -20px;
     // bootstrap overide
     .dropdown-menu {
-      top: 0;
+      width: 210px;
+      top: -10px;
       left: 40px;
+      padding: 20px 10px;
+      border: none;
+      border-radius: 4px;
       &:before {
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 50px 86.6px 50px 0;
-        border-color: transparent #ffffff transparent transparent;
+        position: absolute;
+        top: 11px;
+        left: -7px;
+        display: inline-block;
+        border-bottom: 9px solid transparent;
+        border-top: 9px solid transparent;
+        border-right: 9px solid #ffffff;
+        border-bottom-color: rgba(0, 0, 0, 0.2);
+        content: '';
+      }
+
+      &:after {
+        position: absolute;
+        top: 12px;
+        left: -6px;
+        display: inline-block;
+        border-bottom: 8px solid transparent;
+        border-top: 8px solid transparent;
+        border-right: 8px solid #ffffff;
+        content: '';
+      }
+      li{
+        a {
+          font-family: $gotham-book;
+          font-size: 18px;
+          color: #212B31;
+        }
+        img {
+          margin-right: 16px;
+        }
+      }
+      li:first-child {
+        margin-bottom: 15px;
       }
     }
   }

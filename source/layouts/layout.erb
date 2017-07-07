@@ -12,8 +12,6 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker3.standalone.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.css">
 
     <%= stylesheet_link_tag :site %>
     <%= javascript_include_tag :all %>
@@ -22,8 +20,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 
-    <script src="javascripts/jquery.numpad.js"></script>
-    <script src="javascripts/circle-progress.min.js"></script>
+    <script src="/javascripts/jquery.numpad.js"></script>
+    <script src="/javascripts/circle-progress.min.js"></script>
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.5.3/css/bootstrap-slider.min.css">
@@ -31,25 +29,17 @@
 
   <body class="<%= page_classes %>">
 
+    <% unless current_page.url == "/loading.html" %>
     <%= partial "partials/sidebar" %>
-
+    <% end %>
     <div class="main-content">
 
       <%= yield %>
 
     </div>
 
-    <!-- <div class="right-slide">
-        <div class="right-slide__title">Vérifier que la salle est vide avant de lancer ce cours</div>
-        <div class="right-slide__content">
-          <div class="row">
-            <div class="col-md-6">
-              <%= partial "partials/card", :locals => { :img => data.lessons.envies[0].image, :time => data.lessons.envies[0].time, :title => data.lessons.envies[0].title, :description => data.lessons.envies[0].description, :difficulty => data.lessons.envies[0].difficulty } %></div>
+    <%= partial "partials/numpad" %>
 
-            </div>
-        </div>
-    </div> -->
-    <!-- <div class="right-slide-bg"></div> -->
     <script>
 
       $('.js-countdown-1').circleProgress({

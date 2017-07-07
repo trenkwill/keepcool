@@ -7,6 +7,7 @@
     overflow: hidden;
     background-size: cover;
     margin-bottom: 50px;
+    position: relative;
     &:last-child {
       margin-bottom: 0;
     }
@@ -19,9 +20,24 @@
       font-family: $bebas-bold;
       font-size: 24px;
       color: #FFFFFF;
+      border-right: solid 6px #fff;
       letter-spacing: 1.33px;
     }
 
+    &--fin-cours {
+      overflow: inherit;
+      .slot__time {
+        right: -32px;
+      }
+    }
+    &__link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 4;
+    }
     &__schedule {
       font-family: $bebas-bold;
       background: #7F7F7F;
@@ -114,7 +130,7 @@
 
     &__difficulty {
       position: absolute;
-      bottom: 20px;
+      bottom: 0px;
       left: 10px;
       z-index: 9999;
     }

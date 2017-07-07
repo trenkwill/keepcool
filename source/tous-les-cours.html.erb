@@ -1,15 +1,41 @@
 <div id="filter">
 
   <div class="filter">
-    <div class="filter__description">Trouver votre cours <br>grace aux filtres</div>
+    <div class="filter__description"><span class="text">
+      Trouver votre cours <br>grace aux filtres <%= image_tag "arrow.png"%></span>
+    <a href="#" class="filter__reset hidden"><%= inline_svg("reset") %><span>Réinitialiser</span></a></div>
+
     <ul class="filter__nav list-inline">
-      <li><a href="#" data-toggle="collapse" data-target="#categories" class="filter__item filter__item--categorie js-active-filter">Categories</a></li>
-      <li><a href="#" data-toggle="collapse" data-target="#teachers" class="filter__item filter__item--teacher js-active-filter">Tous les profs</a></li>
-      <li><a href="#" data-toggle="collapse" data-target="#difficulties" class="filter__item filter__item--difficulty js-active-filter">Tout niveau</a></li>
-      <li><a href="#" data-toggle="collapse" data-target="#time" class="filter__item filter__item--time js-active-filter">Durée</a></li>
       <li>
-      <label for="enter-code" class="filter__item filter__item--label">Code</label>
-        <input type="number" id="enter-code" class="filter__item filter__item--code">
+        <a href="#" data-toggle="collapse" data-target="#categories" class="filter__item filter__item--categorie">
+        <span class="filter__item__text">Categories</span>
+          <span class="filter__item__icon"><%= inline_svg("categorie") %></span>
+        </a>
+      </li>
+      <li>
+        <a href="#" data-toggle="collapse" data-target="#teachers" class="filter__item filter__item--teacher">
+          <span class="filter__item__text">Tous les profs</span>
+          <span class="filter__item__icon"><%= inline_svg("teacher") %></span>
+          <%= image_tag "img-content/teacher-1.jpg", :width => "60", :class => "teacher-img" %>
+        </a>
+      </li>
+      <li>
+        <a href="#" data-toggle="collapse" data-target="#difficulties" class="filter__item filter__item--difficulty">
+          <span class="filter__item__text">Tout niveau</span>
+          <span class="filter__item__icon"><%= inline_svg("difficulty") %></span>
+        </a>
+      </li>
+      <li>
+        <a href="#" data-toggle="collapse" data-target="#time" class="filter__item filter__item--time">
+          <span class="filter__item__text">Durée</span>
+          <span class="filter__item__icon"><%= inline_svg("time") %></span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="filter__item filter__item--code">
+        <span class="filter__item__text">Code</span>
+          <span id="enter-code" class="filter__item__icon"><%= inline_svg("code") %></span>
+        </a>
       </li>
     </ul>
   </div>
@@ -19,11 +45,21 @@
     <div class="filter__section">
     <h2 class="filter__section__title">Sélectionner une catégorie de cours</h2>
     <div class="row no-gutter">
+          <div class="col-md-3">
+            <div class="filter__section__card js-active-category selected">
+              <div>
+                <div class="icon-wrap"><%= inline_svg("categorie") %></div>
+                <div class="filter__section__card__title">Tous les cours</div>
+              </div>
+            </div>
+          </div>
         <% data.filter.categories.each do |category| %>
           <div class="col-md-3">
-            <div class="filter__section__card">
+            <div class="filter__section__card js-active-category">
               <div>
-                <%= image_tag category.image %>
+                <div class="icon-wrap">
+                  <%= inline_svg(category.image) %>
+                </div>
                 <div class="filter__section__card__title"><%= category.title %></div>
               </div>
             </div>
@@ -44,9 +80,19 @@
     <ul class="teacher-carousel">
       <li>
         <div class="row no-gutter">
+          <div class="col-md-3">
+            <div class="filter__section__card selected">
+              <div>
+                <div class="icon-wrap">
+                  <%= inline_svg("teacher") %>
+                </div>
+                <div class="filter__section__card__title mt">Tous les profs</div>
+              </div>
+            </div>
+          </div>
         <% data.filter.teachers.each do |teacher| %>
           <div class="col-md-3">
-            <div class="filter__section__card">
+            <div class="filter__section__card js-active-teacher">
               <div>
                 <%= image_tag teacher.image, :width => "60" %>
                 <div class="filter__section__card__title mt"><%= teacher.title %></div>
@@ -60,9 +106,9 @@
         <div class="row no-gutter">
         <% data.filter.teachers.each do |teacher| %>
           <div class="col-md-3">
-            <div class="filter__section__card">
+            <div class="filter__section__card js-active-filter js-active-teacher">
               <div>
-                <%= image_tag teacher.image %>
+                <%= image_tag teacher.image, :width => "60" %>
                 <div class="filter__section__card__title mt"><%= teacher.title %></div>
               </div>
             </div>
@@ -79,16 +125,52 @@
     <div class="filter__section">
     <h2 class="filter__section__title">Sélectionner un niveau</h2>
     <div class="row no-gutter">
-        <% data.filter.difficulties.each do |difficulty| %>
+        <div class="col-md-3">
+          <div class="filter__section__card js-active-level selected">
+            <div>
+              <div class="icon-wrap">
+                <%= inline_svg("difficulty") %>
+              </div>
+              <div class="filter__section__card__title">Tout niveau</div>
+            </div>
+          </div>
+        </div>
+
           <div class="col-md-3">
-            <div class="filter__section__card">
+            <div class="filter__section__card js-active-difficulty">
               <div>
-                <%= image_tag difficulty.image %>
-                <div class="filter__section__card__title"><%= difficulty.title %></div>
+                <div class="icon-wrap">
+                  <span class="difficulty-icon difficulty-icon--green difficulty-icon__level-1"><%= inline_svg("difficulty") %></span>
+                </div>
+                <div class="filter__section__card__title">Facile</div>
               </div>
             </div>
           </div>
-          <% end %>
+
+          <div class="col-md-3">
+            <div class="filter__section__card js-active-difficulty">
+              <div>
+                <div class="icon-wrap">
+                  <span class="difficulty-icon difficulty-icon--green difficulty-icon__level-2"><%= inline_svg("difficulty") %></span>
+                </div>
+                <div class="filter__section__card__title">Moyen</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="filter__section__card js-active-difficulty">
+              <div>
+                <div class="icon-wrap">
+                  <span class="difficulty-icon difficulty-icon--green difficulty-icon__level-3"><%= inline_svg("difficulty") %></span>
+                </div>
+                <div class="filter__section__card__title">Difficile</div>
+              </div>
+            </div>
+          </div>
+
+
+
         </div>
     </div>
   </div>
@@ -97,12 +179,22 @@
     <div class="filter__section">
     <h2 class="filter__section__title">Sélectionner une durée</h2>
     <div class="row no-gutter">
-        <% data.filter.time.each do |difficulty| %>
+        <div class="col-md-3">
+          <div class="filter__section__card js-active-time selected">
+            <div>
+              <div class="icon-wrap">
+                <%= inline_svg("time") %>
+              </div>
+              <div class="filter__section__card__title">Toutes durées</div>
+            </div>
+          </div>
+        </div>
+        <% data.filter.time.each do |time| %>
           <div class="col-md-3">
-            <div class="filter__section__card">
+            <div class="filter__section__card js-active-time">
               <div>
-                <%= image_tag difficulty.image %>
-                <div class="filter__section__card__title"><%= difficulty.title %></div>
+                <div class="icon-wrap"><%= inline_svg(time.image) %></div>
+                <div class="filter__section__card__title"><%= time.title %></div>
               </div>
             </div>
           </div>
@@ -119,38 +211,21 @@
   <ul class="carousel">
     <li class="slide">
         <div class="row mb+">
-        <% data.lessons.envies.each do |lesson| %>
-            <div class="col-md-4">
+        <% data.lessons.envies[0,3].each do |lesson| %>
+            <div class="col-md-4 card-animation">
+              <% @slug = lesson.slug %>
               <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
             </div>
         <% end %>
-        <% data.lessons.top.each do |lesson| %>
-            <div class="col-md-4">
+        <% data.lessons.top[0,3].each do |lesson| %>
+            <div class="col-md-4 card-animation">
+              <% @slug = lesson.slug %>
               <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
             </div>
         <% end %>
-        <% data.lessons.envies.each do |lesson| %>
-            <div class="col-md-4">
-              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
-            </div>
-        <% end %>
-
-      </div>
-    </li>
-    <li class="slide">
-      <div class="row mb+">
-        <% data.lessons.envies.each do |lesson| %>
-            <div class="col-md-4">
-              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
-            </div>
-        <% end %>
-        <% data.lessons.top.each do |lesson| %>
-            <div class="col-md-4">
-              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
-            </div>
-        <% end %>
-        <% data.lessons.envies.each do |lesson| %>
-            <div class="col-md-4">
+        <% data.lessons.envies[0,3].each do |lesson| %>
+            <div class="col-md-4 card-animation">
+              <% @slug = lesson.slug %>
               <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
             </div>
         <% end %>
@@ -159,18 +234,44 @@
     </li>
     <li class="slide">
       <div class="row mb+">
-        <% data.lessons.envies.each do |lesson| %>
-            <div class="col-md-4">
+        <% data.lessons.envies[0,3].each do |lesson| %>
+            <div class="col-md-4 card-animation">
+              <% @slug = lesson.slug %>
               <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
             </div>
         <% end %>
-        <% data.lessons.top.each do |lesson| %>
-            <div class="col-md-4">
+        <% data.lessons.top[0,3].each do |lesson| %>
+            <div class="col-md-4 card-animation">
+              <% @slug = lesson.slug %>
               <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
             </div>
         <% end %>
-        <% data.lessons.envies.each do |lesson| %>
-            <div class="col-md-4">
+        <% data.lessons.envies[0,3].each do |lesson| %>
+            <div class="col-md-4 card-animation">
+              <% @slug = lesson.slug %>
+              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+            </div>
+        <% end %>
+
+      </div>
+    </li>
+    <li class="slide">
+      <div class="row mb+">
+        <% data.lessons.envies[0,3].each do |lesson| %>
+            <div class="col-md-4 card-animation">
+              <% @slug = lesson.slug %>
+              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+            </div>
+        <% end %>
+        <% data.lessons.top[0,3].each do |lesson| %>
+            <div class="col-md-4 card-animation">
+              <% @slug = lesson.slug %>
+              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+            </div>
+        <% end %>
+        <% data.lessons.envies[0,3].each do |lesson| %>
+            <div class="col-md-4 card-animation">
+              <% @slug = lesson.slug %>
               <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
             </div>
         <% end %>
@@ -181,40 +282,101 @@
   <div id="slide-counter"></div>
 </div>
 
-<div class="modal fade" id="code">
-  <div class="modal-dialog code">
-    <div class="code__header">
-
-      <a href="" data-dismiss="modal" aria-hidden="true">Retour</a>
-
-      <div class="code__title">
-        Taper votre code
-      </div>
-
-
-      <div id="numpad4div"></div>
-    </div>
-
-  </div>
-</div>
 
 
 
 
 <script>
 
-  $(".js-active-filter").click(function(){
-      $(".js-active-filter").removeClass("selected");
-      $(this).toggleClass("selected");
+
+  // toggleling the filters section
+  var $myGroup = $('#filter');
+
+  $myGroup.on('show.bs.collapse','.collapse', function() {
+      $myGroup.find('.collapse.in').collapse('hide');
+      slider2.reloadSlider();
+      $(".card-carousel").addClass("opacity");
   });
+  $myGroup.on('hidden.bs.collapse', function () {
+     $(".card-carousel").removeClass("opacity");
+  });
+
+  // special treatment for the carousel
+  $("a[data-toggle='collapse']:not([data-target='#teachers'])").click(function(){
+      $(".teacher-carousel-wrap").removeClass("active");
+  });
+
+  $("a[data-target='#teachers']").click(function(){
+      $(".teacher-carousel-wrap").toggleClass("active");
+  });
+
+
+  function activateFilter(filterName) {
+    $(".js-active-menu").removeClass("selected");
+    $(".filter__description .text").hide();
+    $(".filter__reset").removeClass("hidden");
+    $(this).toggleClass("selected");
+    $myGroup.find('.collapse.in').collapse('hide');
+  }
+
+  // clicking on a filter card in CATEGORIES:
+  $(".js-active-category").click(function(){
+      var categoryName = $(this).find(".filter__section__card__title").text();
+      $(".js-active-category").removeClass("selected");
+      activateFilter();
+      $(".filter__item--categorie").find(".filter__item__text").text(categoryName);
+      $(".filter__item--categorie").find(".filter__item__icon").hide();
+      $(".filter__item--categorie").find(".icon-wrap").hide();
+
+      $(this).find(".icon-wrap").clone().appendTo(".filter__item--categorie");
+  });
+
+
+  // clicking on a filter card in LEVELS:
+  $(".js-active-difficulty").click(function(){
+      var difficultyName = $(this).find(".filter__section__card__title").text();
+      $(".js-active-difficulty").removeClass("selected");
+      $(".filter__item--difficulty").find(".filter__item__text").text(difficultyName);
+      $(".filter__item--difficulty").find(".filter__item__icon").hide();
+      $(".filter__item--difficulty").find(".icon-wrap").hide();
+      activateFilter();
+      $(this).find(".icon-wrap").clone().appendTo(".filter__item--difficulty");
+  });
+
+  // clicking on a filter card in TIME:
+  $(".js-active-time").click(function(){
+      var timeName = $(this).find(".filter__section__card__title").text();
+
+      $(".js-active-time").removeClass("selected");
+      $(".filter__item--time").find(".filter__item__text").text(timeName);
+      $(".filter__item--time").find(".filter__item__icon").hide();
+      $(".filter__item--time").find(".icon-wrap").hide();
+      activateFilter();
+      $(this).find(".icon-wrap").clone().appendTo(".filter__item--time");
+  });
+
+  // clicking on a filter card in TEACHERS:
+  $(".js-active-teacher").click(function(){
+      var teacherName = $(this).find(".filter__section__card__title").text();
+      activateFilter();
+      $(".filter__item--teacher").find(".filter__item__text").text(teacherName);
+      $(".teacher-carousel-wrap").removeClass("active");
+      $(".filter__item--teacher img").show();
+      $(".filter__item--teacher .filter__item__icon").hide();
+  });
+
+
+
+  // overide bxslider width to the window width
   var slideWidth = $(window).width() - 460,
       totalLessonCount = $(".card-carousel .card").length;
 
+  // add text to the slide counter
   $('#slide-counter').prepend('Cours <span class="from-current-index"></span> à <span class="current-index"></span>/<span class="total-lesson-count">'+totalLessonCount+'</span>');
 
   $(".slide").each(function() {
-        return lessonsInSlide = $(this).find(".card").length;
-    });
+      return lessonsInSlide = $(this).find(".card").length;
+  });
 
   $('#slide-counter .current-index').text(lessonsInSlide + 1);
 
@@ -262,24 +424,6 @@
   var slider2 = $('.teacher-carousel').bxSlider(mySettings);
 
 
-  // $('#slide-counter .current-index').append(slider.getSlideCount());
-
-  var $myGroup = $('#filter');
-
-  $myGroup.on('show.bs.collapse','.collapse', function() {
-      $myGroup.find('.collapse.in').collapse('hide');
-      slider2.reloadSlider();
-  });
-
-  $("a[data-toggle='collapse']:not([data-target='#teachers'])").click(function(){
-      $(".teacher-carousel-wrap").removeClass("active");
-  });
-
-  $("a[data-target='#teachers']").click(function(){
-      $(".teacher-carousel-wrap").toggleClass("active");
-  });
-
-
 
 
   $(window).resize( function() {
@@ -289,35 +433,10 @@
         slider2.reloadSlider();
     }).trigger("resize");
 
-  // Set NumPad defaults for jQuery mobile.
-  // These defaults will be applied to all NumPads within this document!
-  $.fn.numpad.defaults.gridTpl = '<div class="code"></div>';
-  $.fn.numpad.defaults.rowTpl = '<div class="code__numbers"></div>';
-  $.fn.numpad.defaults.cellTpl = '<div class="code__num"></div>';
-  $.fn.numpad.defaults.displayCellTpl = '<div class="code__header"></div>';
-  $.fn.numpad.defaults.textDelete = 'Effacer';
-  $.fn.numpad.defaults.textDone = 'Retour';
-  $.fn.numpad.defaults.backgroundTpl = '<div class="modal-backdrop in"></div>';
-  // $.fn.numpad.defaults.displayTpl = '<div><input type="text" class="form-control" /></div>';
-  $.fn.numpad.defaults.buttonNumberTpl =  '<button type="button" class="btn btn-default code__btn"></button>';
-  $.fn.numpad.defaults.buttonFunctionTpl = '<div></div>';
-  $.fn.numpad.defaults.hidePlusMinusButton = false;
-  $.fn.numpad.defaults.hideDecimalButton = false;
-
-  $.fn.numpad.defaults.onKeypadCreate = function(){
-      $(this).find('.nmpd-display').attr( "placeholder", "••••" );
-      $('#enter-code').removeClass("active");
-  ;};
-  $.fn.numpad.defaults.onKeypadClose = function(){
-      $('#enter-code').val($(this).find('.nmpd-display').val()).addClass("active");
-  ;};
-  $.fn.numpad.defaults.onChange = function(){
-      // limit to 4 digits
-  ;};
-
-  // Instantiate NumPad once the page is ready to be shown
-  $(document).ready(function(){
-    $('#enter-code').numpad();
+  $("#enter-code").click(function(){
+      $(".code").fadeIn();
+      $(".code-bg").fadeIn();
   });
+
 
 </script>

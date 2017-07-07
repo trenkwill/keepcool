@@ -19,6 +19,15 @@ page '/*.txt', layout: false
   proxy "/envie-de/#{cours}.html", "/envie-de/show.html", :locals => { :cours => cours }, :ignore => true
 end
 
+data.lessons.envies.each do |lesson|
+  proxy "/fiche/#{lesson.slug}.html", "/fiche/show.html", :locals => { :lesson => lesson }, :ignore => true
+end
+
+
+data.lessons.envies.each do |play|
+  proxy "/play/#{play.slug}.html", "/play/show.html", :locals => { :play => play }, :ignore => true
+end
+
 
 # General configuration
 

@@ -11,10 +11,8 @@
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
           <%= image_tag "french_flag.png" %></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li><a href="#">Separated link</a></li>
+          <li><a href="#"><%= image_tag "french_flag.png" %> French</a></li>
+          <li><a href="#"><%= image_tag "english_flag.png" %> English</a></li>
         </ul>
     </span>
   </div>
@@ -35,9 +33,17 @@
 
   <div class="sidebar__slots">
 
-    <%= partial "partials/slot", :locals => { :type => "encours" } %>
+    <% if current_page.url == "/" %>
 
-    <%= partial "partials/slot", :locals => { :type => "suivant" } %>
+      <%= partial "partials/slot", :locals => { :type => "fin-cours" } %>
+      <%= partial "partials/slot", :locals => { :type => "suivant" } %>
+
+    <% else %>
+
+      <%= partial "partials/slot", :locals => { :type => "encours" } %>
+      <%= partial "partials/slot", :locals => { :type => "suivant" } %>
+
+    <% end %>
 
   </div>
 <% else %>

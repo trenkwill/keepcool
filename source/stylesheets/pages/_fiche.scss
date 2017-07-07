@@ -1,19 +1,30 @@
 .fiche {
   background:#fff;
   &__header {
-    height: 400px;
+    height: 350px;
     background-size: cover;
+    background-position: center;
     position: relative;
     margin-left: -$sidebar-padding;
+    margin-right: -$sidebar-padding;
     padding: $sidebar-padding;
+    &__back {
+      position: absolute;
+      top: 55px;
+      left: 70px;
+      svg {
+        transform: scale(1.5);
+        transform-origin: top;
+      }
+    }
     &__content {
       position: absolute;
-      bottom: -40px;
+      left: 110px;
+      bottom: -50px;
       .title {
-        font-family: $bebas-bold;
+        font-family: $bebas-regular;
         font-size: 36px;
         color: #fff;
-
       }
       .subtitle {
         font-size: 20px;
@@ -27,10 +38,11 @@
         @extend .list-inline;
         display: flex;
         justify-content: space-between;
-        $size: 70px;
+        $size: 80px;
         &__avatar {
           border: solid 3px rgba(224, 0, 105, .15);
           border-radius: 50%;
+          background-clip: padding-box;
           width: $size;
           height: $size;
           text-align: center;
@@ -41,6 +53,7 @@
         &__time {
           background: #fff;
           border: solid 3px rgba(224, 0, 105, .15);
+          background-clip: padding-box;
           border-radius: 50%;
           width: $size;
           height: $size;
@@ -50,17 +63,19 @@
           font-size: 12px;
           color: #212B32;
           margin-right: 20px;
-          padding-top: 13px;
+          padding-top: 18px;
           line-height: 1;
           div {
             font-family: $bebas-bold;
             color: $pink;
-            font-size: 24px;
+            font-size: 36px;
+            line-height: 29px;
           }
         }
         &__difficulty {
           background: #fff;
           border: solid 3px rgba(224, 0, 105, .15);
+          background-clip: padding-box;
           border-radius: 50%;
           width: $size;
           height: $size;
@@ -70,8 +85,11 @@
           font-size: 12px;
           color: #212B32;
           margin-right: 20px;
-          padding-top: 13px;
+          padding-top: 18px;
           line-height: 1;
+          svg {
+            transform: scaleY(1.5);
+          }
           div {
             font-family: $bebas-bold;
             color: $pink;
@@ -81,8 +99,9 @@
       }
     }
   }
-  &__content {
 
+  &__content {
+      padding: 70px 0 70px 70px;
   }
   &__number {
     font-family: $bebas-bold;
@@ -134,5 +153,59 @@
     color: rgba(0,0,0,0.71);
     letter-spacing: 0;
     line-height: 24px;
+  }
+  &__start-time {
+    margin-top: 15px;
+    .list-inline {
+      margin-left: 0;
+    }
+    .title {
+      text-align: center;
+      font-family: $gotham-medium;
+      font-size: 20px;
+      color: #212B31;
+      margin-bottom: 20px;
+      letter-spacing: 0;
+      line-height: 22px;
+    }
+    .hour {
+      font-family: $bebas-bold;
+      font-size: 48px;
+      text-align: center;
+      color: #E00069;
+      letter-spacing: 1.5px;
+      line-height: 40px;
+      margin-bottom: 90px;
+    }
+    .bubble {
+      position: relative;
+      background: #7F7F7F;
+      border-radius: 4px;
+      font-family: $gotham-medium;
+      text-align: center;
+      font-size: 18px;
+      height: 100px;
+      color: #FFFFFF;
+      margin: 30px auto;
+      max-width: 230px;
+      letter-spacing: -0.9px;
+      line-height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:before {
+        position: absolute;
+        top: -21px;
+        left: 50%;
+        margin-left: -30px;
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 30px 30px 30px;
+        border-color: transparent transparent #7F7F7F transparent;
+        content: '';
+      }
+    }
   }
 }
