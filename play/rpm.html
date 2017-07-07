@@ -12,8 +12,6 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker3.standalone.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.css">
 
     <link href="../stylesheets/site.css" rel="stylesheet" />
     <script src="../javascripts/all.js"></script>
@@ -159,7 +157,6 @@
   </div>
 </div>
 
-
     <div class="main-content">
 
       <div class="play">
@@ -256,7 +253,7 @@
         <div>
           <div class="time">03:35</div>
           <div class="time-2">Sur 14 min</div>
-          <?xml version="1.0" encoding="UTF-8"?>
+          <a href="#" class="js-open-panel"><?xml version="1.0" encoding="UTF-8"?>
 <svg width="29px" height="36px" viewBox="0 0 29 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
     <title>pause</title>
@@ -273,7 +270,7 @@
             </g>
         </g>
     </g>
-</svg>
+</svg></a>
         </div>
       </div>
     </div>
@@ -392,6 +389,89 @@
 </div>
 
 
+<div class="right-panel animated">
+    <div class="right-panel__title">
+      Le cours s’arrêtera dans
+    </div>
+
+
+
+
+    <div class="right-panel__countdown js-countdown-play-2">
+      <div class="inner">
+        <div>
+          <div class="time">00:06</div>
+        </div>
+      </div>
+      <img src="../images/jauge-pink.png" class="jauge-pink" alt="Jauge pink" />
+    </div>
+
+
+    <div class="right-panel__buttons">
+      <div class="row">
+        <div class="col-md-6 pr">
+          <a href="#" class="btn btn-primary btn-block"><img src="../images/play.svg" class="btn__icon" alt="Play" /><div>Reprendre <br>le cours</div></a>
+        </div>
+        <div class="col-md-6">
+          <a href="#" class="btn btn-white js-close-panel">Arrêter <br>maintenant</a>
+        </div>
+      </div>
+    </div>
+
+
+</div>
+<div class="right-panel-bg js-close-panel"></div>
+
+
+<script>
+
+  $('.js-countdown-play-2').circleProgress({
+    startAngle: -Math.PI / 4 * 2,
+    value: 0.25,
+    size: 240,
+    thickness: 15,
+    lineCap: 'round',
+    emptyFill: 'rgba(255, 255, 255, .1)',
+    fill: '#E00069'
+  });
+
+
+  $(".js-open-panel").click(function(){
+    $(".right-panel").show().removeClass("bounceOutRight").addClass("bounceInRight");
+    $(".right-panel-bg").show().removeClass("fadeOut").addClass("fadeIn");
+  });
+
+  $(".js-confirm-lesson").click(function(){
+    $(".right-panel__title").text("Confirmer la réservation de ce cours à 17h45");
+    $(".right-panel__text .right-panel__description").text("Celui-ci se lancera 30 secondes après la fin du cours actuel (à 17h45)");
+    $(this).addClass("btn-default").removeClass("btn-primary").text("confirmer");
+  });
+
+
+
+  $(".js-close-panel").click(function(){
+
+    $(".right-panel").removeClass("bounceInRight").addClass("bounceOutRight").delay(100).queue(function(next){
+        $(this).hide();
+        next();
+    });
+
+    $(".right-panel-bg").hide();
+
+  });
+
+
+  if (window.location.search.indexOf('available=no') > -1) {
+      $(".right-panel__title").text("Ce studio n’est disponible que jusqu’à 23H00, votre cours sera arrêté avant la fin");
+      $(".right-panel__text .right-panel__description").text("Nous vous conseillons de choisir un cours plus adapté au temps disponible dans ce studio");
+      $(".right-panel__text .right-panel__description").text("Nous vous conseillons de choisir un cours plus adapté au temps disponible dans ce studio");
+      $(".right-panel__buttons .btn-primary").html("Lancer tout de <br> même ce cours");
+      $(".right-panel__buttons .btn-white").text("Choisir un autre cours");
+  }
+</script>
+
+
+
 <script>
 
   // library used : https://github.com/kottenator/jquery-circle-progress
@@ -464,44 +544,99 @@ $(document).ready(function(){
 
     </div>
 
-    <!-- <div class="right-slide">
-        <div class="right-slide__title">Vérifier que la salle est vide avant de lancer ce cours</div>
-        <div class="right-slide__content">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="card" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.20), rgba(0,0,0,0.20)), url('../img-content/gym-0.jpg'); ">
-
-
-  <a href="fiche/.html" class="card__link"></a>
-
-  <div class="card__number">2034</div>
-
-  <div class="card__content">
-
-    <div class="card__time">14'</div>
-    <h3 class="card__title">Cuisses fessiers</h3>
-    <p class="card__description">Toujours Plus Loin, Plus Fort, Plus Vite !</p>
-
-    <span class="card__difficulty">
-      <span class="difficulty-icon difficulty-icon--pink difficulty-icon__level-2">
-        <svg width="23px" height="23px" viewBox="0 0 23 23">
-        <rect id="level_1" x="1" y="10" width="4" height="7" rx="3"></rect>
-        <rect id="level_2" x="9.5" y="7" width="4" height="10" rx="2"></rect>
-        <rect id="level_3" x="18" y="2" width="4" height="15" rx="2"></rect>
-</svg>
-
-      </span>
-    </span>
-
-  </div>
-
-</div>
-</div>
-
-            </div>
+    <div class="code">
+    <div class="code__numbers">
+        <div class="code__header">
+        <div class="code__header__text">Taper votre code</div>
+          <ul class="list-inline">
+            <li class="code__header__dot-1 empty">•</li>
+            <li class="code__header__dot-2 empty">•</li>
+            <li class="code__header__dot-3 empty">•</li>
+            <li class="code__header__dot-4 empty">•</li>
+          </ul>
         </div>
-    </div> -->
-    <!-- <div class="right-slide-bg"></div> -->
+    </div>
+    <div class="code__numbers">
+        <div class="code__num">
+            <button type="button" class="btn btn-default code__btn numero">7</button>
+        </div>
+        <div class="code__num">
+            <button type="button" class="btn btn-default code__btn numero">8</button>
+        </div>
+        <div class="code__num">
+            <button type="button" class="btn btn-default code__btn numero">9</button>
+        </div>
+    </div>
+    <div class="code__numbers">
+        <div class="code__num">
+            <button type="button" class="btn btn-default code__btn numero">4</button>
+        </div>
+        <div class="code__num">
+            <button type="button" class="btn btn-default code__btn numero">5</button>
+        </div>
+        <div class="code__num">
+            <button type="button" class="btn btn-default code__btn numero">6</button>
+        </div>
+
+    </div>
+    <div class="code__numbers">
+        <div class="code__num">
+            <button type="button" class="btn btn-default code__btn numero">1</button>
+        </div>
+        <div class="code__num">
+            <button type="button" class="btn btn-default code__btn numero">2</button>
+        </div>
+        <div class="code__num">
+            <button type="button" class="btn btn-default code__btn numero">3</button>
+        </div>
+
+    </div>
+    <div class="code__numbers">
+
+        <div class="code__num">
+            <button type="button" class="btn btn-default code__btn numero">0</button>
+        </div>
+    </div>
+    <a href="#" class="code__done js-done">Retour</a>
+    <a href="#" class="code__del js-del">Effacer</a>
+</div>
+
+<div class="code-bg"></div>
+
+
+<script>
+  $(".code__btn").click(function(){
+      var number = $(this).text();
+
+      if ($(".code__header__dot-1").hasClass("empty")) {
+          $(".code__header__dot-1").text(number).removeClass("empty");
+      }
+      else if ($(".code__header__dot-2").hasClass("empty")) {
+        $(".code__header__dot-2").text(number).removeClass("empty");
+      }
+      else if ($(".code__header__dot-3").hasClass("empty")) {
+        $(".code__header__dot-3").text(number).removeClass("empty");
+      }
+      else if ($(".code__header__dot-4").hasClass("empty")) {
+        $(".code__header__dot-4").text(number).removeClass("empty");
+          location.href='/fiche/cuisses-fessiers.html';
+      }
+  });
+
+  $(".js-del").click(function(){
+      $(".code__header__dot-1").text("•").addClass("empty");
+      $(".code__header__dot-2").text("•").addClass("empty");
+      $(".code__header__dot-3").text("•").addClass("empty");
+      $(".code__header__dot-4").text("•").addClass("empty");
+  });
+
+  $(".js-done").click(function(){
+      $(".code").fadeOut();
+      $(".code-bg").fadeOut();
+  });
+</script>
+
+
     <script>
 
       $('.js-countdown-1').circleProgress({
