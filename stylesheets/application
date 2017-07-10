@@ -10155,6 +10155,7 @@ legend {
           transform: scale(0.7);
           transform-origin: bottom; }
           .filter__nav li .filter__item .icon-wrap svg {
+            width: 50px;
             transform: scale(1.5); }
             .filter__nav li .filter__item .icon-wrap svg path {
               fill: #fff !important; }
@@ -10221,8 +10222,10 @@ legend {
         justify-content: center;
         position: relative;
         bottom: 20px; }
-        .filter__section__card .icon-wrap svg path, .filter__section__card .icon-wrap svg rect {
-          fill: #A7CD45; }
+        .filter__section__card .icon-wrap svg {
+          width: 80px; }
+          .filter__section__card .icon-wrap svg path, .filter__section__card .icon-wrap svg rect {
+            fill: #A7CD45; }
         .filter__section__card .icon-wrap #categorie rect {
           stroke: #A7CD45;
           fill: #fff; }
