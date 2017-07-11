@@ -1,0 +1,39 @@
+<div class="hero">
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="hero__card" style="background-image: url('<%= asset_url "img-content/bikini-challenge.png" %>');">
+        <a href="thematique.html" class="hero__card__link"></a>
+      </div>
+    </div>
+
+    <div class="col-xs-6">
+      <div class="hero__card" style="background-image: url('<%= asset_url "img-content/abdo-choko.png" %>');">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="main-content__section">
+
+    <h2 class="main-content__title mb">Envie de se défouler ?</h2>
+
+    <div class="row mb+">
+      <% data.lessons.envies[0,3].each do |lesson| %>
+          <div class="col-md-4 card-animation">
+            <% @slug = lesson.slug %>
+            <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+          </div>
+      <% end %>
+    </div>
+
+
+     <h2 class="main-content__title mb">Le top de la semaine</h2>
+
+    <div class="row">
+      <% data.lessons.top.each do |lesson| %>
+          <div class="col-md-4 card-animation">
+            <% @slug = lesson.slug %>
+            <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+          </div>
+      <% end %>
+    </div>
+</div>
