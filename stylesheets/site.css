@@ -5891,6 +5891,9 @@ h1, h2, h3 {
 p {
   font-size: 14px; }
 
+a:active {
+  background: rgba(0, 0, 0, 0.3); }
+
 .main-content {
   margin-left: 285px;
   margin-right: 30px; }
@@ -6496,15 +6499,15 @@ legend {
   fill: rgba(0, 0, 0, 0.2); }
 .difficulty-icon--green.difficulty-icon__level-1 #level_1 {
   fill: #A7CD45;
-  transform: scaleX(1.35);
+  transform: scaleX(1.2);
   transform-origin: center; }
 .difficulty-icon--green.difficulty-icon__level-2 #level_1, .difficulty-icon--green.difficulty-icon__level-2 #level_2 {
   fill: #A7CD45;
-  transform: scaleX(1.35);
+  transform: scaleX(1.2);
   transform-origin: center; }
 .difficulty-icon--green.difficulty-icon__level-3 #level_1, .difficulty-icon--green.difficulty-icon__level-3 #level_2, .difficulty-icon--green.difficulty-icon__level-3 #level_3 {
   fill: #A7CD45;
-  transform: scaleX(1.35);
+  transform: scaleX(1.2);
   transform-origin: center; }
 
 .right-panel {
@@ -6634,14 +6637,26 @@ legend {
     letter-spacing: 0;
     line-height: 22px; }
 
-.card-animation:nth-child(1) {
-  animation-delay: 0s; }
-.card-animation:nth-child(2) {
-  animation-delay: 0.1s; }
-.card-animation:nth-child(3) {
-  animation-delay: 0.2s; }
-.card-animation:nth-child(4) {
-  animation-delay: 0.3s; }
+.card-animation {
+  animation-duration: 0.5s !important; }
+  .card-animation:nth-child(1) {
+    animation-delay: 0s; }
+  .card-animation:nth-child(2) {
+    animation-delay: 0.1s; }
+  .card-animation:nth-child(3) {
+    animation-delay: 0.2s; }
+  .card-animation:nth-child(4) {
+    animation-delay: 0s; }
+  .card-animation:nth-child(5) {
+    animation-delay: 0.1s; }
+  .card-animation:nth-child(6) {
+    animation-delay: 0.2s; }
+  .card-animation:nth-child(7) {
+    animation-delay: 0s; }
+  .card-animation:nth-child(8) {
+    animation-delay: 0.1s; }
+  .card-animation:nth-child(9) {
+    animation-delay: 0.2s; }
 
 .card {
   text-decoration: none;
@@ -6659,7 +6674,8 @@ legend {
     top: 0;
     bottom: 0;
     left: 0;
-    right: 0; }
+    right: 0;
+    z-index: 9999999999; }
   .card__title {
     margin-bottom: 7px;
     font-family: "Gotham Bold", "Helvetica", "sans-serif";
@@ -6684,7 +6700,7 @@ legend {
     padding: 15px 0 0 28px; }
   .card__time {
     position: absolute;
-    top: -40px;
+    top: -25px;
     right: 30px;
     background: #fff;
     border: solid 3px rgba(224, 0, 105, 0.15);
@@ -6707,7 +6723,7 @@ legend {
   .card__difficulty {
     position: absolute;
     right: 45px;
-    top: 25px; }
+    top: 35px; }
 
 .slot {
   color: #fff;
@@ -6859,6 +6875,13 @@ legend {
   margin-bottom: 30px;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
   border-radius: 4px; }
+  .category-card__link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999999999999999999; }
   .category-card__icon {
     height: 155px;
     display: flex;
@@ -6872,6 +6895,7 @@ legend {
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 5;
     padding-top: 30px;
     border-radius: 0 0 4px 4px; }
   .category-card__title {
@@ -6889,7 +6913,7 @@ legend {
   .filter__description {
     float: left;
     width: 325px;
-    padding: 30px 0 30px 80px;
+    padding: 30px 0 30px 85px;
     font-family: "Have Heart One";
     font-size: 30px;
     color: #212B31;
@@ -6941,7 +6965,6 @@ legend {
         color: #000;
         height: 110px;
         width: 100%;
-        margin-bottom: 10px;
         display: block;
         background-repeat: no-repeat;
         background-position: center 60px;
@@ -6950,9 +6973,12 @@ legend {
         flex-direction: column;
         justify-content: space-around;
         align-items: center; }
+        .filter__nav li .filter__item:active #categorie rect {
+          stroke: #000;
+          fill: #B2B2B2; }
         .filter__nav li .filter__item__text {
           position: absolute;
-          top: 25px;
+          top: 20px;
           left: 0;
           right: 0; }
         .filter__nav li .filter__item__icon {
@@ -6963,37 +6989,88 @@ legend {
         .filter__nav li .filter__item.filter__item--difficulty svg {
           transform-origin: top;
           transform: scaleY(1.5); }
-        .filter__nav li .filter__item.filter__item--difficulty.collapsed rect {
-          fill: #fff !important;
-          opacity: .5; }
+        .filter__nav li .filter__item.filter__item--difficulty rect {
+          transform: scaleX(1) !important; }
         .filter__nav li .filter__item.filter__item--difficulty .difficulty-icon__level-1 #level_1 {
-          fill: #fff !important;
+          fill: #A7CD45;
           opacity: 1; }
+        .filter__nav li .filter__item.filter__item--difficulty .difficulty-icon__level-1 #level_2, .filter__nav li .filter__item.filter__item--difficulty .difficulty-icon__level-1 #level_3 {
+          fill: rgba(0, 0, 0, 0.2);
+          stroke: none; }
         .filter__nav li .filter__item.filter__item--difficulty .difficulty-icon__level-2 #level_1, .filter__nav li .filter__item.filter__item--difficulty .difficulty-icon__level-2 #level_2 {
-          fill: #fff !important;
+          fill: #A7CD45;
           opacity: 1; }
-        .filter__nav li .filter__item.filter__item--difficulty .difficulty-icon__level-3 #level_1, .filter__nav li .filter__item.filter__item--difficulty .difficulty-icon__level-3 #level_2, .filter__nav li .filter__item.filter__item--difficulty .difficulty-icon__level-3 #level_2 {
-          fill: #fff !important;
+        .filter__nav li .filter__item.filter__item--difficulty .difficulty-icon__level-2 #level_3 {
+          fill: rgba(0, 0, 0, 0.2);
+          stroke: none; }
+        .filter__nav li .filter__item.filter__item--difficulty .difficulty-icon__level-3 #level_1, .filter__nav li .filter__item.filter__item--difficulty .difficulty-icon__level-3 #level_2, .filter__nav li .filter__item.filter__item--difficulty .difficulty-icon__level-3 #level_3 {
+          fill: #A7CD45;
           opacity: 1; }
         .filter__nav li .filter__item svg path {
           fill: #000; }
+        .filter__nav li .filter__item.selected {
+          border-bottom: solid 4px #A7CD45;
+          top: 4px;
+          position: relative; }
+          .filter__nav li .filter__item.selected .filter__item__text {
+            top: 15px; }
+          .filter__nav li .filter__item.selected.filter__item--difficulty svg {
+            position: relative;
+            top: 5px; }
         .filter__nav li .filter__item .teacher-img {
           border-radius: 50%;
-          border: solid 6px #A7CD45;
+          border: solid 5px #A7CD45;
           width: 50px;
           height: 50px;
           position: absolute;
-          top: 53px;
+          top: 43px;
           display: none; }
+        .filter__nav li .filter__item .icon-wrap {
+          width: 60px;
+          height: 60px;
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          bottom: 15px; }
+          .filter__nav li .filter__item .icon-wrap svg {
+            width: 60px; }
+            .filter__nav li .filter__item .icon-wrap svg path {
+              fill: #A7CD45;
+              stroke: #A7CD45;
+              stroke-width: 0.4px; }
+            .filter__nav li .filter__item .icon-wrap svg rect {
+              stroke: #A7CD45;
+              fill: #fff; }
+            .filter__nav li .filter__item .icon-wrap svg use {
+              fill: #fff !important; }
+          .filter__nav li .filter__item .icon-wrap #categorie rect {
+            stroke: #A7CD45;
+            fill: #fff; }
         .filter__nav li .filter__item[aria-expanded="true"] {
           background-color: #A7CD45;
           color: #fff;
+          top: 0;
           position: absolute;
-          height: 130px; }
-          .filter__nav li .filter__item[aria-expanded="true"] .icon-wrap, .filter__nav li .filter__item[aria-expanded="true"] .teacher-img {
-            display: none !important; }
-          .filter__nav li .filter__item[aria-expanded="true"] .filter__item__icon {
-            display: block !important; }
+          height: 120px; }
+          .filter__nav li .filter__item[aria-expanded="true"]:active #categorie rect {
+            stroke: #fff;
+            fill: #A7CD45; }
+          .filter__nav li .filter__item[aria-expanded="true"] .difficulty-icon__level-1 #level_1 {
+            fill: #fff;
+            opacity: 1; }
+          .filter__nav li .filter__item[aria-expanded="true"] .difficulty-icon__level-1 #level_2, .filter__nav li .filter__item[aria-expanded="true"] .difficulty-icon__level-1 #level_3 {
+            fill: rgba(0, 0, 0, 0.2);
+            stroke: none; }
+          .filter__nav li .filter__item[aria-expanded="true"] .difficulty-icon__level-2 #level_1, .filter__nav li .filter__item[aria-expanded="true"] .difficulty-icon__level-2 #level_2 {
+            fill: #fff;
+            opacity: 1; }
+          .filter__nav li .filter__item[aria-expanded="true"] .difficulty-icon__level-2 #level_3 {
+            fill: rgba(0, 0, 0, 0.2);
+            stroke: none; }
+          .filter__nav li .filter__item[aria-expanded="true"] .difficulty-icon__level-3 #level_1, .filter__nav li .filter__item[aria-expanded="true"] .difficulty-icon__level-3 #level_2, .filter__nav li .filter__item[aria-expanded="true"] .difficulty-icon__level-3 #level_3 {
+            fill: #fff;
+            opacity: 1; }
           .filter__nav li .filter__item[aria-expanded="true"].filter__item--difficulty svg {
             opacity: .5; }
           .filter__nav li .filter__item[aria-expanded="true"].filter__item--categorie rect {
@@ -7003,44 +7080,25 @@ legend {
             fill: #A7CD45; }
           .filter__nav li .filter__item[aria-expanded="true"] svg path, .filter__nav li .filter__item[aria-expanded="true"] svg rect {
             fill: #fff; }
-        .filter__nav li .filter__item .icon-wrap {
-          width: 72px;
-          height: 72px;
-          border-radius: 50%;
-          position: absolute;
-          top: 13px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-          background: #A7CD45;
-          bottom: 10px;
-          transform: scale(0.7);
-          transform-origin: bottom; }
-          .filter__nav li .filter__item .icon-wrap svg {
-            width: 50px;
-            transform: scale(1.5); }
-            .filter__nav li .filter__item .icon-wrap svg path {
-              fill: #fff !important; }
-            .filter__nav li .filter__item .icon-wrap svg rect {
-              stroke: #fff !important;
-              fill: #A7CD45 !important; }
-            .filter__nav li .filter__item .icon-wrap svg use {
-              fill: #A7CD45 !important; }
-          .filter__nav li .filter__item .icon-wrap .difficulty-icon.difficulty-icon__level-1 #level_2, .filter__nav li .filter__item .icon-wrap .difficulty-icon.difficulty-icon__level-1 #level_3 {
-            fill: rgba(255, 255, 255, 0.5) !important;
-            stroke: none !important; }
-          .filter__nav li .filter__item .icon-wrap .difficulty-icon.difficulty-icon__level-2 #level_3 {
-            fill: rgba(255, 255, 255, 0.5) !important;
-            stroke: none !important; }
-          .filter__nav li .filter__item .icon-wrap .difficulty-icon svg {
-            transform: scaleY(2) scaleX(1.3);
-            margin-top: -8px; }
-            .filter__nav li .filter__item .icon-wrap .difficulty-icon svg rect {
-              transform-origin: left; }
-          .filter__nav li .filter__item .icon-wrap #categorie rect {
-            stroke: #A7CD45;
-            fill: #fff; }
+          .filter__nav li .filter__item[aria-expanded="true"] .icon-wrap {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            bottom: 15px; }
+            .filter__nav li .filter__item[aria-expanded="true"] .icon-wrap svg {
+              width: 60px; }
+              .filter__nav li .filter__item[aria-expanded="true"] .icon-wrap svg path {
+                fill: #fff;
+                stroke: white;
+                stroke-width: 0.4px; }
+              .filter__nav li .filter__item[aria-expanded="true"] .icon-wrap svg rect {
+                stroke: #fff;
+                fill: #A7CD45; }
+              .filter__nav li .filter__item[aria-expanded="true"] .icon-wrap svg use {
+                fill: #A7CD45; }
         .filter__nav li .filter__item--code.active {
           background-image: url("../images/green-circle.png");
           background-size: 50px;
@@ -7053,7 +7111,7 @@ legend {
           height: 130px;
           margin: 0; }
   .filter__section {
-    padding: 40px 50px; }
+    padding: 40px 48px; }
     .filter__section__card {
       background: #fff;
       text-align: center;
@@ -7063,18 +7121,35 @@ legend {
       justify-content: center;
       align-items: center;
       border-right: solid 1px #CDD4D7;
-      border-bottom: solid 1px #CDD4D7; }
-      .filter__section__card.selected .icon-wrap {
+      border-bottom: solid 1px #CDD4D7;
+      transition: background 0.3 ease-in-out;
+      background: white; }
+      .filter__section__card:active {
+        background: rgba(0, 0, 0, 0.3); }
+        .filter__section__card:active .filter__section__card__title {
+          color: #fff;
+          opacity: 1; }
+        .filter__section__card:active svg path {
+          fill: #fff !important; }
+        .filter__section__card:active svg rect {
+          stroke: #fff !important;
+          fill: #A7CD45 !important; }
+        .filter__section__card:active svg use {
+          fill: #A7CD45 !important; }
+      .filter__section__card.selected {
         background: #A7CD45; }
-      .filter__section__card.selected svg path {
-        fill: #fff !important; }
-      .filter__section__card.selected svg rect {
-        stroke: #fff !important;
-        fill: #A7CD45 !important; }
-      .filter__section__card.selected svg use {
-        fill: #A7CD45 !important; }
-      .filter__section__card.selected #categorie {
-        stroke: #fff; }
+        .filter__section__card.selected .filter__section__card__title {
+          color: #fff;
+          opacity: 1; }
+        .filter__section__card.selected svg path {
+          fill: #fff !important; }
+        .filter__section__card.selected svg rect {
+          stroke: #fff !important;
+          fill: #A7CD45 !important; }
+        .filter__section__card.selected svg use {
+          fill: #A7CD45 !important; }
+        .filter__section__card.selected #categorie {
+          stroke: #fff; }
       .filter__section__card .icon-wrap {
         width: 72px;
         height: 72px;
@@ -7117,23 +7192,21 @@ legend {
       letter-spacing: 0;
       line-height: 28px; }
 
-#difficulties .selected .icon-wrap {
-  bottom: 20px !important; }
-  #difficulties .selected .icon-wrap svg {
-    position: relative;
-    top: 5px; }
-    #difficulties .selected .icon-wrap svg rect {
-      fill: #fff !important;
-      opacity: .5; }
-  #difficulties .selected .icon-wrap .difficulty-icon__level-1 #level_1 {
+#difficulties .selected .icon-wrap svg {
+  position: relative;
+  top: 5px; }
+  #difficulties .selected .icon-wrap svg rect {
     fill: #fff !important;
-    opacity: 1; }
-  #difficulties .selected .icon-wrap .difficulty-icon__level-2 #level_1, #difficulties .selected .icon-wrap .difficulty-icon__level-2 #level_2 {
-    fill: #fff !important;
-    opacity: 1; }
-  #difficulties .selected .icon-wrap .difficulty-icon__level-3 #level_1, #difficulties .selected .icon-wrap .difficulty-icon__level-3 #level_2, #difficulties .selected .icon-wrap .difficulty-icon__level-3 #level_2 {
-    fill: #fff !important;
-    opacity: 1; }
+    opacity: .5; }
+#difficulties .selected .icon-wrap .difficulty-icon__level-1 #level_1 {
+  fill: #fff !important;
+  opacity: 1; }
+#difficulties .selected .icon-wrap .difficulty-icon__level-2 #level_1, #difficulties .selected .icon-wrap .difficulty-icon__level-2 #level_2 {
+  fill: #fff !important;
+  opacity: 1; }
+#difficulties .selected .icon-wrap .difficulty-icon__level-3 #level_1, #difficulties .selected .icon-wrap .difficulty-icon__level-3 #level_2, #difficulties .selected .icon-wrap .difficulty-icon__level-3 #level_2 {
+  fill: #fff !important;
+  opacity: 1; }
 #difficulties .icon-wrap {
   bottom: 0; }
   #difficulties .icon-wrap svg {
@@ -7142,6 +7215,7 @@ legend {
 .teacher-carousel-wrap {
   position: absolute;
   top: 110px;
+  left: 273px;
   opacity: 0;
   transition: all 0.3s ease-in-out;
   z-index: 0; }
@@ -9204,11 +9278,11 @@ stretchRight
     transform: translate3d(3000px, 0, 0); }
   60% {
     opacity: 1;
-    -webkit-transform: translate3d(-25px, 0, 0);
-    transform: translate3d(-25px, 0, 0); }
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0); }
   75% {
-    -webkit-transform: translate3d(10px, 0, 0);
-    transform: translate3d(10px, 0, 0); }
+    -webkit-transform: translate3d(0px, 0, 0);
+    transform: translate3d(0px, 0, 0); }
   90% {
     -webkit-transform: translate3d(-5px, 0, 0);
     transform: translate3d(-5px, 0, 0); }
@@ -10836,14 +10910,15 @@ stretchRight
   animation-name: slideOutUp; }
 
 .card-carousel {
+  margin-left: -20px;
   position: relative; }
   .card-carousel.opacity {
     opacity: 0.5; }
 
 #slide-counter {
   position: absolute;
-  right: 130px;
-  bottom: -35px;
+  right: 140px;
+  bottom: -25px;
   font-family: "Bebas Regular";
   font-size: 18px;
   color: #212B32;
@@ -10919,6 +10994,8 @@ stretchRight
 .bxslider {
   margin: 0;
   padding: 0; }
+  .bxslider li {
+    width: 857px; }
 
 /* DIRECTION CONTROLS (NEXT / PREV) */
 .bx-wrapper .bx-prev {
@@ -10926,19 +11003,23 @@ stretchRight
   right: 340px;
   width: 120px;
   height: 120px;
-  bottom: -70px;
-  background: url(../images/bt-prev.png) no-repeat; }
+  bottom: -60px;
+  background: url(../images/bt-prev.png) no-repeat;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out; }
   .bx-wrapper .bx-prev.disabled {
-    display: none; }
+    opacity: 0; }
 .bx-wrapper .bx-next {
   position: absolute;
   right: 0;
-  width: 110px;
+  width: 120px;
   top: 100px;
   bottom: -70px;
-  background: url(../images/bt-next.png) no-repeat right bottom; }
+  background: url(../images/bt-next.png) no-repeat right 10px bottom 10px;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out; }
   .bx-wrapper .bx-next.disabled {
-    display: none; }
+    opacity: 0; }
 
 #filter .bx-next {
   background: url(../images/bt-next-green.png) no-repeat right bottom !important;
@@ -10951,9 +11032,11 @@ stretchRight
 .bx-wrapper .bx-controls-direction a {
   outline: 0;
   text-indent: -9999px;
-  z-index: 9999; }
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out; }
   .bx-wrapper .bx-controls-direction a a.disabled {
-    display: none; }
+    opacity: 0; }
 
 /* AUTO CONTROLS (START / STOP) */
 .bx-wrapper .bx-controls-auto {
