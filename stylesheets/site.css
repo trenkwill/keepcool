@@ -5943,6 +5943,9 @@ a:active {
 .text-green {
   color: #A7CD45 !important; }
 
+.text-white {
+  color: #fff !important; }
+
 .modal-backdrop {
   background: #212b32; }
 
