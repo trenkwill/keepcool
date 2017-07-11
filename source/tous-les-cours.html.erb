@@ -46,7 +46,7 @@
     <h2 class="filter__section__title">Sélectionner une catégorie de cours</h2>
     <div class="row no-gutter">
           <div class="col-md-3">
-            <div class="filter__section__card js-active-category selected">
+            <div class="filter__section__card js-reset-category selected">
               <div>
                 <div class="icon-wrap"><%= inline_svg("categorie") %></div>
                 <div class="filter__section__card__title">Tous les cours</div>
@@ -81,7 +81,7 @@
       <li>
         <div class="row no-gutter">
           <div class="col-md-3">
-            <div class="filter__section__card selected">
+            <div class="filter__section__card selected js-reset-teacher">
               <div>
                 <div class="icon-wrap">
                   <%= inline_svg("teacher") %>
@@ -126,7 +126,7 @@
     <h2 class="filter__section__title">Sélectionner un niveau</h2>
     <div class="row no-gutter">
         <div class="col-md-3">
-          <div class="filter__section__card js-active-level selected">
+          <div class="filter__section__card js-reset-difficulty selected">
             <div>
               <div class="icon-wrap">
                 <%= inline_svg("difficulty") %>
@@ -180,7 +180,7 @@
     <h2 class="filter__section__title">Sélectionner une durée</h2>
     <div class="row no-gutter">
         <div class="col-md-3">
-          <div class="filter__section__card js-active-time selected">
+          <div class="filter__section__card js-reset-time selected">
             <div>
               <div class="icon-wrap">
                 <%= inline_svg("time") %>
@@ -315,7 +315,7 @@
     $(".js-active-menu").removeClass("selected");
     $(".filter__description .text").hide();
     $(".filter__reset").removeClass("hidden");
-    $(this).toggleClass("selected");
+    $(this).addClass("selected");
     $myGroup.find('.collapse.in').collapse('hide');
   }
 
@@ -324,6 +324,7 @@
       var categoryName = $(this).find(".filter__section__card__title").text();
       $(".js-active-category").removeClass("selected");
       activateFilter();
+      $(".filter__item--categorie").addClass("selected");
       $(".filter__item--categorie").find(".filter__item__text").text(categoryName);
       $(".filter__item--categorie").find(".filter__item__icon").hide();
       $(".filter__item--categorie").find(".icon-wrap").hide();
@@ -331,11 +332,30 @@
       $(this).find(".icon-wrap").clone().appendTo(".filter__item--categorie");
   });
 
+  $(".js-reset-category").click(function(){
+      var categoryName = $(this).find(".filter__section__card__title").text();
+
+      $(".js-active-category").removeClass("selected");
+      $(".js-reset-category").removeClass("selected");
+      $(".filter__item--category").removeClass("selected");
+
+      $(".filter__item--category").find(".filter__item__text").text(categoryName);
+      $(".filter__item--category").find(".filter__item__icon").show();
+
+      $(".filter__item--category").find(".icon-wrap").hide();
+      activateFilter();
+
+  });
+
 
   // clicking on a filter card in LEVELS:
   $(".js-active-difficulty").click(function(){
       var difficultyName = $(this).find(".filter__section__card__title").text();
       $(".js-active-difficulty").removeClass("selected");
+      $(this).addClass("selected");
+      $(".js-reset-difficulty").removeClass("selected");
+
+      $(".filter__item--difficulty").addClass("selected");
       $(".filter__item--difficulty").find(".filter__item__text").text(difficultyName);
       $(".filter__item--difficulty").find(".filter__item__icon").hide();
       $(".filter__item--difficulty").find(".icon-wrap").hide();
@@ -343,11 +363,30 @@
       $(this).find(".icon-wrap").clone().appendTo(".filter__item--difficulty");
   });
 
+  $(".js-reset-difficulty").click(function(){
+      var difficultyName = $(this).find(".filter__section__card__title").text();
+
+      $(".js-active-difficulty").removeClass("selected");
+      $(".js-reset-difficulty").removeClass("selected");
+      $(".filter__item--difficulty").removeClass("selected");
+
+      $(".filter__item--difficulty").find(".filter__item__text").text(difficultyName);
+      $(".filter__item--difficulty").find(".filter__item__icon").show();
+
+      $(".filter__item--difficulty").find(".icon-wrap").hide();
+      activateFilter();
+
+  });
+
   // clicking on a filter card in TIME:
   $(".js-active-time").click(function(){
       var timeName = $(this).find(".filter__section__card__title").text();
 
       $(".js-active-time").removeClass("selected");
+      $(".js-reset-time").removeClass("selected");
+      $(".filter__item--time").removeClass("selected");
+
+      $(".filter__item--time").addClass("selected");
       $(".filter__item--time").find(".filter__item__text").text(timeName);
       $(".filter__item--time").find(".filter__item__icon").hide();
       $(".filter__item--time").find(".icon-wrap").hide();
@@ -355,14 +394,49 @@
       $(this).find(".icon-wrap").clone().appendTo(".filter__item--time");
   });
 
+  $(".js-reset-time").click(function(){
+      var timeName = $(this).find(".filter__section__card__title").text();
+
+      $(".js-active-time").removeClass("selected");
+      $(".js-reset-time").removeClass("selected");
+      $(".filter__item--time").removeClass("selected");
+
+      $(".filter__item--time").find(".filter__item__text").text(timeName);
+      $(".filter__item--time").find(".filter__item__icon").show();
+
+      $(".filter__item--time").find(".icon-wrap").hide();
+      activateFilter();
+
+  });
+
   // clicking on a filter card in TEACHERS:
   $(".js-active-teacher").click(function(){
       var teacherName = $(this).find(".filter__section__card__title").text();
       activateFilter();
+      $(".filter__item--teacher").addClass("selected");
+      $(this).addClass("selected");
+      $(".js-reset-teacher").removeClass("selected");
       $(".filter__item--teacher").find(".filter__item__text").text(teacherName);
       $(".teacher-carousel-wrap").removeClass("active");
       $(".filter__item--teacher img").show();
       $(".filter__item--teacher .filter__item__icon").hide();
+  });
+
+  $(".js-reset-teacher").click(function(){
+      var teacherName = $(this).find(".filter__section__card__title").text();
+
+      $(".js-active-teacher").removeClass("selected");
+      $(".js-reset-teacher").removeClass("selected");
+      $(".filter__item--teacher").removeClass("selected");
+
+      $(".teacher-carousel-wrap").removeClass("active");
+      $(".teacher-img").hide();
+      $(".filter__item--teacher").find(".filter__item__text").text(teacherName);
+      $(".filter__item--teacher").find(".filter__item__icon").show();
+
+      $(".filter__item--teacher").find(".icon-wrap").hide();
+      activateFilter();
+
   });
 
 
@@ -386,6 +460,7 @@
         slideWidth: slideWidth,
         slideMargin: 0,
         infiniteLoop: false,
+        speed: 250,
         hideControlOnEnd: true,
         touchEnabled: false,
         moveSlides: 1,

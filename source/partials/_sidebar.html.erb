@@ -1,7 +1,7 @@
 <div class="sidebar">
 
 
-<% unless current_page.url == "/cours.html" %>
+<% unless current_page.url == "/play/cuisses-fessiers.html" %>
   <%= image_tag "logo.png" %>
 
   <div class="clearfix mt-">
@@ -19,8 +19,8 @@
 
   <nav class="sidebar__nav">
     <ul class="list-unstyled">
-      <li class="<%= is_page_active('/') %><%= is_page_active('/thematique.html') %>">
-        <%= link_to "À la Une", "/index.html" %>
+      <li class="<%= is_page_active('/a-la-une.html') %><%= is_page_active('/thematique.html') %>">
+        <%= link_to "À la Une", "/a-la-une.html" %>
       </li>
       <li class="<%= is_page_active('/envie.html') %><%= is_page_active('/envie-de/amuser.html') %><%= is_page_active('/envie-de/defouler.html') %><%= is_page_active('/envie-de/entrainer.html') %><%= is_page_active('/envie-de/ressourcer.html') %><%= is_page_active('/envie-de/tonifier.html') %><%= is_page_active('/envie-de/aerer.html') %><%= is_page_active('/envie-de/sport-a-2.html') %><%= is_page_active('/envie-de/preparer-courses.html') %>">
         <%= link_to "Envie de", "/envie.html" %>
@@ -33,7 +33,7 @@
 
   <div class="sidebar__slots">
 
-    <% if current_page.url == "/" %>
+    <% if current_page.url == "/a-la-une.html" %>
 
       <%= partial "partials/slot", :locals => { :type => "fin-cours" } %>
       <%= partial "partials/slot", :locals => { :type => "suivant" } %>

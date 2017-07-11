@@ -11,6 +11,12 @@ h1, h2, h3 {
 p {
   font-size: 14px
 }
+
+a {
+  &:active {
+    background:rgba(0,0,0,.3);
+  }
+}
 .main-content {
   margin-left: $sidebar-width + $main-content-gutter;
   margin-right: $main-content-gutter;
@@ -66,6 +72,10 @@ p {
 
 .text-green {
   color: $green !important;
+}
+
+.text-white {
+  color: #fff !important;
 }
 
 // modal overide

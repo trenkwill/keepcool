@@ -8,7 +8,7 @@
   &__description {
     float: left;
     width:325px;
-    padding: 30px 0 30px 80px;
+    padding: 30px 0 30px 85px;
     font-family: $have-heart;
     font-size: 30px;
     color: #212B31;
@@ -67,7 +67,6 @@
         color: #000;
         height: 110px;
         width: 100%;
-        margin-bottom: 10px;
         display: block;
         background-repeat: no-repeat;
         background-position: center 60px;
@@ -77,9 +76,17 @@
         justify-content: space-around;
         align-items: center;
 
+        &:active {
+          #categorie {
+            rect {
+              stroke: #000;
+              fill: #B2B2B2;
+            }
+          }
+        }
         &__text {
           position: absolute;
-          top: 25px;
+          top: 20px;
           left: 0;
           right: 0;
         }
@@ -96,28 +103,34 @@
             transform-origin: top;
             transform: scaleY(1.5);
           }
-          // when the difficulty icon is selected in the .filter nav
-          &.collapsed {
-            rect {
-              fill: #fff !important;
-              opacity: .5;
-            }
+          rect {
+            transform: scaleX(1) !important;
           }
+          // when the difficulty icon is selected in the .filter nav
+
           .difficulty-icon__level-1{
             #level_1 {
-              fill: #fff !important;
+              fill: $green;
               opacity: 1;
+            }
+            #level_2, #level_3 {
+              fill:rgba(0, 0, 0, 0.2);
+              stroke: none;
             }
           }
           .difficulty-icon__level-2{
             #level_1, #level_2 {
-              fill: #fff !important;
+              fill: $green;
               opacity: 1;
+            }
+            #level_3 {
+              fill:rgba(0, 0, 0, 0.2);
+              stroke: none;
             }
           }
           .difficulty-icon__level-3{
-            #level_1, #level_2, #level_2 {
-              fill: #fff !important;
+            #level_1, #level_2, #level_3 {
+              fill: $green;
               opacity: 1;
             }
           }
@@ -128,31 +141,116 @@
             fill: #000;
           }
         }
+
+        &.selected {
+          border-bottom: solid 4px $green;
+          top: 4px;
+          position: relative;
+          .filter__item__text{
+            top: 15px;
+          }
+          &.filter__item--difficulty {
+            svg {
+              position: relative;
+              top: 5px;
+            }
+          }
+
+        }
         .teacher-img {
           border-radius: 50%;
-          border: solid 6px $green;
+          border: solid 5px $green;
           width: 50px;
           height: 50px;
           position: absolute;
-          top: 53px;
+          top: 43px;
           display: none;
         }
+
+
+        .icon-wrap {
+          width: 60px;
+          height: 60px;
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          bottom: 15px;
+
+          // base color icons in green
+          svg {
+            width: 60px;
+            path {
+              fill: $green;
+              stroke: $green;
+              stroke-width: 0.4px;
+            }
+            rect {
+              stroke: $green;
+              fill: #fff;
+            }
+            use {
+              fill: #fff !important;
+            }
+          }
+
+
+          // special treatment for categorie icon (this id is the svg)
+          #categorie {
+            rect {
+              stroke: $green;
+              fill: #fff;
+            }
+          }
+        }
+
+
         &[aria-expanded="true"] {
           background-color: $green;
           color: #fff;
+          top: 0;
           position: absolute;
-          // padding-top: 15px;
-          height: 130px;
-          .icon-wrap, .teacher-img {
-            display: none !important;
+          height: 120px;
+          &:active {
+            #categorie {
+              rect {
+                stroke: #fff;
+                fill: $green;
+              }
+            }
           }
-          .filter__item__icon {
-            display: block !important;
+          .difficulty-icon__level-1{
+            #level_1 {
+              fill: #fff;
+              opacity: 1;
+            }
+            #level_2, #level_3 {
+              fill:rgba(0, 0, 0, 0.2);
+              stroke: none;
+            }
           }
+          .difficulty-icon__level-2{
+            #level_1, #level_2 {
+              fill: #fff;
+              opacity: 1;
+            }
+            #level_3 {
+              fill:rgba(0, 0, 0, 0.2);
+              stroke: none;
+            }
+          }
+          .difficulty-icon__level-3{
+            #level_1, #level_2, #level_3 {
+              fill: #fff;
+              opacity: 1;
+            }
+          }
+
           &.filter__item--difficulty {
             svg {
               opacity:.5;
             }
+
           }
           &.filter__item--categorie {
             rect {
@@ -168,73 +266,41 @@
               fill: #fff;
             }
           }
-        }
+          .icon-wrap {
+            width: 60px;
+            height: 60px;
+            // border-radius: 50%;
+            position: absolute;
+            // top: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // position: relative;
+            // background:$green;
+            bottom: 15px;
+            // transform: scale(.7);
+            // transform-origin: bottom;
 
-
-        // CIRCLE IN NAV
-        .icon-wrap {
-          width: 72px;
-          height: 72px;
-          border-radius: 50%;
-          position: absolute;
-          top: 13px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-          background:$green;
-          bottom: 10px;
-          transform: scale(.7);
-          transform-origin: bottom;
-
-          // base color icons in green
-          svg {
-            transform: scale(1.5);
-            path {
-              fill: #fff !important;
-            }
-            rect {
-              stroke: #fff !important;
-              fill: $green !important;
-            }
-            use {
-              fill: $green !important;
-            }
-          }
-
-          .difficulty-icon {
-            &.difficulty-icon__level-1 {
-              #level_2, #level_3 {
-                fill: rgba(255, 255, 255, 0.5) !important;
-                stroke: none !important;
-              }
-            }
-            &.difficulty-icon__level-2 {
-              #level_3 {
-                fill: rgba(255, 255, 255, 0.5) !important;
-                stroke: none !important;
-              }
-            }
+            // base color icons in green
             svg {
-              transform: scaleY(2) scaleX(1.3);
-              margin-top: -8px;
+              width: 60px;
+              path {
+                fill: #fff;
+                stroke: white;
+                stroke-width: 0.4px;
+              }
               rect {
-                transform-origin: left;
+                stroke: #fff;
+                fill: $green;
+              }
+              use {
+                fill: $green;
               }
             }
           }
-
-          // special treatment for categorie icon (this id is the svg)
-          #categorie {
-            .icon-wrap {
-
-            }
-            rect {
-              stroke: $green;
-              fill: #fff;
-            }
-          }
         }
+
+
 
         &--code {
 
@@ -256,7 +322,7 @@
   }
 
   &__section {
-    padding: 40px 50px;
+    padding: 40px 48px;
     &__card {
       background: #fff;
       text-align: center;
@@ -267,12 +333,37 @@
       align-items:center;
       border-right: solid 1px #CDD4D7;
       border-bottom: solid 1px #CDD4D7;
-      &.selected {
-        // green circle around selected icon
-        .icon-wrap {
-          background:$green;
+      transition: background 0.3 ease-in-out;
+      background:rgba(255, 255, 255, 1);
+      &:active {
+        background:rgba(0,0,0,.3);
+        .filter__section__card__title {
+          color: #fff;
+          opacity: 1;
         }
         svg {
+
+          path {
+            fill: #fff !important;
+          }
+          rect {
+            stroke: #fff !important;
+            fill: $green !important;
+          }
+          use {
+            fill: $green !important;
+          }
+        }
+      }
+      &.selected {
+        // green circle around selected icon
+        background:$green;
+        .filter__section__card__title {
+          color: #fff;
+          opacity: 1;
+        }
+        svg {
+
           path {
             fill: #fff !important;
           }
@@ -299,9 +390,12 @@
         justify-content: center;
         position: relative;
         bottom: 20px;
-        // base color icons in green
-        svg path, svg rect {
-          fill: $green;
+        svg {
+          width: 80px;
+          // base color icons in green
+          path, rect {
+            fill: $green;
+          }
         }
         // special treatment for categorie icon (this id is the svg)
         #categorie {
@@ -349,7 +443,7 @@
 #difficulties {
     .selected {
       .icon-wrap {
-        bottom: 20px !important;
+        // bottom: 20px !important;
         svg {
           position: relative;
           top: 5px;
@@ -391,6 +485,7 @@
 .teacher-carousel-wrap {
   position: absolute;
   top: 110px;
+  left: 273px;
   opacity: 0;
   transition: all 0.3s ease-in-out;
   z-index: 0;

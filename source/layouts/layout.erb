@@ -29,7 +29,7 @@
 
   <body class="<%= page_classes %>">
 
-    <% unless current_page.url == "/loading.html" %>
+    <% unless current_page.url == "/loading.html" || current_page.url == "/" || current_page.url == "/play/success.html" %>
     <%= partial "partials/sidebar" %>
     <% end %>
     <div class="main-content">

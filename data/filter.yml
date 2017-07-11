@@ -1,49 +1,49 @@
 categories:
   -
     title: Abdo
-    image: "abdos"
+    image: "CATEGORIESBORNE_-01"
   -
     title: Actions
-    image: "actions"
+    image: "CATEGORIESBORNE_-02"
   -
     title: Ballon
-    image: "ballon"
+    image: "CATEGORIESBORNE_-03"
   -
     title: Bar au sol
-    image: "danse"
+    image: "CATEGORIESBORNE_-04"
   -
     title: Cuisses fessiers
-    image: "strech"
+    image: "CATEGORIESBORNE_-05"
   -
     title: Danse
-    image: "danse"
+    image: "CATEGORIESBORNE_-06"
   -
     title: Etirement
-    image: "strech"
+    image: "CATEGORIESBORNE_-07"
   -
     title: Gymstick
-    image: "gymstick"
+    image: "CATEGORIESBORNE_-08"
   -
     title: Hiit
-    image: "hiit"
+    image: "CATEGORIESBORNE_-09"
   -
     title: Pilates
-    image: "actions"
+    image: "CATEGORIESBORNE_-10"
   -
     title: Piloxing
-    image: "ballon"
+    image: "CATEGORIESBORNE_-11"
   -
     title: Postnatal
-    image: "danse"
+    image: "CATEGORIESBORNE_-12"
   -
     title: Yoga
-    image: "yoga"
+    image: "CATEGORIESBORNE_-13"
   -
     title: Step
-    image: "danse"
+    image: "CATEGORIESBORNE_-14"
   -
     title: Gym
-    image: "strech"
+    image: "CATEGORIESBORNE_-15"
 
 teachers:
   -

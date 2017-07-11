@@ -1,6 +1,7 @@
 .card-animation {
   @extend .animated;
   @extend .bounceInRight;
+  animation-duration: 0.5s !important;
   &:nth-child(1) {
     animation-delay:0s;
   }
@@ -11,7 +12,22 @@
     animation-delay:0.2s;
   }
   &:nth-child(4) {
-    animation-delay:0.3s;
+    animation-delay:0s;
+  }
+  &:nth-child(5) {
+    animation-delay:0.1s;
+  }
+  &:nth-child(6) {
+    animation-delay:0.2s;
+  }
+  &:nth-child(7) {
+    animation-delay:0s;
+  }
+  &:nth-child(8) {
+    animation-delay:0.1s;
+  }
+  &:nth-child(9) {
+    animation-delay:0.2s;
   }
 }
 
@@ -33,6 +49,7 @@
     bottom:0;
     left: 0;
     right: 0;
+    z-index: 9999999999;
   }
 	&__title {
     margin-bottom: 7px;
@@ -61,7 +78,7 @@
   }
   &__time {
     position: absolute;
-    top: -40px;
+    top: -25px;
     right: 30px;
     background: #fff;
     border: solid 3px rgba(224, 0, 105, .15);
@@ -86,6 +103,6 @@
   &__difficulty {
     position: absolute;
     right: 45px;
-    top: 25px;
+    top: 35px;
   }
 }

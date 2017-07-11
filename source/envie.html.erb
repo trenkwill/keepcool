@@ -17,7 +17,9 @@ title: Keep Cool
 
       <div class="col-md-3">
         <div class="category-card" style="background-image: linear-gradient(rgba(33,43,50,0.50) 0%, rgba(33,43,50,0.50) 100%), url('<%= asset_url category.image %>');">
-          <% link_to "envie-de/#{envie}.html", :class => 'category__link' do %>
+          <% link_to "envie-de/#{envie}.html", :class => 'category-card__link' do %>
+          &nbsp;
+          <% end %>
             <img src="" alt="">
             <div class="category-card__icon">
               <%= image_tag category.icon %>
@@ -25,7 +27,7 @@ title: Keep Cool
             <div class="category-card__content">
               <div class="category-card__title"><%= category.title %></div>
             </div>
-          <% end %>
+
         </div>
       </div>
 
