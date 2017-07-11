@@ -6877,7 +6877,7 @@ legend {
   position: relative;
   margin-bottom: 30px;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 4px; }
+  border-radius: 6px; }
   .category-card__link {
     position: absolute;
     top: 0;
@@ -7236,6 +7236,9 @@ legend {
 
 .time-line {
   fill: black !important; }
+
+#categories {
+  margin-bottom: -40px; }
 
 #categories, #difficulties, #time {
   position: relative;
