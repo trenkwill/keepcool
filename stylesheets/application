@@ -8949,7 +8949,7 @@ stretchRight
 .bx-wrapper .bx-next {
   position: absolute;
   right: 0;
-  width: 120px;
+  width: 130px;
   top: 100px;
   bottom: -70px;
   background: url(../images/bt-next.png) no-repeat right 10px bottom 10px;
@@ -10024,7 +10024,7 @@ legend {
   min-height: 255px;
   background-size: 100%;
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
   border-radius: 6px; }
   .category-card__link {
