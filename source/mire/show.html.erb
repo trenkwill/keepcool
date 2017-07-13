@@ -1,17 +1,17 @@
-<div class="play">
+<div class="mire">
 
-  <div class="play__top">
+  <div class="mire__top">
     <div>
-      <div class="play__number">2034</div>
+      <div class="mire__number">2034</div>
 
-      <h3 class="play__title"><%= play.title %></h3>
+      <h3 class="mire__title"><%= mire.title %></h3>
 
-      <p class="play__description"><%= play.description %></p>
+      <p class="mire__description"><%= mire.description %></p>
     </div>
 
     <div class="ml+ mt">
-      <ul class="play__material">
-        <li class="play__material__difficulty">
+      <ul class="mire__material">
+        <li class="mire__material__difficulty">
 
           <span class="difficulty-icon difficulty-icon--white difficulty-icon__level-1">
             <%= inline_svg("difficulty") %>
@@ -28,23 +28,23 @@
     </div>
   </div>
 
-  <%= image_tag "/img-content/play-1.jpg", :class =>"play__media js-adapt-size" %>
+  <%= image_tag "/img-content/mire-1.jpg", :class =>"mire__media js-adapt-size" %>
 
-  <div class="play__content">
+  <div class="mire__content">
 
-    <% if current_page.url == "/play/cuisses-fessiers.html"%>
-    <div class="play__countdown js-countdown">
+    <% if current_page.url == "/mire/cuisses-fessiers.html"%>
+    <div class="mire__countdown js-countdown">
       <div class="inner">
         <div>
-          Votre play <br> démarre dans
+          Votre mire <br> démarre dans
           <div class="time">00:07</div>
         </div>
       </div>
     </div>
     <% end %>
 
-    <% if current_page.url == "/play/rpm.html"%>
-    <div class="play__countdown-2 js-countdown-play">
+    <% if current_page.url == "/mire/rpm.html"%>
+    <div class="mire__countdown-2 js-countdown-play">
       <div class="inner">
         <div>
           <div class="time">03:35</div>
@@ -55,7 +55,7 @@
     </div>
     <% end %>
 
-    <div class="play__voice js-voice">
+    <div class="mire__voice js-voice">
       <div class="inner">
         <div>
           <div class="text">Voix</div>
@@ -63,13 +63,13 @@
         </div>
       </div>
       <%= image_tag "jauge.png", :class =>"jauge" %>
-      <div class="play__sound-btns">
-        <a href="#" class="play__sound-btn">-</a>
-        <a href="#" class="play__sound-btn">+</a>
+      <div class="mire__sound-btns">
+        <a href="#" class="mire__sound-btn">-</a>
+        <a href="#" class="mire__sound-btn">+</a>
       </div>
     </div>
 
-    <div class="play__voice js-music">
+    <div class="mire__voice js-music">
       <div class="inner">
         <div>
           <div class="text">Musique</div>
@@ -77,14 +77,14 @@
         </div>
       </div>
       <%= image_tag "jauge.png", :class =>"jauge" %>
-      <div class="play__sound-btns">
-        <a href="#" class="play__sound-btn">-</a>
-        <a href="#" class="play__sound-btn">+</a>
+      <div class="mire__sound-btns">
+        <a href="#" class="mire__sound-btn">-</a>
+        <a href="#" class="mire__sound-btn">+</a>
       </div>
     </div>
 
 
-    <div class="play__subtitle">
+    <div class="mire__subtitle">
           <div class="text">Sous-titre</div>
           <%= inline_svg("subtitle") %>
 

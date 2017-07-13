@@ -445,6 +445,10 @@
   var slideWidth = $(window).width() - 460,
       totalLessonCount = $(".card-carousel .card").length;
 
+  // make the filter section the same size
+  $(".filter__section").width(slideWidth - 20);
+
+
   // add text to the slide counter
   $('#slide-counter').prepend('Cours <span class="from-current-index"></span> à <span class="current-index"></span>/<span class="total-lesson-count">'+totalLessonCount+'</span>');
 

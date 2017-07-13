@@ -508,10 +508,13 @@
   fill: black !important;
 }
 
-// make each panel above the hidden .teacher-carousel-wrap
+
 #categories, #difficulties, #time {
+  // 1. make each panel above the hidden .teacher-carousel-wrap
   position: relative;
   z-index: 2;
+  // 2. adjust margin bottom
+  margin-bottom: -40px;
 }
 
 // set the sane height of the collapsable container (#teachers) and teachers carousel (.teacher-carousel-wrap)

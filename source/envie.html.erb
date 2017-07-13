@@ -20,9 +20,8 @@ title: Keep Cool
           <% link_to "envie-de/#{envie}.html", :class => 'category-card__link' do %>
           &nbsp;
           <% end %>
-            <img src="" alt="">
             <div class="category-card__icon">
-              <%= image_tag category.icon %>
+              <%= inline_svg(category.icon) %>
             </div>
             <div class="category-card__content">
               <div class="category-card__title"><%= category.title %></div>

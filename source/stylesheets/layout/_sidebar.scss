@@ -76,6 +76,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+    }
     &__icon {
       display: block;
       margin-bottom: 5px;

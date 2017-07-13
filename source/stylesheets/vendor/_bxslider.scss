@@ -8,7 +8,7 @@
 #slide-counter {
   position: absolute;
   right: 140px;
-  bottom: -25px;
+  bottom: -21px;
   font-family: $bebas-regular;
   font-size: 18px;
   color: #212B32;
@@ -144,7 +144,7 @@
           bottom: -60px;
           background: url(../images/bt-prev.png) no-repeat;
           opacity:1;
-          transition: opacity 0.5s ease-in-out;
+          transition: opacity 0.2s ease-in-out;
           &.disabled {
             opacity:0;
           }
@@ -157,7 +157,7 @@
           bottom: -70px;
           background: url(../images/bt-next.png) no-repeat right 10px bottom 10px;
           opacity:1;
-          transition: opacity 0.5s ease-in-out;
+          transition: opacity 0.2s ease-in-out;
           &.disabled {
             opacity:0;
           }
@@ -183,7 +183,7 @@
         text-indent: -9999px;
         z-index: 9999;
         opacity:1;
-        transition: opacity 0.5s ease-in-out;
+        transition: opacity 0.2s ease-in-out;
         a.disabled {
             opacity:0;
         }

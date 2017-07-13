@@ -32,14 +32,16 @@
           </div>
           <div class="envies__cards">
               <div class="row">
-              <% data.lessons.envies.each do |lesson| %>
+              <% data.lessons.envies[0,3].each do |lesson| %>
                     <div class="col-md-6">
-                      <%= partial "partials/card", :locals => { :img => lesson.image, :slug => lesson.slug, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+                      <% @slug = lesson.slug %>
+                      <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
                     </div>
                 <% end %>
-                <% data.lessons.top.each do |lesson| %>
+                <% data.lessons.top[0,3].each do |lesson| %>
                     <div class="col-md-6">
-                      <%= partial "partials/card", :locals => { :img => lesson.image, :slug => lesson.slug, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+                      <% @slug = lesson.slug %>
+                      <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
                     </div>
                 <% end %>
                 </div>
@@ -48,19 +50,22 @@
     </li>
     <li class="slide">
       <div class="row mb+">
-        <% data.lessons.envies.each do |lesson| %>
+        <% data.lessons.envies[0,3].each do |lesson| %>
             <div class="col-md-4">
-              <%= partial "partials/card", :locals => { :img => lesson.image, :slug => lesson.slug, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+              <% @slug = lesson.slug %>
+              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
             </div>
         <% end %>
         <% data.lessons.top.each do |lesson| %>
             <div class="col-md-4">
-              <%= partial "partials/card", :locals => { :img => lesson.image, :slug => lesson.slug, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+              <% @slug = lesson.slug %>
+              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
             </div>
         <% end %>
-        <% data.lessons.envies.each do |lesson| %>
+        <% data.lessons.envies[0,3].each do |lesson| %>
             <div class="col-md-4">
-              <%= partial "partials/card", :locals => { :img => lesson.image, :slug => lesson.slug, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+              <% @slug = lesson.slug %>
+              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
             </div>
         <% end %>
 
@@ -68,19 +73,22 @@
     </li>
     <li class="slide">
       <div class="row mb+">
-        <% data.lessons.envies.each do |lesson| %>
+        <% data.lessons.envies[0,3].each do |lesson| %>
             <div class="col-md-4">
-              <%= partial "partials/card", :locals => { :img => lesson.image, :slug => lesson.slug, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+              <% @slug = lesson.slug %>
+              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
             </div>
         <% end %>
         <% data.lessons.top.each do |lesson| %>
             <div class="col-md-4">
-              <%= partial "partials/card", :locals => { :img => lesson.image, :slug => lesson.slug, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+              <% @slug = lesson.slug %>
+              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
             </div>
         <% end %>
-        <% data.lessons.envies.each do |lesson| %>
+        <% data.lessons.envies[0,3].each do |lesson| %>
             <div class="col-md-4">
-              <%= partial "partials/card", :locals => { :img => lesson.image, :slug => lesson.slug, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
+              <% @slug = lesson.slug %>
+              <%= partial "partials/card", :locals => { :img => lesson.image, :time => lesson.time, :title => lesson.title, :description => lesson.description, :difficulty => lesson.difficulty } %>
             </div>
         <% end %>
 

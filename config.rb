@@ -24,8 +24,8 @@ data.lessons.envies.each do |lesson|
 end
 
 
-data.lessons.envies.each do |play|
-  proxy "/play/#{play.slug}.html", "/play/show.html", :locals => { :play => play }, :ignore => true
+data.lessons.envies.each do |mire|
+  proxy "/mire/#{mire.slug}.html", "/mire/show.html", :locals => { :mire => mire }, :ignore => true
 end
 
 
