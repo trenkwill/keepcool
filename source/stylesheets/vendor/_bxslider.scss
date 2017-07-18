@@ -152,7 +152,7 @@
       .bx-next {
           position: absolute;
           right: 0;
-          width: 120px;
+          width: 130px;
           top: 100px;
           bottom: -70px;
           background: url(../images/bt-next.png) no-repeat right 10px bottom 10px;
@@ -171,6 +171,7 @@
   #filter .bx-prev {
     background: url(../images/bt-prev-green.png) no-repeat right bottom !important;
     right: 160px;
+    bottom: -70px;
   }
 
 
