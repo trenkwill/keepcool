@@ -8964,7 +8964,8 @@ stretchRight
 
 #filter .bx-prev {
   background: url(../images/bt-prev-green.png) no-repeat right bottom !important;
-  right: 160px; }
+  right: 160px;
+  bottom: -70px; }
 
 .bx-wrapper .bx-controls-direction a {
   outline: 0;
@@ -10379,8 +10380,7 @@ legend {
 
 .teacher-carousel .row.no-gutter {
   border-top: solid 1px #CFD4D7;
-  border-left: solid 1px #CFD4D7;
-  border-bottom: solid 1px #CFD4D7; }
+  border-left: solid 1px #CFD4D7; }
 
 .teacher-carousel li[aria-hidden="true"] {
   opacity: .5; }
