@@ -1,0 +1,48 @@
+<div class="mire">
+
+  <%= image_tag "/img-content/play-1.jpg", :class =>"mire__media js-adapt-size" %>
+
+  <div class="mire__content mire__content--no-sidebar">
+    <div class="mire__rankings">
+      <div class="mire__rankings__title">Bravo, challenge réussi !</div>
+      <div class="mire__rankings__title-2">Avez-vous aimé ce cours ?</div>
+      <ul class="list-inline">
+          <li class="mire__rankings__item js-select-ranking pas-cool"><%= inline_svg("pas-cool") %> <div>Pas cool</div></li>
+          <li class="mire__rankings__item js-select-ranking bof"><%= inline_svg("bof") %> <div>Bof</div></li>
+          <li class="mire__rankings__item js-select-ranking select cool"><%= inline_svg("cool") %> <div>Cool</div></li>
+          <li class="mire__rankings__item js-select-ranking trop-cool"><%= inline_svg("trop-cool") %> <div>Trop cool</div></li>
+      </ul>
+    </div>
+  </div>
+  <div class="mire__ignore js-countdown-3">
+    <div class="inner">
+      <div>
+        <div class="text">Ignorer</div>
+      </div>
+    </div>
+    <%= image_tag "jauge-2.png", :class =>"jauge" %>
+  </div>
+
+</div>
+
+
+<script>
+
+  // library used : https://github.com/kottenator/jquery-circle-progress
+  $(".js-select-ranking").click(function(){
+      $(".js-select-ranking").addClass("unselected");
+      $(this).addClass("selected");
+  });
+  $('.js-countdown-3').circleProgress({
+    startAngle: -Math.PI / 4 * 2,
+    value: 0.25,
+    size: 240,
+    thickness: 12,
+    lineCap: 'round',
+    emptyFill: 'transparent',
+    fill: {
+      gradient: ["#E3E4E5", "#fff"]
+    }
+  });
+
+</script>
