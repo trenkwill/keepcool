@@ -38,6 +38,22 @@
       <%= partial "partials/slot", :locals => { :type => "fin-cours" } %>
       <%= partial "partials/slot", :locals => { :type => "suivant" } %>
 
+    <% elsif current_page.url == "/fiche/cuisses-fessiers.html" %>
+
+      <%= partial "partials/slot", :locals => { :type => "encours" } %>
+      <%= partial "partials/slot", :locals => { :type => "suivant-disponible" } %>
+
+    <% elsif current_page.url == "/fiche/rpm.html" %>
+
+      <div class="m+ p+ text-center"><%= inline_svg "whistle" %></div>
+      <%= partial "partials/slot", :locals => { :type => "suivant-disponible" } %>
+
+      <% elsif current_page.url == "/fiche/yoga.html" %>
+
+      <%= partial "partials/slot", :locals => { :type => "encours" } %>
+      <%= partial "partials/slot", :locals => { :type => "suivant" } %>
+
+
     <% else %>
 
       <%= partial "partials/slot", :locals => { :type => "encours" } %>
@@ -46,6 +62,8 @@
     <% end %>
 
   </div>
+
+
 <% else %>
 
   <% link_to "/tous-les-cours.html", :class => 'sidebar__back' do %>

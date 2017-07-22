@@ -52,19 +52,20 @@
         <div class="col-md-5">
 
               <% if current_page.url == "/fiche/cuisses-fessiers.html"%>
-              <a href="#" class="btn btn-primary btn-block mb+ mt+"><%= image_tag "play.svg", :class => "btn__icon" %><div>Remplacer <br>maintenant</div></a>
+              <a href="#" class="btn btn-primary btn-block mb+ mt+ js-open-panel js-replace-lesson"><%= image_tag "play.svg", :class => "btn__icon" %><div>Remplacer <br>maintenant</div></a>
 
-              <a href="#" class="btn btn-default btn-block mb+ js-open-panel"><%= image_tag "schedule.svg", :class => "btn__icon" %><div>Réserver ce cours <br> à 17h45</div></a>
+              <a href="#" class="btn btn-default btn-block mb+ js-open-panel js-book-lesson"><%= image_tag "schedule.svg", :class => "btn__icon" %><div>Réserver ce cours <br> à 17h45</div></a>
               <% end %>
 
               <% if current_page.url == "/fiche/pilates.html"%>
-                <% link_to "/fiche/yoga.html", :class => 'btn btn-default-2 btn-block mb+  mt+' do %>
+                <p class="fiche__text2">Studio occupé</p>
+                <% link_to "/fiche/yoga.html", :class => 'btn btn-default-2 btn-block mb+  mt' do %>
                   <div>Voir le cours suivant</div>
                 <% end %>
               <% end %>
 
               <% if current_page.url == "/fiche/rpm.html"%>
-              <a href="#" class="btn btn-primary btn-block mb+  mt+"><%= image_tag "play.svg", :class => "btn__icon" %><div>Lancer le cours</div></a>
+              <a href="#" class="btn btn-primary btn-block mb+ mt+ js-open-panel js-play-lesson"><%= image_tag "play.svg", :class => "btn__icon" %><div>Lancer le cours</div></a>
               <% end %>
 
               <% if current_page.url == "/fiche/yoga.html"%>
@@ -88,11 +89,13 @@
                       <span class="user-icon user-icon--dash"><%= inline_svg("user") %></span>
                     </li>
                   </ul>
-                  <div class="bubble">
+                  <a href="#" class="bubble">
                     <div>Participer <br>à ce cours</div>
-                  </div>
+                  </a>
               </div>
               <% end %>
+
+
         </div>
 
 
