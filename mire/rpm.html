@@ -166,7 +166,7 @@
         <div>
           <div class="time">03:35</div>
           <div class="time-2">Sur 14 min</div>
-          <a href="#" class="js-open-panel"><?xml version="1.0" encoding="UTF-8"?>
+          <?xml version="1.0" encoding="UTF-8"?>
 <svg width="29px" height="36px" viewBox="0 0 29 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
     <title>pause</title>
@@ -183,7 +183,8 @@
             </g>
         </g>
     </g>
-</svg></a>
+</svg>
+          <a href="#" class="mire__countdown__pause js-open-panel"></a>
         </div>
       </div>
     </div>
@@ -310,17 +311,13 @@
 
 
 
-
-
-
     <div class="right-panel__content">
       <div class="row">
         <div class="col-md-6 pr">
-
             <div class="card" style="background-image: linear-gradient(0deg, rgba(0,0,0,0.20), rgba(0,0,0,0.20)), url('../img-content/gym-0.jpg'); ">
 
 
-  <a href="/fiche/.html" class="card__link"></a>
+  <a href="/fiche/cuisses-fessiers.html" class="card__link"></a>
 
   <div class="card__number">2034</div>
 
@@ -344,6 +341,7 @@
   </div>
 
 </div>
+
 
 
           </div>
@@ -404,7 +402,7 @@
     <div class="right-panel__buttons">
       <div class="row">
         <div class="col-md-6 pr">
-          <a href="#" class="btn btn-primary btn--text-center js-confirm-lesson">Confirmer</a>
+          <a href="#" class="btn btn-primary btn--text-center js-btn-confirm">Confirmer</a>
         </div>
         <div class="col-md-6">
           <a href="#" class="btn btn-white btn--text-center js-close-panel">Annuler</a>
@@ -433,10 +431,23 @@
     $(".right-panel-bg").show().removeClass("fadeOut").addClass("fadeIn");
   });
 
-  $(".js-confirm-lesson").click(function(){
+  $(".js-replace-lesson").click(function(){
+    $(".right-panel__title").text("Vérifier que la salle est vide avant de lancer ce cours");
+    $(".right-panel__text .right-panel__description").text("Celui-ci se lancera dans 30 secondes");
+    $(".js-btn-confirm").addClass("btn-primary").removeClass("btn-default").text("confirmer");
+  });
+
+  $(".js-book-lesson").click(function(){
     $(".right-panel__title").text("Confirmer la réservation de ce cours à 17h45");
     $(".right-panel__text .right-panel__description").text("Celui-ci se lancera 30 secondes après la fin du cours actuel (à 17h45)");
-    $(this).addClass("btn-default").removeClass("btn-primary").text("confirmer");
+    $(".js-btn-confirm").addClass("btn-default").removeClass("btn-primary").text("confirmer");
+  });
+
+  $(".js-play-lesson").click(function(){
+    $(".right-panel__title").text("Ce studio n’est disponible que jusqu’à 23H00, votre cours sera arrêté avant la fin");
+    $(".right-panel__text .right-panel__description").text("Nous vous conseillons de choisir un cours plus adapté au temps disponible dans ce studio");
+    $(".right-panel__buttons .btn-primary").html("Lancer tout de <br> même ce cours");
+    $(".right-panel__buttons .btn-white").text("Choisir un autre cours");
   });
 
 
@@ -454,11 +465,7 @@
 
 
   if (window.location.search.indexOf('available=no') > -1) {
-      $(".right-panel__title").text("Ce studio n’est disponible que jusqu’à 23H00, votre cours sera arrêté avant la fin");
-      $(".right-panel__text .right-panel__description").text("Nous vous conseillons de choisir un cours plus adapté au temps disponible dans ce studio");
-      $(".right-panel__text .right-panel__description").text("Nous vous conseillons de choisir un cours plus adapté au temps disponible dans ce studio");
-      $(".right-panel__buttons .btn-primary").html("Lancer tout de <br> même ce cours");
-      $(".right-panel__buttons .btn-white").text("Choisir un autre cours");
+
   }
 </script>
 
