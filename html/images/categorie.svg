@@ -1,0 +1,21 @@
+<svg width="32px" height="26px" viewBox="0 0 32 26">
+    <defs>
+        <rect id="path-1" x="5" y="5" width="18" height="12" rx="1"></rect>
+        <rect id="path-2" x="0" y="10" width="18" height="12" rx="1"></rect>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icone-filtre-catégorie" transform="translate(2.000000, 2.000000)">
+            <g id="categorie">
+                <rect id="Rectangle-3" stroke="#212B32" stroke-width="2" x="9" y="-1" width="20" height="14" rx="1"></rect>
+                <g id="Rectangle-3">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <rect stroke="#212B32" stroke-width="2" x="4" y="4" width="20" height="14" rx="1"></rect>
+                </g>
+                <g id="Rectangle-3">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    <rect stroke="#212B32" stroke-width="2" x="-1" y="9" width="20" height="14" rx="1"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
