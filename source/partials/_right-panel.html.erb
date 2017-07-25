@@ -38,8 +38,9 @@
     <div class="right-panel__content">
       <div class="row">
         <div class="col-md-6 pr">
-            <% @slug = lesson.slug %>
+            <% @slug = data.lessons.envies[0].slug %>
             <%= partial "partials/card", :locals => { :img => data.lessons.envies[0].image, :time => data.lessons.envies[0].time, :title => data.lessons.envies[0].title, :description => data.lessons.envies[0].description, :difficulty => data.lessons.envies[0].difficulty } %>
+
 
           </div>
 
