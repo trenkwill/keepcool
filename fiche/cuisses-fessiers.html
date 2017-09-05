@@ -25,6 +25,11 @@
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.5.3/css/bootstrap-slider.min.css">
+    <script>
+      var windowHeight = $(window).height();
+      var windowWidth = $(window).width();
+      $("body").css({"width": windowWidth, "height": windowHeight, "overflow": "hidden"});
+    </script>
   </head>
 
   <body class="fiche fiche_cuisses-fessiers">
@@ -260,7 +265,23 @@
 
         <div class="col-md-5">
 
-              <a href="#" class="btn btn-primary btn-block mb+ mt+ js-open-panel js-replace-lesson"><img src="../images/play.svg" class="btn__icon" alt="Play" /><div>Remplacer <br>maintenant</div></a>
+
+              <div class="fiche__right">
+                <!-- <div class="fiche__time">
+                  <div class="js-countdown-1"
+                  data-size="50"
+                  >
+                    <div class="inner">
+                      <div>
+                        <div class="time">13</div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+                <p class="fiche__text2">Studio occupé</p>
+              </div>
+
+              <a href="#" class="btn btn-primary btn-block mb+ mt+ js-open-panel js-replace-lesson"><img src="../images/play.svg" class="btn__icon" alt="Play" /><div>Recommencer <br>maintenant</div></a>
 
               <a href="#" class="btn btn-default btn-block mb+ js-open-panel js-book-lesson"><img src="../images/schedule.svg" class="btn__icon" alt="Schedule" /><div>Réserver ce cours <br> à 17h45</div></a>
 
@@ -541,6 +562,7 @@
 
 
     <script>
+
 
       $('.js-countdown-1').circleProgress({
         startAngle: -Math.PI / 4 * 2,

@@ -25,6 +25,11 @@
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.5.3/css/bootstrap-slider.min.css">
+    <script>
+      var windowHeight = $(window).height();
+      var windowWidth = $(window).width();
+      $("body").css({"width": windowWidth, "height": windowHeight, "overflow": "hidden"});
+    </script>
   </head>
 
   <body class="tous-les-cours">
@@ -877,7 +882,7 @@
     </g>
 </svg>
 </div>
-                <div class="filter__section__card__title">Moins de 10 minutes</div>
+                <div class="filter__section__card__title">- de 10 minutes</div>
               </div>
             </div>
           </div>
@@ -934,7 +939,7 @@
     </g>
 </svg>
 </div>
-                <div class="filter__section__card__title">Plus de 20 min</div>
+                <div class="filter__section__card__title">+ de 20 min</div>
               </div>
             </div>
           </div>
@@ -2112,6 +2117,7 @@
 
 
     <script>
+
 
       $('.js-countdown-1').circleProgress({
         startAngle: -Math.PI / 4 * 2,

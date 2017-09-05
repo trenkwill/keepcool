@@ -25,6 +25,11 @@
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.5.3/css/bootstrap-slider.min.css">
+    <script>
+      var windowHeight = $(window).height();
+      var windowWidth = $(window).width();
+      $("body").css({"width": windowWidth, "height": windowHeight, "overflow": "hidden"});
+    </script>
   </head>
 
   <body class="fiche fiche_pilates">
@@ -301,9 +306,11 @@
         <div class="col-md-5">
 
 
+              <div class="fiche__right">
                 <p class="fiche__text2">Studio occupé</p>
-<a href="yoga.html" class="btn btn-default-2 btn-block mb+  mt">                  <div>Voir le cours suivant</div>
-</a>
+<a href="yoga.html" class="btn btn-default-2 btn-block mb+  mt+">                  <div>Voir le cours suivant</div>
+</a>              </div>
+
 
 
 
@@ -580,6 +587,7 @@
 
 
     <script>
+
 
       $('.js-countdown-1').circleProgress({
         startAngle: -Math.PI / 4 * 2,

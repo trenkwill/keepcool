@@ -9029,7 +9029,8 @@ stretchRight
 
 body {
   color: #506270;
-  background: #E2E2E2; }
+  background: #E2E2E2;
+  overflow: hidden; }
 
 h1, h2, h3 {
   font-family: "Gotham Bold", "Helvetica", "sans-serif";
@@ -9180,7 +9181,7 @@ a:active {
     flex-direction: column;
     justify-content: center;
     align-items: center; }
-    .sidebar__back:hover {
+    .sidebar__back:hover, .sidebar__back:active, .sidebar__back:focus {
       color: #fff;
       text-decoration: none; }
     .sidebar__back__icon {
@@ -10063,7 +10064,7 @@ legend {
   background: #F3F3F3;
   box-shadow: 0 1px 5px 0 rgba(33, 43, 50, 0.3);
   margin-left: -40px;
-  margin-right: -40px;
+  margin-right: -30px;
   position: relative; }
   .filter__description {
     float: left;
@@ -10373,7 +10374,8 @@ legend {
   left: 273px;
   opacity: 0;
   transition: all 0.3s ease-in-out;
-  z-index: 0; }
+  z-index: 0;
+  overflow: hidden; }
   .teacher-carousel-wrap.active {
     display: block;
     opacity: 1; }
@@ -10594,6 +10596,36 @@ legend {
     font-family: "Bebas Bold";
     font-size: 24px;
     color: rgba(33, 43, 50, 0.32); }
+  .fiche__right {
+    margin-top: 88px; }
+  .fiche__time {
+    float: left;
+    margin-right: 15px;
+    margin-left: 22px;
+    position: relative; }
+    .fiche__time .inner {
+      background: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 7px;
+      left: 7px;
+      text-align: center;
+      font-size: 20px;
+      color: #E00069;
+      letter-spacing: 0;
+      line-height: 22px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 36px;
+      height: 36px; }
+      .fiche__time .inner .time {
+        margin-top: 2px;
+        font-family: "Bebas Bold";
+        font-size: 20px;
+        color: #212B32;
+        letter-spacing: 1.5px;
+        line-height: 40px; }
   .fiche__title {
     font-family: "Gotham Bold", "Helvetica", "sans-serif";
     font-size: 48px;
@@ -10612,6 +10644,11 @@ legend {
     color: #212B32; }
     .fiche__material li {
       margin-right: 30px; }
+      .fiche__material li svg {
+        display: block;
+        margin: 0 auto 5px; }
+      .fiche__material li div {
+        text-align: center; }
   .fiche__list {
     margin-top: 60px; }
     .fiche__list li {
@@ -10632,6 +10669,13 @@ legend {
     text-align: center;
     max-width: 310px;
     font-family: "Gotham Medium", "Helvetica", "sans-serif";
+    font-size: 20px;
+    color: #212B31;
+    letter-spacing: 0;
+    line-height: 22px; }
+  .fiche__text3 {
+    font-family: "Bebas Bold";
+    margin-top: 15px;
     font-size: 20px;
     color: #212B31;
     letter-spacing: 0;
@@ -10685,7 +10729,7 @@ legend {
     background: url("../images/envie-header.png") no-repeat;
     background-size: cover;
     margin-left: -40px;
-    margin-right: -40px;
+    margin-right: -30px;
     padding-top: 55px;
     text-align: center;
     margin-bottom: -195px; }
@@ -10761,7 +10805,7 @@ legend {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 255px;
+  left: 245px;
   padding-left: 40px;
   right: 0;
   background: rgba(0, 0, 0, 0.7);
@@ -10851,14 +10895,15 @@ legend {
   justify-content: center;
   align-items: center; }
   .mire__subtitle .text {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-family: "Bebas Bold";
     font-family: "Bebas Regular";
     font-size: 20px;
+    margin-top: 55px;
     letter-spacing: 1px;
     color: #FFFFFF; }
   .mire__subtitle .toggle-wrap {
-    margin: 30px 0 0 50px; }
+    margin: 10px 0 0 50px; }
 .mire__ignore {
   position: absolute;
   bottom: 80px;
@@ -11018,9 +11063,10 @@ legend {
   .mire__sound-btn:hover {
     color: #212B31;
     text-decoration: none; }
-  .mire__sound-btn:active {
+  .mire__sound-btn:active, .mire__sound-btn:focus {
     color: #212B31;
-    background: #eee; }
+    background: #eee;
+    text-decoration: none; }
 .mire__media {
   position: absolute;
   top: 0;
@@ -11062,7 +11108,7 @@ legend {
     flex-direction: column;
     justify-content: flex-end; }
     .mire__material li svg {
-      margin-bottom: 10px; }
+      margin: 0 auto 10px; }
       .mire__material li svg path, .mire__material li svg rect {
         fill: #fff; }
   .mire__material__difficulty {
