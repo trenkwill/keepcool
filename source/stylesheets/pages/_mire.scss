@@ -25,7 +25,7 @@
     position: absolute;
     top: 0;
     bottom:0;
-    left: $sidebar-width;
+    left: 245px;
     padding-left: $sidebar-padding;
     right: 0;
     background: rgba(0,0,0,0.70);
@@ -142,15 +142,16 @@
     justify-content: center;
     align-items: center;
     .text {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       font-family: $bebas-bold;
       font-family: $bebas-regular;
       font-size: 20px;
+      margin-top: 55px;
       letter-spacing: 1px;
       color: #FFFFFF;
     }
     .toggle-wrap {
-      margin: 30px 0 0 50px;
+      margin: 10px 0 0 50px;
     }
   }
 
@@ -333,9 +334,10 @@
       color: #212B31;
       text-decoration: none;
     }
-    &:active {
+    &:active, &:focus {
       color: #212B31;
       background: #eee;
+      text-decoration: none;
     }
   }
   // video, image that runs behind
@@ -385,7 +387,7 @@
       flex-direction: column;
       justify-content: flex-end;
       svg {
-        margin-bottom: 10px;
+        margin:0 auto 10px;
         path, rect {
           fill: #fff;
         }

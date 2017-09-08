@@ -25,6 +25,11 @@
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.5.3/css/bootstrap-slider.min.css">
+    <script>
+      var windowHeight = $(window).height();
+      var windowWidth = $(window).width();
+      $("body").css({"width": windowWidth, "height": windowHeight, "overflow": "hidden"});
+    </script>
   </head>
 
   <body class="<%= page_classes %>">
@@ -41,6 +46,7 @@
     <%= partial "partials/numpad" %>
 
     <script>
+
 
       $('.js-countdown-1').circleProgress({
         startAngle: -Math.PI / 4 * 2,
@@ -62,6 +68,12 @@
           gradient: ["#E3E4E5", "#fff"]
         }
       });
+
+      // fix height of teacher-carousel to fit height of window
+      var windowHeight = $(window).height();
+      $(".teacher-carousel-wrap").height(windowHeight - 170);
+
+
     </script>
   </body>
 </html>

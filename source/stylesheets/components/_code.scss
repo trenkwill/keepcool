@@ -20,7 +20,7 @@
     border-radius: 50%;
     justify-content: center;
     &:focus {
-      outline: none;
+      outline: none !important;
     }
     &:active, &:hover {
       border: solid 1px #fff;
@@ -68,10 +68,18 @@
   &__del {
     position: absolute;
     bottom: 135px;
-    left: 465px;
+    left: 230px;
     font-family: $bebas-regular;
     font-size: 18px;
     color:#212B31;
+  }
+  &__ok {
+    position: absolute;
+    bottom: 130px;
+    left: 490px;
+    font-size: 28px;
+    font-family: $bebas-regular;
+    color:$green;
   }
 
   &__done {

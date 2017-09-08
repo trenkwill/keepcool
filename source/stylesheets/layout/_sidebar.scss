@@ -76,7 +76,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    &:hover {
+    &:hover, &:active, &:focus {
       color: #fff;
       text-decoration: none;
     }

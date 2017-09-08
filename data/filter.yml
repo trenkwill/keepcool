@@ -105,11 +105,11 @@ difficulties:
 
 time:
   -
-    title: "Moins de 10 minutes"
+    title: "- de 10 minutes"
     image: "time-1"
   -
     title: "10 à 20 min"
     image: "time-2"
   -
-    title: "Plus de 20 min"
+    title: "+ de 20 min"
     image: "time-3"

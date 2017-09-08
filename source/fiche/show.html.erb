@@ -52,20 +52,41 @@
         <div class="col-md-5">
 
               <% if current_page.url == "/fiche/cuisses-fessiers.html"%>
-              <a href="#" class="btn btn-primary btn-block mb+ mt+ js-open-panel js-replace-lesson"><%= image_tag "play.svg", :class => "btn__icon" %><div>Remplacer <br>maintenant</div></a>
+
+              <div class="fiche__right">
+                <!-- <div class="fiche__time">
+                  <div class="js-countdown-1"
+                  data-size="50"
+                  >
+                    <div class="inner">
+                      <div>
+                        <div class="time">13</div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+                <p class="fiche__text2">Studio occupé</p>
+              </div>
+
+              <a href="#" class="btn btn-primary btn-block mb+ mt+ js-open-panel js-replace-lesson"><%= image_tag "reload-white.svg", :class => "btn__icon" %><div>Recommencer <br>immédiatement</div></a>
 
               <a href="#" class="btn btn-default btn-block mb+ js-open-panel js-book-lesson"><%= image_tag "schedule.svg", :class => "btn__icon" %><div>Réserver ce cours <br> à 17h45</div></a>
               <% end %>
 
               <% if current_page.url == "/fiche/pilates.html"%>
+              <div class="fiche__right">
                 <p class="fiche__text2">Studio occupé</p>
-                <% link_to "/fiche/yoga.html", :class => 'btn btn-default-2 btn-block mb+  mt' do %>
+                <% link_to "/fiche/yoga.html", :class => 'btn btn-default-2 btn-block mb+  mt+' do %>
                   <div>Voir le cours suivant</div>
                 <% end %>
+              </div>
               <% end %>
 
               <% if current_page.url == "/fiche/rpm.html"%>
-              <a href="#" class="btn btn-primary btn-block mb+ mt+ js-open-panel js-play-lesson"><%= image_tag "play.svg", :class => "btn__icon" %><div>Lancer le cours</div></a>
+              <div class="fiche__right">
+                <p class="fiche__text2">Studio libre</p>
+                <a href="#" class="btn btn-primary btn-block mb+ mt+ js-open-panel js-play-lesson"><%= image_tag "play.svg", :class => "btn__icon" %><div>Lancer le cours</div></a>
+              </div>
               <% end %>
 
               <% if current_page.url == "/fiche/yoga.html"%>
@@ -75,19 +96,9 @@
                   <ul class="list-inline text-center">
                     <li>
                       <span class="user-icon user-icon--selected"><%= inline_svg("user") %></span>
+                        <div class="user-icon__text">X3</div>
                     </li>
-                    <li>
-                      <span class="user-icon user-icon--selected"><%= inline_svg("user") %></span>
-                    </li>
-                    <li>
-                      <span class="user-icon"><%= inline_svg("user") %></span>
-                    </li>
-                    <li>
-                      <span class="user-icon user-icon--dash"><%= inline_svg("user") %></span>
-                    </li>
-                    <li>
-                      <span class="user-icon user-icon--dash"><%= inline_svg("user") %></span>
-                    </li>
+
                   </ul>
                   <a href="#" class="bubble">
                     <div>Participer <br>à ce cours</div>
