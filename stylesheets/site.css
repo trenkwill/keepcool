@@ -6945,7 +6945,7 @@ legend {
     padding: 5px 20px;
     letter-spacing: 0;
     display: inline-block; }
-    .filter__reset:hover, .filter__reset:active {
+    .filter__reset:hover, .filter__reset:active, .filter__reset:focus {
       color: #fff;
       text-decoration: none; }
     .filter__reset svg {
@@ -7022,7 +7022,7 @@ legend {
           top: 4px;
           position: relative; }
           .filter__nav li .filter__item.selected .filter__item__text {
-            top: 15px; }
+            top: 16px; }
           .filter__nav li .filter__item.selected.filter__item--difficulty svg {
             position: relative;
             top: 5px; }
@@ -7272,7 +7272,7 @@ legend {
     border-radius: 50%;
     justify-content: center; }
     .code__btn:focus {
-      outline: none; }
+      outline: none !important; }
     .code__btn:active, .code__btn:hover {
       border: solid 1px #fff;
       color: #333;
@@ -7311,10 +7311,17 @@ legend {
   .code__del {
     position: absolute;
     bottom: 135px;
-    left: 465px;
+    left: 230px;
     font-family: "Bebas Regular";
     font-size: 18px;
     color: #212B31; }
+  .code__ok {
+    position: absolute;
+    bottom: 130px;
+    left: 490px;
+    font-size: 28px;
+    font-family: "Bebas Regular";
+    color: #A7CD45; }
   .code__done {
     background: #FFFFFF url("../images/back-green.png") no-repeat center 30px;
     box-shadow: 0 -6px 12px 0 rgba(33, 43, 50, 0.4);
@@ -7343,19 +7350,26 @@ legend {
   bottom: 0;
   background: rgba(33, 43, 50, 0.7); }
 
-.user-icon--small svg {
-  width: 10px;
-  height: 13px; }
-.user-icon--small path {
-  fill: #fff;
-  stroke: none; }
-.user-icon--selected path {
-  fill: #E00069;
-  stroke: none; }
-.user-icon--dash path {
-  stroke-linejoin: round;
-  stroke-linecap: round;
-  stroke-dasharray: 2,6; }
+.user-icon {
+  float: left; }
+  .user-icon--small svg {
+    width: 10px;
+    height: 13px; }
+  .user-icon--small path {
+    fill: #fff;
+    stroke: none; }
+  .user-icon--selected path {
+    fill: #E00069;
+    stroke: none; }
+  .user-icon--dash path {
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    stroke-dasharray: 2,6; }
+  .user-icon__text {
+    float: left;
+    font-size: 26px;
+    color: #E00069;
+    margin: 20px 0 0 15px; }
 
 .fiche {
   background: #fff; }

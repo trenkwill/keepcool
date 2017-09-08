@@ -281,7 +281,7 @@
                 <p class="fiche__text2">Studio occupé</p>
               </div>
 
-              <a href="#" class="btn btn-primary btn-block mb+ mt+ js-open-panel js-replace-lesson"><img src="../images/play.svg" class="btn__icon" alt="Play" /><div>Recommencer <br>maintenant</div></a>
+              <a href="#" class="btn btn-primary btn-block mb+ mt+ js-open-panel js-replace-lesson"><img src="../images/reload-white.svg" class="btn__icon" alt="Reload white" /><div>Recommencer <br>immédiatement</div></a>
 
               <a href="#" class="btn btn-default btn-block mb+ js-open-panel js-book-lesson"><img src="../images/schedule.svg" class="btn__icon" alt="Schedule" /><div>Réserver ce cours <br> à 17h45</div></a>
 
@@ -523,6 +523,7 @@
     </div>
     <a href="#" class="code__done js-done">Retour</a>
     <a href="#" class="code__del js-del">Effacer</a>
+    <a href="#" class="code__ok js-done">OK</a>
 </div>
 
 <div class="code-bg"></div>
@@ -584,6 +585,12 @@
           gradient: ["#E3E4E5", "#fff"]
         }
       });
+
+      // fix height of teacher-carousel to fit height of window
+      var windowHeight = $(window).height();
+      $(".teacher-carousel-wrap").height(windowHeight - 170);
+
+
     </script>
   </body>
 </html>

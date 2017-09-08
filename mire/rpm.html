@@ -603,6 +603,7 @@ $(document).ready(function(){
     </div>
     <a href="#" class="code__done js-done">Retour</a>
     <a href="#" class="code__del js-del">Effacer</a>
+    <a href="#" class="code__ok js-done">OK</a>
 </div>
 
 <div class="code-bg"></div>
@@ -664,6 +665,12 @@ $(document).ready(function(){
           gradient: ["#E3E4E5", "#fff"]
         }
       });
+
+      // fix height of teacher-carousel to fit height of window
+      var windowHeight = $(window).height();
+      $(".teacher-carousel-wrap").height(windowHeight - 170);
+
+
     </script>
   </body>
 </html>
