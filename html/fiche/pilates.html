@@ -25,6 +25,11 @@
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.5.3/css/bootstrap-slider.min.css">
+    <script>
+      var windowHeight = $(window).height();
+      var windowWidth = $(window).width();
+      $("body").css({"width": windowWidth, "height": windowHeight, "overflow": "hidden"});
+    </script>
   </head>
 
   <body class="fiche fiche_pilates">
@@ -301,9 +306,11 @@
         <div class="col-md-5">
 
 
+              <div class="fiche__right">
                 <p class="fiche__text2">Studio occupé</p>
-<a href="yoga.html" class="btn btn-default-2 btn-block mb+  mt">                  <div>Voir le cours suivant</div>
-</a>
+<a href="yoga.html" class="btn btn-default-2 btn-block mb+  mt+">                  <div>Voir le cours suivant</div>
+</a>              </div>
+
 
 
 
@@ -541,6 +548,7 @@
     </div>
     <a href="#" class="code__done js-done">Retour</a>
     <a href="#" class="code__del js-del">Effacer</a>
+    <a href="#" class="code__ok js-done">OK</a>
 </div>
 
 <div class="code-bg"></div>
@@ -581,6 +589,7 @@
 
     <script>
 
+
       $('.js-countdown-1').circleProgress({
         startAngle: -Math.PI / 4 * 2,
         value: 0.25,
@@ -601,6 +610,12 @@
           gradient: ["#E3E4E5", "#fff"]
         }
       });
+
+      // fix height of teacher-carousel to fit height of window
+      var windowHeight = $(window).height();
+      $(".teacher-carousel-wrap").height(windowHeight - 170);
+
+
     </script>
   </body>
 </html>

@@ -25,6 +25,11 @@
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.5.3/css/bootstrap-slider.min.css">
+    <script>
+      var windowHeight = $(window).height();
+      var windowWidth = $(window).width();
+      $("body").css({"width": windowWidth, "height": windowHeight, "overflow": "hidden"});
+    </script>
   </head>
 
   <body class="tous-les-cours">
@@ -877,7 +882,7 @@
     </g>
 </svg>
 </div>
-                <div class="filter__section__card__title">Moins de 10 minutes</div>
+                <div class="filter__section__card__title">- de 10 minutes</div>
               </div>
             </div>
           </div>
@@ -934,7 +939,7 @@
     </g>
 </svg>
 </div>
-                <div class="filter__section__card__title">Plus de 20 min</div>
+                <div class="filter__section__card__title">+ de 20 min</div>
               </div>
             </div>
           </div>
@@ -2073,6 +2078,7 @@
     </div>
     <a href="#" class="code__done js-done">Retour</a>
     <a href="#" class="code__del js-del">Effacer</a>
+    <a href="#" class="code__ok js-done">OK</a>
 </div>
 
 <div class="code-bg"></div>
@@ -2113,6 +2119,7 @@
 
     <script>
 
+
       $('.js-countdown-1').circleProgress({
         startAngle: -Math.PI / 4 * 2,
         value: 0.25,
@@ -2133,6 +2140,12 @@
           gradient: ["#E3E4E5", "#fff"]
         }
       });
+
+      // fix height of teacher-carousel to fit height of window
+      var windowHeight = $(window).height();
+      $(".teacher-carousel-wrap").height(windowHeight - 170);
+
+
     </script>
   </body>
 </html>
